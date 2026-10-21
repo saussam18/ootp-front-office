@@ -3,10 +3,9 @@ __pycache__/
 *.pyc
 .DS_Store
 node_modules/
-public/
+web/static/
 ui/dist/
 ui/tsconfig.tsbuildinfo
 .vercel/
 .env*
 *.duckdb.wal
-.vercel

@@ -41,7 +41,7 @@ class SafeJSON(JSONResponse):
 
 
 app = FastAPI(title="Halifax front office", default_response_class=SafeJSON)
-DIST = ROOT / "public"  # the built UI (ui/ builds into it)
+DIST = ROOT / "web" / "static"  # the built UI (ui/ builds into it)
 M = 1e6
 REPORT_GROUPS = [
     ("Your team", ["depth", "contracts", "resign", "arb", "sell_high", "jump_mine"]),
