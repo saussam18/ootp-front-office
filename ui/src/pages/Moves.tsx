@@ -23,7 +23,7 @@ function Note({ m }: { m: Move }) {
   );
 }
 
-export function Moves() {
+export function Moves({ embedded }: { embedded?: boolean } = {}) {
   const q = useQuery({ queryKey: ["moves"], queryFn: () => api.get<{ moves: Move[] }>("/api/moves") });
   const readOnly = useReadOnly();
   const [view, setView] = useState("key");
@@ -39,9 +39,11 @@ export function Moves() {
 
   return (
     <div className="space-y-4">
-      <PageTitle sub={`Read from the league's transaction logs every refresh (trades from the player histories).${readOnly ? "" : " Add your own notes to any move."}`}>
-        Moves
-      </PageTitle>
+      {!embedded && (
+        <PageTitle sub={`Read from the league's transaction logs every refresh (trades from the player histories).${readOnly ? "" : " Add your own notes to any move."}`}>
+          Moves
+        </PageTitle>
+      )}
       <div className="flex flex-wrap items-center gap-2">
         <div className="max-w-full overflow-x-auto"><Segmented value={view} onChange={setView} options={VIEWS} /></div>
         <Input className="w-56" icon={<IconSearch size={14} />} placeholder="Search…" value={search} onChange={(e) => setSearch(e.currentTarget.value)} />

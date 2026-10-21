@@ -10,7 +10,7 @@ import pandas as pd
 import offseason
 import trade
 from load import DB, mlb_teams
-from offseason import RP_LEVERAGE, best_lineup
+from offseason import best_lineup
 
 from . import moves, plans, store
 
@@ -76,12 +76,6 @@ class Context:
             return year <= ov[pid][0]
         s = self.season(pid, year)
         return s is not None and pd.notna(s.status) and s.status != "free agent"
-
-    def kept(self):
-        """Your org's players under control next season."""
-        org = self.org()
-        ids = [pid for pid in org.index if self.controlled(pid, self.nxt)]
-        return self.players.loc[ids].assign(id=ids)
 
     def _hand_medians(self):
         """Median MLB team's starter value at each position vs each hand, next season."""
@@ -188,150 +182,6 @@ class Context:
         notes = store.move_notes()
         return [{**m, "note": notes.get(m["key"], "")} for m in moves.moves(self.team_id, self.trade_moves())]
 
-    # -------------------------------------------------------------- plans
-    def plan_year(self, key):
-        return self.core_year if plans.PLANS[key]["group"] == "core" else self.nxt
-
-    def share(self, key):
-        """Share of next season's PAs this plan plays: the vs-RHP lineup the PAs vs righties, the vs-LHP lineup the rest."""
-        return {"vr": 1 - self.rep.lhp, "vl": self.rep.lhp}.get(plans.PLANS[key].get("hand"), 1.0)
-
-    def slot_rate(self, key, slot, pid):
-        """A hitter's full-season xWAR rate at this position if every PA came vs this plan's hand (None if not a split slot)."""
-        p = plans.PLANS[key]
-        if not pid or p["group"] != "next" or p["kind"] != "hit" or slot not in plans.HIT or (pid, slot) not in self.pv.index:
-            return None
-        v = self.pv[f"xwar_{p['hand']}"].get((pid, slot))
-        return None if pd.isna(v) else float(v)
-
-    def slot_value(self, key, slot, pid):
-        """Model xWAR this player adds over a season in this slot (None if he can't fill it).
-        Lineup slots count only the PAs vs that hand, so a vs-LHP starter is worth about a quarter of his rate."""
-        p = plans.PLANS[key]
-        if not pid or pid not in self.df.index:
-            return None
-        if p["group"] == "core":
-            s = self.season(pid, self.core_year)
-            return None if s is None else float(s.xwar)
-        if p["kind"] == "hit" and slot in plans.HIT:
-            rate = self.slot_rate(key, slot, pid)
-            return None if rate is None else rate * self.share(key)
-        if p.get("role") == "SP" and slot.startswith("SP") and (pid, "SP") in self.pv.index:
-            return float(self.pv.xwar[(pid, "SP")])
-        if p.get("role") == "RP" and slot in plans.BULLPEN and (pid, "RP") in self.pv.index:
-            return float(self.pv.xwar[(pid, "RP")]) * plans.LEVERAGE.get(slot, RP_LEVERAGE[-1])
-        return float(self.df.xwar_next.get(pid)) if pd.notna(self.df.xwar_next.get(pid)) else None  # bench / minors
-
-    def slot_median(self, key, slot):
-        p = plans.PLANS[key]
-        if p["group"] != "next":
-            return None
-        if p["kind"] == "hit" and slot in plans.HIT:
-            rate = self.hand_medians.get((p["hand"], slot))
-            return None if rate is None else rate * self.share(key)
-        if slot.startswith("SP") and slot in self.rep.median.index:
-            return float(self.rep.median[slot])
-        if slot in plans.BULLPEN:
-            return float(self.rep.median[plans.BULLPEN_SLOT[slot]])
-        return None
-
-    def eligible(self, key):
-        """Org players who can be in this plan: right kind, and under control in the plan's season."""
-        p = plans.PLANS[key]
-        org = self.org()
-        org = org[org.pos.isin(PITCHERS)] if p["kind"] == "pit" else org[~org.pos.isin(PITCHERS)]
-        year = self.plan_year(key)
-        return org[[self.controlled(pid, year) for pid in org.index]]
-
-    def model_picks(self, key):
-        p = plans.PLANS[key]
-        if p["group"] == "next" and p["kind"] == "hit":
-            return {s: pid for s, (pid, _) in self.model_lineup(p["hand"]).items()}
-        if p["group"] == "next" and p.get("role") == "SP":
-            return {s: pid for s, (pid, _) in self.model_staff().items() if s.startswith("SP")}
-        if p.get("role") == "RP":
-            staff = self.model_staff()
-            return {role: staff[rp][0] for role, rp in plans.BULLPEN_SLOT.items() if rp in staff}
-        if p["group"] == "core":
-            pool = self.eligible(key)
-            seasons = self.proj[(self.proj.season == self.core_year) & self.proj.player_id.isin(pool.index)].sort_values("xwar", ascending=False)
-            picks, used = {}, set()
-            for slot in p["slots"]:
-                want = {"DH": None}.get(slot, slot)
-                for _, s in seasons.iterrows():
-                    fits = s.best_pos == want if want else s.best_pos in plans.HIT
-                    if p["kind"] == "pit":
-                        fits = s.best_pos == "SP"
-                    if fits and s.player_id not in used:
-                        picks[slot] = int(s.player_id)
-                        used.add(s.player_id)
-                        break
-            return picks
-        return {}
-
-    def model_lineup(self, hand):
-        pv = self.lg.pos_value[self.lg.pos_value.player_id.isin(self.kept().id) & self.lg.pos_value.pos.isin(plans.HIT)]
-        return best_lineup(pv, f"xwar_{hand}")
-
-    def model_staff(self):
-        chart = offseason.depth(self.kept(), self.lg.pos_value, self.rep.lhp)
-        return {k: v for k, v in chart.items() if k.startswith(("SP", "RP"))}
-
-    def plan(self, key, with_options=True):
-        """Everything the plan editor needs, JSON-ready (with_options: the dropdown choices per slot)."""
-        p = plans.PLANS[key]
-        year = self.plan_year(key)
-        saved = store.slots(key)
-        pool = self.eligible(key)
-        model = self.model_picks(key)
-
-        def status(value, median):
-            if value is None:
-                return "empty"
-            if median is None:
-                return "ok"
-            if value < median - plans.UPGRADE_GAP:
-                return "upgrade"
-            if value > median + plans.STRONG_GAP:
-                return "strong"
-            return "ok"
-
-        def row(slot, counts):
-            s = saved.get(slot, {})
-            pid, was = s.get("player_id"), None
-            if pid and not self.controlled(pid, year):
-                pid, was = None, s["player_id"]  # leaving: show the slot as open
-            value, median = self.slot_value(key, slot, pid), self.slot_median(key, slot)
-            mp = model.get(slot)
-            options = sorted(((int(o), self.slot_value(key, slot, o)) for o in pool.index), key=lambda x: (x[1] is None, -(x[1] or 0))) if with_options else []
-            return {
-                "slot": slot, "counts": counts, "player_id": pid, "label": s.get("label", "") if not pid else "",
-                "was": {"id": int(was), "name": self.name(was)} if was else None,
-                "value": value, "median": median, "status": "leaving" if was else status(value, median),
-                "rate": self.slot_rate(key, slot, pid), "median_rate": None if median is None or not p.get("hand") else median / self.share(key),
-                "model": {"id": int(mp), "name": self.name(mp), "value": self.slot_value(key, slot, mp)} if mp else None,
-                "options": [{"id": o, "value": v} for o, v in options],
-            }
-
-        rows = [row(s, True) for s in p["slots"]] + [row(s, False) for s in p.get("bench", [])]
-        # For open slots (someone leaving, or never filled): the best player under control who isn't already starting.
-        used = {r["player_id"] for r in rows if r["counts"] and r["player_id"]}
-        for r in rows:
-            if r["counts"] and not r["player_id"]:
-                best = max(((self.slot_value(key, r["slot"], o), o) for o in pool.index if o not in used),
-                           key=lambda x: -1e9 if x[0] is None else x[0], default=(None, None))
-                if best[0] is not None:
-                    r["suggest"] = {"id": int(best[1]), "name": self.name(best[1]), "value": best[0]}
-        total = sum(r["value"] or 0 for r in rows if r["counts"])
-        model_total = sum(r["model"]["value"] or 0 for r in rows if r["counts"] and r["model"])
-        return {"key": key, "title": p["title"], "group": p["group"], "kind": p["kind"], "year": year, "rows": rows,
-                "total": total, "model_total": model_total, "share": self.share(key)}
-
-    def plan_players(self):
-        """Name/pos/level for every org player, so plan options can be labelled client-side."""
-        org = self.org()
-        return {int(pid): {"name": r["name"], "pos": r.pos, "lev": r.lev, "b": r.b, "t": r.t} for pid, r in org.iterrows()}
-
     def losing(self):
         """Players in the org now whose control ends after this season (by the model or your overrides)."""
         ov = self.overrides()
@@ -365,16 +215,6 @@ class Context:
                         "model_last": int(self.model_last.get(pid, self.yr)), "last": ov[pid][0] if pid in ov else None,
                         "note": ov[pid][1] if pid in ov else "", "xwar": None if pd.isna(r.xwar_next) else r.xwar_next})
         return sorted(out, key=lambda x: (x["lev"] != "RLB", -(x["salary"] or 0)))
-
-    def internal_options(self, year, pos, exclude, n=3):
-        """Best org players under control in `year` at the same position group."""
-        group = {"C": {"C"}, "1B": {"1B", "DH"}, "DH": {"1B", "DH"}, "2B": {"2B", "SS", "3B"}, "SS": {"2B", "SS", "3B"},
-                 "3B": {"2B", "SS", "3B"}, "LF": {"LF", "CF", "RF"}, "CF": {"LF", "CF", "RF"}, "RF": {"LF", "CF", "RF"},
-                 "SP": {"SP"}, "RP": {"RP", "SP"}, "CL": {"RP", "SP"}}.get(pos, {pos})
-        p = self.proj[(self.proj.season == year) & self.proj.player_id.isin(self.org().index) & (self.proj.status != "free agent")]
-        p = p[p.best_pos.isin(group) & ~p.player_id.isin(exclude)]
-        p = p[p.player_id.map(lambda pid: self.controlled(pid, year)).astype(bool)].nlargest(n, "xwar")  # after your contract-end calls
-        return [{"id": int(r.player_id), "name": self.name(r.player_id), "xwar": float(r.xwar)} for _, r in p.iterrows()]
 
     # -------------------------------------------------------------- player detail
     def player_detail(self, pid):

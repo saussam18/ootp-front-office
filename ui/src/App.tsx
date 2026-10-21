@@ -1,44 +1,38 @@
 import { useEffect, useState } from "react";
-import { IconArrowsExchange, IconBallBaseball, IconBrandGithub, IconCalendarDollar, IconChartBar, IconClipboardList, IconHistory,
-  IconLayoutDashboard, IconListNumbers, IconMenu2, IconMoon, IconNotes, IconSun, IconUsers, IconX } from "@tabler/icons-react";
+import { IconArrowsExchange, IconBrandGithub, IconClipboardList, IconHistory, IconMenu2, IconMoon, IconSun, IconUsers, IconX } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
-import { NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
 import { api, type Meta } from "./api";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { PlayerPicker } from "./components/PlayerPicker";
 import { IconButton, cn } from "./components/ui";
-import { Board } from "./pages/Board";
-import { Dashboard } from "./pages/Dashboard";
-import { Forty } from "./pages/Forty";
-import { FreeAgency } from "./pages/FreeAgency";
-import { Moves } from "./pages/Moves";
+import { Log } from "./pages/Log";
+import { Market } from "./pages/Market";
+import { Plan } from "./pages/Plan";
 import { Player } from "./pages/Player";
-import { Plans } from "./pages/Plans";
-import { Report, Reports } from "./pages/Reports";
-import { Roster } from "./pages/Roster";
-import { Strategy } from "./pages/Strategy";
-import { TradeLab } from "./pages/TradeLab";
+import { Players } from "./pages/Players";
+import { MARKET_TAB } from "./pages/Reports";
 
 const REPO = "https://github.com/saussam18/ootp-front-office";
 
 const NAV = [
-  { group: "Plan", items: [
-    { to: "/", label: "Team plan", icon: IconClipboardList },
-    { to: "/plans", label: "Lineups & staff", icon: IconBallBaseball },
-    { to: "/fa", label: "Free agency", icon: IconCalendarDollar },
-    { to: "/forty", label: "40-man", icon: IconListNumbers },
-  ] },
-  { group: "Market", items: [
-    { to: "/trade", label: "Trade lab", icon: IconArrowsExchange },
-    { to: "/reports", label: "Reports", icon: IconChartBar },
-  ] },
-  { group: "Club", items: [
-    { to: "/roster", label: "Roster", icon: IconUsers },
-    { to: "/moves", label: "Moves", icon: IconHistory },
-    { to: "/strategy", label: "Strategy", icon: IconNotes },
-    { to: "/dashboard", label: "Dashboard", icon: IconLayoutDashboard },
-  ] },
+  { to: "/", label: "Plan", icon: IconClipboardList },
+  { to: "/market", label: "Market", icon: IconArrowsExchange },
+  { to: "/players", label: "Players", icon: IconUsers },
+  { to: "/log", label: "Log", icon: IconHistory },
 ];
+
+/** Old URLs (bookmarks, links in notes) land on the page that now holds that view, keeping their query string. */
+function Redirect({ to }: { to: string }) {
+  const { search } = useLocation();
+  const extra = search.replace(/^\?/, "");
+  return <Navigate replace to={extra ? `${to}${to.includes("?") ? "&" : "?"}${extra}` : to} />;
+}
+
+function ReportRedirect() {
+  const { key = "" } = useParams();
+  return <Redirect to={MARKET_TAB[key] ? `/market?tab=${MARKET_TAB[key]}` : `/players?tab=reports&report=${key}`} />;
+}
 
 function useTheme() {
   const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
@@ -51,19 +45,14 @@ function useTheme() {
 
 function Nav({ meta, onNavigate }: { meta?: Meta; onNavigate?: () => void }) {
   return (
-    <nav className="flex h-full flex-col gap-5 px-3 py-4">
-      {NAV.map(({ group, items }) => (
-        <div key={group}>
-          <div className="px-2 pb-1 text-[11px] font-medium uppercase tracking-wider text-faint">{group}</div>
-          {items.map(({ to, label, icon: Icon }) => (
-            <NavLink key={to} to={to} end={to === "/"} onClick={onNavigate}
-              className={({ isActive }) => cn("flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[13px] font-medium transition-colors",
-                isActive ? "bg-surface text-fg shadow-sm ring-1 ring-line" : "text-muted hover:bg-sunken hover:text-fg")}>
-              <Icon size={16} stroke={1.75} />
-              {label}
-            </NavLink>
-          ))}
-        </div>
+    <nav className="flex h-full flex-col gap-0.5 px-3 py-4">
+      {NAV.map(({ to, label, icon: Icon }) => (
+        <NavLink key={to} to={to} end={to === "/"} onClick={onNavigate}
+          className={({ isActive }) => cn("flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[13px] font-medium transition-colors",
+            isActive ? "bg-surface text-fg shadow-sm ring-1 ring-line" : "text-muted hover:bg-sunken hover:text-fg")}>
+          <Icon size={16} stroke={1.75} />
+          {label}
+        </NavLink>
       ))}
       {meta && (
         <div className="mt-auto px-2 text-[11px] leading-relaxed text-faint">
@@ -132,18 +121,18 @@ export function App() {
           <div className="mx-auto max-w-[1400px]">
             <ErrorBoundary key={pathname}>
               <Routes>
-                <Route path="/" element={<Board />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/forty" element={<Forty />} />
-                <Route path="/moves" element={<Moves />} />
-                <Route path="/plans" element={<Plans />} />
-                <Route path="/strategy" element={<Strategy />} />
-                <Route path="/fa" element={<FreeAgency />} />
-                <Route path="/roster" element={<Roster />} />
+                <Route path="/" element={<Plan />} />
+                <Route path="/market" element={<Market />} />
+                <Route path="/players" element={<Players />} />
+                <Route path="/log" element={<Log />} />
                 <Route path="/player/:id" element={<Player />} />
-                <Route path="/trade" element={<TradeLab />} />
-                <Route path="/reports" element={<Reports />} />
-                <Route path="/reports/:key" element={<Report />} />
+                {["/plans", "/fa", "/forty", "/dashboard"].map((p) => <Route key={p} path={p} element={<Redirect to="/" />} />)}
+                <Route path="/trade" element={<Redirect to="/market?tab=trade" />} />
+                <Route path="/reports" element={<Redirect to="/players?tab=reports" />} />
+                <Route path="/reports/:key" element={<ReportRedirect />} />
+                <Route path="/roster" element={<Redirect to="/players" />} />
+                <Route path="/moves" element={<Redirect to="/log" />} />
+                <Route path="/strategy" element={<Redirect to="/log?tab=notes" />} />
               </Routes>
             </ErrorBoundary>
           </div>

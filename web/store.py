@@ -29,6 +29,11 @@ create table if not exists slots (plan text, slot text, player_id integer, label
 create table if not exists leaving (player_id integer primary key, note text not null default '');
 create table if not exists control (player_id integer primary key, last_season integer not null, note text not null default '');
 create table if not exists move_notes (key text primary key, note text not null default '');
+create table if not exists pins (season integer, slot text, hand text not null default 'R', player_id integer not null, primary key (season, slot, hand));
+create table if not exists signings (player_id integer primary key, first_season integer not null, years integer not null default 1,
+    aav real, note text not null default '');
+create table if not exists decisions (player_id integer, season integer, kind text, choice text not null, primary key (player_id, season, kind));
+create table if not exists flags (key text primary key, value text not null default '');
 create table if not exists fa_plan (
     year integer, departing_id integer, departing_label text not null default '',
     replacement_id integer, replacement_label text not null default '', note text not null default '',
@@ -37,7 +42,7 @@ create table if not exists fa_plan (
 """
 
 
-VERSION = [0]  # bumped on every write to control, so callers can cache it
+VERSION = [0]  # bumped on every write that changes a plan (control, pins, signings, decisions, 40-man), so callers can cache
 
 
 def connect():
@@ -93,11 +98,13 @@ def fringe():
 def set_fringe(pid, status, note=""):
     with connect() as con:
         con.execute("insert or replace into fringe values (?, ?, ?)", (pid, status, note))
+    VERSION[0] += 1
 
 
 def remove_fringe(pid):
     with connect() as con:
         con.execute("delete from fringe where player_id = ?", (pid,))
+    VERSION[0] += 1
 
 
 # ------------------------------------------------------------------ contract end dates you set
@@ -179,3 +186,68 @@ def remove_fa_plan(year, departing_id, departing_label):
     with connect() as con:
         con.execute("delete from fa_plan where year = ? and departing_id = ? and departing_label = ?",
                     (year, departing_id or 0, departing_label or ""))
+
+
+# ------------------------------------------------------------------ the season plan (web/planner.py)
+
+def pins(season):
+    """{(slot, hand): player_id}: slots you've decided yourself; hand 'L' is a vs-LHP swap."""
+    with connect() as con:
+        return {(r["slot"], r["hand"]): r["player_id"] for r in con.execute("select * from pins where season = ?", (season,))}
+
+
+def set_pin(season, slot, hand, pid):
+    with connect() as con:
+        if pid is None:
+            con.execute("delete from pins where season = ? and slot = ? and hand = ?", (season, slot, hand))
+        else:
+            con.execute("insert or replace into pins values (?, ?, ?, ?)", (season, slot, hand, pid))
+    VERSION[0] += 1
+
+
+def clear_pins(season, slots):
+    with connect() as con:
+        con.executemany("delete from pins where season = ? and slot = ?", [(season, s) for s in slots])
+    VERSION[0] += 1
+
+
+def signings():
+    with connect() as con:
+        return [dict(r) for r in con.execute("select * from signings order by first_season, player_id")]
+
+
+def set_signing(pid, first_season, years, aav, note=""):
+    with connect() as con:
+        con.execute("insert or replace into signings values (?, ?, ?, ?, ?)", (pid, first_season, years, aav, note))
+    VERSION[0] += 1
+
+
+def remove_signing(pid):
+    with connect() as con:
+        con.execute("delete from signings where player_id = ?", (pid,))
+    VERSION[0] += 1
+
+
+def decisions():
+    with connect() as con:
+        return [dict(r) for r in con.execute("select * from decisions")]
+
+
+def set_decision(pid, season, kind, choice):
+    with connect() as con:
+        if choice is None:
+            con.execute("delete from decisions where player_id = ? and season = ? and kind = ?", (pid, season, kind))
+        else:
+            con.execute("insert or replace into decisions values (?, ?, ?, ?)", (pid, season, kind, choice))
+    VERSION[0] += 1
+
+
+def flag(key):
+    with connect() as con:
+        r = con.execute("select value from flags where key = ?", (key,)).fetchone()
+        return r["value"] if r else None
+
+
+def set_flag(key, value="1"):
+    with connect() as con:
+        con.execute("insert or replace into flags values (?, ?)", (key, value))

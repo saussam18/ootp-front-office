@@ -16,7 +16,7 @@ function PlanToggle({ p, labels }: { p: FortyPlayer; labels: [string, string] })
   const readOnly = useReadOnly();
   const save = useMutation({
     mutationFn: (status: string) => api.put(`/api/forty/${p.id}`, { status: status === "undecided" ? null : status, note: p.note }),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ["forty"] }); qc.invalidateQueries({ queryKey: ["board"] }); },
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ["forty"] }); qc.invalidateQueries({ queryKey: ["plan"] }); },
   });
   if (readOnly) {
     return p.plan ? <Badge tone={p.plan === "on" ? "accent" : "neutral"}>{p.plan === "on" ? labels[0] : labels[1]}</Badge> : <span className="text-faint">–</span>;
@@ -47,7 +47,7 @@ function AdviceBadge({ p, tip = true }: { p: FortyPlayer; tip?: boolean }) {
   return tip ? <Tip label={a.tip}>{badge}</Tip> : badge;
 }
 
-export function Forty() {
+export function Forty({ embedded }: { embedded?: boolean } = {}) {
   const q = useQuery({ queryKey: ["forty"], queryFn: () => api.get<FortyData>("/api/forty") });
   const [showAll, setShowAll] = useState(false);
   if (q.isLoading) return <Loading />;
@@ -70,15 +70,17 @@ export function Forty() {
 
   return (
     <div className="space-y-4">
-      <PageTitle sub={<>Rule 5 eligibility from each player's first pro contract (draft or international signing): eligible for the December draft
+      {!embedded && <PageTitle sub={<>Rule 5 eligibility from each player's first pro contract (draft or international signing): eligible for the December draft
         after his 4th season if he signed at 18 or younger, after his 3rd if older. That matches every Rule 5 pick in the league's history.
-        Plans you set here (keep/drop, protect/expose) feed the projected count.</>}>40-man roster</PageTitle>
+        Plans you set here (keep/drop, protect/expose) feed the projected count.</>}>40-man roster</PageTitle>}
+      {!embedded && (
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <Stat label="On the 40-man" value={<>{d.count}<span className="text-base font-normal text-faint">/40</span></>} />
         <Stat label="Leaving after the season" value={d.leaving} sub="contracts ending or marked as leaving" />
         <Stat label="Planned" value={`−${d.planned_drops} / +${d.planned_adds}`} sub="drops / Rule 5 protections" />
         <Stat label="Projected" value={<>{d.projected}<span className="text-base font-normal text-faint">/40</span></>} sub={`${40 - d.projected} open spots for free agents and trades`} />
       </div>
+      )}
 
       <Section title={`Rule 5 eligible this December (${d.rule5_year}), not on the 40-man`}
         right={<Switch checked={showAll} onChange={setShowAll}

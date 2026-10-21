@@ -7,7 +7,7 @@ import { Input, Loading, Num, PlayerLink, Section, Select, Table, Td, Th, cn, us
 interface Contract { id: number; name: string; pos: string; age: number; lev: string | null; salary: number | null; yl: number | null;
   status: string; model_last: number; last: number | null; note: string; xwar: number | null }
 
-const REFRESH = ["contracts", "fa", "board", "plans", "forty", "dashboard"];
+const REFRESH = ["contracts", "plan", "forty"];
 
 function Row({ c, years, season, readOnly }: { c: Contract; years: number[]; season: number; readOnly: boolean }) {
   const qc = useQueryClient();
@@ -56,7 +56,7 @@ export function ContractEnds() {
   return (
     <Section title="Contract end dates" right={<span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-accent-soft ring-1 ring-accent/30" /> your call</span>}>
       <p className="mb-3 max-w-3xl text-[13px] text-muted">The export counts team option years as guaranteed. Set when a player's control really ends (declined or
-        exercised options, planned releases, extensions) and every page follows: lineups, free agency, the team plan and the 40-man.</p>
+        exercised options, planned releases, extensions) and the plan follows: who is on each season's roster, the lineup and staff built from it, and the 40-man.</p>
       <Table minWidth={900}>
         <thead><tr><Th>Player</Th><Th>Pos</Th><Th right>Age</Th><Th right>Salary</Th><Th>Contract</Th><Th right>xWAR</Th><Th>Under control</Th><Th>Note</Th></tr></thead>
         <tbody>{d.players.map((c) => <Row key={c.id} c={c} years={d.years} season={d.season} readOnly={readOnly} />)}</tbody>

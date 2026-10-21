@@ -27,7 +27,7 @@ function Note({ k, label, initial }: { k: string; label: string; initial: string
   );
 }
 
-export function Strategy() {
+export function Strategy({ embedded }: { embedded?: boolean } = {}) {
   const qc = useQueryClient();
   const readOnly = useReadOnly();
   const q = useQuery({ queryKey: ["strategy"], queryFn: () => api.get<Strat>("/api/strategy") });
@@ -46,7 +46,7 @@ export function Strategy() {
 
   return (
     <div className="space-y-4">
-      <PageTitle>Team strategy</PageTitle>
+      {!embedded && <PageTitle>Team strategy</PageTitle>}
       <Note k="moves" label="Planned moves" initial={d.notes.moves ?? ""} />
 
       <Section title="Trade block">
@@ -65,8 +65,8 @@ export function Strategy() {
                   <Td>{b.pick}</Td><Td>{b.asking}</Td><Td className="text-xs text-muted">{b.note}</Td>
                   <Td>
                     <span className="flex items-center gap-2 whitespace-nowrap text-xs">
-                      <TextLink to={`/trade?mode=shop&give=${b.player_id}`}>Shop</TextLink>
-                      <TextLink to={`/trade?mode=comps&give=${b.player_id}`}>Comps</TextLink>
+                      <TextLink to={`/market?tab=trade&mode=shop&give=${b.player_id}`}>Shop</TextLink>
+                      <TextLink to={`/market?tab=trade&mode=comps&give=${b.player_id}`}>Comps</TextLink>
                       {!readOnly && (
                         <IconButton label="Remove" className="size-6 hover:bg-bad-soft hover:text-bad" onClick={() => delBlock.mutate(b.player_id)}>
                           <IconTrash size={14} />
@@ -89,8 +89,8 @@ export function Strategy() {
         )}
       </Section>
 
-      <p className="text-[13px] text-muted">The 40-man fringe (keep / drop, Rule 5 protection) lives on the <TextLink to="/forty">40-man page</TextLink>,
-        and the moves you've made are logged automatically on <TextLink to="/moves">Moves</TextLink>.</p>
+      <p className="text-[13px] text-muted">The 40-man fringe (keep / drop, Rule 5 protection) lives on the <TextLink to="/">Plan</TextLink>,
+        and the moves you've made are logged automatically on <TextLink to="/log">Moves</TextLink>.</p>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { api, qs, type Meta, type Table } from "../api";
 import { DataTable } from "../components/DataTable";
 import { Combobox, Failed, Loading, PageTitle, Section } from "../components/ui";
 
-export function Roster() {
+export function Roster({ embedded }: { embedded?: boolean } = {}) {
   const [params, setParams] = useSearchParams();
   const meta = useQuery({ queryKey: ["meta"], queryFn: () => api.get<Meta>("/api/meta") });
   const org = params.get("org") ?? meta.data?.team ?? "";
@@ -16,10 +16,10 @@ export function Roster() {
   return (
     <div className="space-y-4">
       <PageTitle right={
-        <Combobox className="w-64" width={256} value={org} onChange={(v) => v && setParams({ org: v })}
+        <Combobox className="w-64" width={256} value={org} onChange={(v) => v && setParams(params.get("tab") ? { tab: params.get("tab")!, org: v } : { org: v })}
           options={[{ value: meta.data?.team ?? "", label: meta.data?.team ?? "" }, { value: "FA", label: "Free agents" }, { value: "all", label: "Every player" },
             ...(q.data?.orgs ?? []).filter((o) => o !== meta.data?.team).map((o) => ({ value: o, label: o }))]} />
-      }>{title}</PageTitle>
+      }>{embedded ? <span className="text-base">{title}</span> : title}</PageTitle>
       {q.isLoading ? <Loading /> : q.error || !q.data ? <Failed error={q.error} /> : (
         <Section title={`${q.data.table.rows.length} players`}><DataTable table={q.data.table} maxHeight={900} /></Section>
       )}

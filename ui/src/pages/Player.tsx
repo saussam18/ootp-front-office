@@ -88,7 +88,7 @@ export function Player() {
           <h1 className="text-xl font-semibold tracking-tight">{displayName(p.name)}</h1>
           <div className="mt-1 flex flex-wrap items-center gap-2 text-[13px] text-muted">
             <span>{p.pos} · age {p.age} · bats {p.b} / throws {p.t} ·{" "}
-              {p.org ? <Link to={`/roster?org=${encodeURIComponent(p.org)}`} className="text-accent hover:underline underline-offset-2">{p.org}</Link> : "free agent"} {p.lev}</span>
+              {p.org ? <Link to={`/players?org=${encodeURIComponent(p.org)}`} className="text-accent hover:underline underline-offset-2">{p.org}</Link> : "free agent"} {p.lev}</span>
             {p.prospect_rank && <Badge tone="accent">#{p.prospect_rank} prospect</Badge>}
             {p.on40 && <Badge>40-man</Badge>}
             {q.data.on_block && readOnly && <Badge tone="warn">On the trade block</Badge>}
@@ -102,10 +102,10 @@ export function Player() {
                   {q.data.on_block ? "Remove from trade block" : "Add to trade block"}
                 </Button>
               )}
-              <LinkButton to={`/trade?mode=shop&give=${id}`}>Shop him</LinkButton>
+              <LinkButton to={`/market?tab=trade&mode=shop&give=${id}`}>Shop him</LinkButton>
             </>
-          ) : <LinkButton to={`/trade?mode=offer&get=${id}`} primary>What would it take?</LinkButton>}
-          <LinkButton to={`/trade?mode=comps&give=${id}`}>Comparable trades</LinkButton>
+          ) : <LinkButton to={`/market?tab=trade&mode=offer&get=${id}`} primary>What would it take?</LinkButton>}
+          <LinkButton to={`/market?tab=trade&mode=comps&give=${id}`}>Comparable trades</LinkButton>
         </div>
       </div>
 

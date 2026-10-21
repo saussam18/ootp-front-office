@@ -24,6 +24,7 @@ from load import ROOT
 from trade import norm
 
 from . import context, plans, seed, store
+from . import planner as planner_mod
 from .serialize import clean, frame, records
 
 def sanitize(v):
@@ -179,23 +180,6 @@ def fringe_delete(pid: int):
 
 # ------------------------------------------------------------------ plans
 
-class Leaving(BaseModel):
-    note: str = ""
-
-
-@app.put("/api/leaving/{pid}")
-def mark_leaving(pid: int, body: Leaving):
-    """Gone after this season (declined option, release): a contract end date of this season."""
-    store.set_control(pid, ctx().yr, body.note)
-    return {"ok": True}
-
-
-@app.delete("/api/leaving/{pid}")
-def unmark_leaving(pid: int):
-    store.remove_control(pid)
-    return {"ok": True}
-
-
 @app.get("/api/contracts")
 def contracts():
     c = ctx()
@@ -216,12 +200,100 @@ def set_contract(pid: int, body: Control):
     return {"ok": True}
 
 
-@app.get("/api/plans")
-def get_plans():
+# ------------------------------------------------------------------ the season plan (web/planner.py)
+
+_planners = {}
+
+
+def planner():
     c = ctx()
-    marked = {pid: note for pid, (last, note) in c.overrides().items() if last == c.yr}
-    return {"players": c.plan_players(), "plans": {k: c.plan(k) for k in plans.PLANS}, "losing": c.losing(), "marked": marked,
-            "next": c.nxt, "core_year": c.core_year, "upgrade_gap": plans.UPGRADE_GAP}
+    if id(c) not in _planners:
+        _planners.clear()
+        planner_mod.migrate(c)
+        _planners[id(c)] = planner_mod.Planner(c)
+    return _planners[id(c)]
+
+
+@app.get("/api/plan")
+def get_plan(season: int | None = None):
+    pl = planner()
+    c = pl.c
+    season = season if season in pl.seasons else c.nxt
+    out = {**pl.plan(season), "seasons": pl.seasons, "next": c.nxt, "current": c.yr, "core_year": c.core_year, "lhp": pl.lhp,
+           "model_totals": pl.model_totals(season), "moves": pl.moves(season), "grid": pl.grid(),
+           "upgrade_gap": plans.UPGRADE_GAP, "strong_gap": plans.STRONG_GAP,
+           "watch": {k: [{"slot": slot, "id": r["player_id"], "name": c.name(r["player_id"]), "pos": c.df.pos.get(r["player_id"]),
+                          "lev": c.df.lev.get(r["player_id"])}
+                         for slot, r in sorted(store.slots(k).items()) if r.get("player_id") in c.df.index]
+                     for k in ("minors_hit", "minors_pit")}}
+    if season == c.nxt:
+        out["decisions"], out["forty"] = pl.decisions()
+    return out
+
+
+class Pin(BaseModel):
+    season: int
+    slot: str
+    hand: str = "R"
+    player_id: int | None = None  # None = back to the model's pick
+
+
+@app.put("/api/pins")
+def set_pin(p: Pin):
+    store.set_pin(p.season, p.slot, p.hand if p.hand in ("R", "L") else "R", p.player_id)
+    return {"ok": True}
+
+
+@app.delete("/api/pins")
+def reset_pins(season: int, group: str = "all"):
+    slots = {"lineup": plans.HIT, "staff": planner_mod.SP_SLOTS + plans.BULLPEN}.get(group, plans.HIT + planner_mod.SP_SLOTS + plans.BULLPEN)
+    store.clear_pins(season, slots)
+    return {"ok": True}
+
+
+class Signing(BaseModel):
+    player_id: int
+    first_season: int
+    years: int = 1
+    aav: float | None = None  # $M a year
+    note: str = ""
+
+
+@app.post("/api/signings")
+def add_signing(s: Signing):
+    store.set_signing(s.player_id, s.first_season, max(1, s.years), s.aav, s.note)
+    return {"ok": True}
+
+
+@app.delete("/api/signings/{pid}")
+def drop_signing(pid: int):
+    store.remove_signing(pid)
+    return {"ok": True}
+
+
+class Decision(BaseModel):
+    player_id: int
+    kind: str  # rule5, tender, legacy_leave
+    choice: str
+    season: int | None = None  # legacy_leave: the season he's gone before
+
+
+@app.put("/api/decisions")
+def decide(d: Decision):
+    c = ctx()
+    if d.kind == "rule5":
+        store.set_fringe(d.player_id, "on" if d.choice == "protect" else "off")
+    elif d.kind == "tender":
+        if d.choice == "non-tender":
+            store.set_control(d.player_id, c.yr, "non-tender")
+        store.set_decision(d.player_id, c.nxt, "tender", d.choice)
+    elif d.kind == "legacy_leave":
+        if d.choice == "leaving" and d.season:
+            store.set_control(d.player_id, d.season - 1, "from your free agency plan")
+        store.set_decision(d.player_id, c.nxt, "legacy_leave", d.choice)
+    else:
+        raise HTTPException(400, "unknown decision")
+    return {"ok": True}
 
 
 class Slot(BaseModel):
@@ -234,130 +306,10 @@ def set_slot(key: str, slot: str, s: Slot):
     if key not in plans.PLANS:
         raise HTTPException(404)
     store.set_slot(key, slot, s.player_id, "" if s.player_id else s.label)
-    return ctx().plan(key)
-
-
-# ------------------------------------------------------------------ free agency planning
-
-def starters(keys):
-    """Player ids in the starting slots of these plans (they're not 'next up' for anyone else)."""
-    out = set()
-    for k in keys:
-        for slot, s in store.slots(k).items():
-            if slot in plans.PLANS[k]["slots"] and s.get("player_id"):
-                out.add(s["player_id"])
-    return out
-
-
-def fa_years(c, pools=True):
-    """Per season: the ML regulars gone before it (model) plus the ones you've added, with your plans.
-
-    Regulars = on the MLB roster now, or in a starting slot of your next-season or core plans.
-    A player you've added to a season is gone before that season instead of whenever the model says.
-    'Next up' is the best internal option not already starting, leaving, planned as a replacement by then, or next up for someone else."""
-    saved = store.fa_plans()
-    years = []
-    busy_next = starters(["lineup_vr", "lineup_vl", "rotation", "bullpen"])
-    busy_core = starters(["core_lineup", "core_rotation"])
-    regulars = busy_next | busy_core
-    seasons = range(c.nxt, c.nxt + 4)
-    model = {}
-    for year in seasons:
-        d = c.departures(year)
-        model[year] = d[(d.lev == "RLB") | d.index.isin(list(regulars))]
-    added = {p["departing_id"]: p["year"] for p in saved
-             if p["departing_id"] and not p["hidden"] and p["departing_id"] not in model.get(p["year"], {}).index}
-
-    def entry(year, pid, label, plan, added):
-        r = c.df.loc[pid] if pid and pid in c.df.index else None
-        s = c.season(pid, year) if r is not None else None
-        pos = r.pos if r is not None else ""
-        if plan:
-            plan = {**plan, "replacement_name": c.name(plan["replacement_id"]) or plan["replacement_label"]}
-        return {"id": int(pid) if r is not None else None, "name": r["name"] if r is not None else label, "label": label, "pos": pos,
-                "age": clean(r.age) if r is not None else None, "lev": clean(r.lev) if r is not None else None,
-                "salary": clean((r.slr or 0) / M) if r is not None else None,
-                "xwar": clean(s.xwar) if s is not None else None, "worth": clean(s.market / M) if s is not None else None,
-                "price": clean(s.price / M) if s is not None else None, "plan": plan, "added": added,
-                "_best": (r.best_pos if pd.notna(r.best_pos) else pos) if r is not None else None}
-
-    for year in seasons:
-        busy = busy_core if year >= c.core_year else busy_next
-        d = model[year]
-        gone = set(d.index) | {pid for pid, y in added.items() if y <= year}
-        mine = {(p["departing_id"], p["departing_label"]): p for p in saved if p["year"] == year}
-        rows, hidden = [], 0
-        for pid in d.index:
-            plan = mine.pop((pid, ""), None)
-            if plan and plan["hidden"]:
-                hidden += 1
-                continue
-            if pid in added and added[pid] != year:  # you've put him in another season
-                continue
-            rows.append(entry(year, pid, "", plan, False))
-        for p in mine.values():  # ones you added (trades, releases, old notes)
-            if not p["hidden"]:
-                rows.append(entry(year, p["departing_id"] or None, p["departing_label"], p, True))
-        claimed = {p["replacement_id"] for p in saved if p["replacement_id"] and not p["hidden"] and p["year"] <= year}  # planned from then on
-        for r in sorted(rows, key=lambda r: -(r["xwar"] or 0)):
-            best = r.pop("_best")
-            r["options"] = c.internal_options(year, best, busy | gone | claimed) if best is not None else []
-            if r["options"] and not (r["plan"] and r["plan"]["replacement_id"]):
-                claimed.add(r["options"][0]["id"])
-        pool = [{"id": int(pid), "name": r["name"], "pos": r.pos, "lev": r.lev}
-                for pid, r in c.org().sort_values("name").iterrows() if c.controlled(pid, year)] if pools else []
-        years.append({"year": year, "rows": rows, "hidden": hidden, "pool": pool})
-    return years
-
-
-@app.get("/api/fa")
-def fa():
-    return {"years": fa_years(ctx())}
-
-
-class FaPlan(BaseModel):
-    year: int
-    departing_id: int = 0
-    departing_label: str = ""
-    replacement_id: int | None = None
-    replacement_label: str = ""
-    note: str = ""
-    hidden: bool = False
-
-
-@app.put("/api/fa")
-def fa_save(p: FaPlan):
-    """Set a replacement plan; also adds your own departures, or hides a model one (hidden=True)."""
-    store.set_fa_plan(p.year, p.departing_id, p.departing_label, p.replacement_id, "" if p.replacement_id else p.replacement_label,
-                      p.note, p.hidden)
     return {"ok": True}
 
 
-@app.post("/api/fa/{year}/unhide")
-def fa_unhide(year: int):
-    store.unhide_fa_plans(year)
-    return {"ok": True}
-
-
-@app.delete("/api/fa")
-def fa_delete(year: int, departing_id: int = 0, departing_label: str = ""):
-    store.remove_fa_plan(year, departing_id, departing_label)
-    return {"ok": True}
-
-
-# ------------------------------------------------------------------ team plan board, 40-man, moves
-
-@app.get("/api/board")
-def board():
-    """The one-page team plan: lineups, staff, minors, core, FA timeline, needs, 40-man count."""
-    c = ctx()
-    forty = c.forty()
-    return {"players": c.plan_players(), "plans": {k: c.plan(k, with_options=False) for k in plans.PLANS},
-            "fa": fa_years(c), "losing": c.losing(),
-            "forty": {k: forty[k] for k in ("count", "leaving", "planned_drops", "planned_adds", "projected")},
-            "must_protect": [b for b in forty["exposed"] if b["eligible_now"] and b["advice"] == "protect" and b["plan"] != "on"],
-            "next": c.nxt, "core_year": c.core_year, "season": c.yr}
-
+# ------------------------------------------------------------------ 40-man, moves
 
 @app.get("/api/forty")
 def forty():

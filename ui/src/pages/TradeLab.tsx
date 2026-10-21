@@ -84,7 +84,7 @@ function Offer({ get, protect }: { get: number[]; protect: number[] }) {
                 <Td>{p.players.map((x: Pick, j: number) => <span key={x.id}>{j > 0 && <span className="text-faint">, </span>}<PlayerLink id={x.id} name={x.label} /></span>)}</Td>
                 <Td right><Num v={p.perceived} /></Td><Td right><Num v={p.surplus_given} /></Td><Td right><Num v={p.your_gain} /></Td>
                 <Td right><Num v={p.your_depth} signed /></Td><Td right><Num v={p.their_depth} signed /></Td>
-                <Td className="text-right"><TextLink to={`/trade?${qs({ mode: "eval", give: p.players.map((x: Pick) => x.id), get })}`}>Evaluate</TextLink></Td>
+                <Td className="text-right"><TextLink to={`/market?tab=trade&${qs({ mode: "eval", give: p.players.map((x: Pick) => x.id), get })}`}>Evaluate</TextLink></Td>
               </tr>
             ))}
           </tbody>
@@ -124,8 +124,14 @@ function Comps({ id }: { id: number }) {
   );
 }
 
-export function TradeLab() {
-  const [params, setParams] = useSearchParams();
+export function TradeLab({ embedded }: { embedded?: boolean } = {}) {
+  const [params, setRawParams] = useSearchParams();
+  const setParams = (s: string) => {  // keep the page's own params (Market's ?tab=) when the lab rewrites the URL
+    const p = new URLSearchParams(s);
+    const tab = params.get("tab");
+    if (tab) p.set("tab", tab);
+    setRawParams(p);
+  };
   const mode = (params.get("mode") ?? "eval") as Mode;
   const urlGive = ids(params.getAll("give")), urlGet = ids(params.getAll("get")), urlProtect = ids(params.getAll("protect"));
   const [give, setGive] = useState<Pick[]>([]);
@@ -143,9 +149,14 @@ export function TradeLab() {
 
   return (
     <div className="space-y-4">
-      <PageTitle sub="Value to us comes from ratings; how other GMs see it blends ratings with this season's results, pays up for cheap control and for bats over gloves, and discounts prospects for risk. Type R3 for a draft pick.">
-        Trade lab
-      </PageTitle>
+      {embedded ? (
+        <p className="max-w-3xl text-[13px] leading-relaxed text-muted">Value to us comes from ratings; how other GMs see it blends ratings with this season's results, pays up for cheap control
+          and for bats over gloves, and discounts prospects for risk. Type R3 for a draft pick.</p>
+      ) : (
+        <PageTitle sub="Value to us comes from ratings; how other GMs see it blends ratings with this season's results, pays up for cheap control and for bats over gloves, and discounts prospects for risk. Type R3 for a draft pick.">
+          Trade lab
+        </PageTitle>
+      )}
       <div className="overflow-x-auto">
         <Segmented<Mode> value={mode} onChange={setMode} options={[
           { value: "eval", label: "Evaluate a deal" }, { value: "shop", label: "Shop a player" },
