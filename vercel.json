@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd ui && corepack enable && pnpm install --frozen-lockfile && pnpm build",
+  "buildCommand": "cd ui && npx -y pnpm@10.27.0 install --frozen-lockfile && npx -y pnpm@10.27.0 build",
   "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }],
   "functions": {
     "index.py": { "excludeFiles": "{data/snapshots/**,ui/**,ui_templates/**,out/**,public/**,.venv/**}" }
