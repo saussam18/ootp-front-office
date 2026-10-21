@@ -41,13 +41,20 @@ class SafeJSON(JSONResponse):
 
 
 app = FastAPI(title="Halifax front office", default_response_class=SafeJSON)
-DIST = ROOT / "ui" / "dist"
+DIST = ROOT / "public"  # the built UI (ui/ builds into it)
 M = 1e6
 REPORT_GROUPS = [
     ("Your team", ["depth", "contracts", "resign", "arb", "sell_high", "jump_mine"]),
     ("Market", ["fa_board", "trade_targets", "platoons", "gems_fa", "gems_blocked", "gems_buylow", "jump_others", "jump_fa"]),
     ("Model", ["aging"]),
 ]
+
+
+@app.middleware("http")
+async def read_only(request: Request, call_next):
+    if store.READ_ONLY and request.method not in ("GET", "HEAD", "OPTIONS"):
+        return JSONResponse({"detail": "This is a read-only demo."}, status_code=403)
+    return await call_next(request)
 
 
 @app.middleware("http")
@@ -86,7 +93,7 @@ def player_brief(c, pid):
 @app.get("/api/meta")
 def meta():
     c = ctx()
-    return {"team": c.team, "season": c.yr, "next": c.nxt, "core_year": c.core_year, "snapshot": c.snapshot}
+    return {"team": c.team, "season": c.yr, "next": c.nxt, "core_year": c.core_year, "snapshot": c.snapshot, "read_only": store.READ_ONLY}
 
 
 @app.get("/api/dashboard")

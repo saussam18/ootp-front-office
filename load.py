@@ -137,7 +137,28 @@ def abbrev(name):
     return f"{first[0]}. {rest}" if rest else name
 
 
+def db_table(name):
+    """A table from rlb.duckdb as a DataFrame, or None if the database or table isn't there."""
+    if not DB.exists():
+        return None
+    con = duckdb.connect(str(DB), read_only=True)
+    try:
+        return con.execute(f"select * from {name}").df()
+    except duckdb.CatalogException:
+        return None
+    finally:
+        con.close()
+
+
 def mlb_teams():
+    """MLB team id -> every label its box score links use, as saved in the database (else read from the box scores)."""
+    t = db_table("league_team_labels")
+    if t is None:
+        return parse_mlb_teams()
+    return {k: set(g.label) for k, g in t.groupby("team_id")}
+
+
+def parse_mlb_teams():
     """MLB team id -> every label its box score links use ("Houston", "Houston Red Bulls", ...)."""
     teams = {}
     for f in glob.glob(str(LEAGUE / "news/html/box_scores/*.html")):
@@ -245,7 +266,7 @@ def build_db():
     if DB.exists():
         DB.unlink()
     con = duckdb.connect(str(DB))
-    teams = mlb_teams()
+    teams = parse_mlb_teams()
     aff = affiliations(teams)
     for snap_dir in sorted(p for p in SNAPSHOTS.iterdir() if p.is_dir()):
         build_snapshot(con, snap_dir, teams, aff)
@@ -253,8 +274,28 @@ def build_db():
     tables = [r[0] for r in con.execute("select table_name from information_schema.tables where table_type = 'BASE TABLE'").fetchall()]
     for t in tables:
         con.execute(f"create view cur_{t} as select * exclude (snapshot) from {t} where snapshot = '{latest}'")
+    league_tables(con, teams)
     con.close()
     print(f"built {DB.name}; cur_* views point at {latest}")
+
+
+def league_tables(con, teams):
+    """Save what the app would otherwise read from the league folder each time it starts (team labels and
+    standings from 350 MB of box scores, the MLB teams' transaction logs), so it starts fast and runs without OOTP."""
+    import report  # report imports this module
+
+    con.register("labels", pd.DataFrame([(t, label) for t, labels in teams.items() for label in sorted(labels)], columns=["team_id", "label"]))
+    con.execute("create table league_team_labels as select * from labels")
+    con.register("st", report.parse_standings())
+    con.execute("create table league_standings as select * from st")
+    rows = []
+    for team_id in teams:
+        for name in (f"team_{team_id}_all_transactions.txt", f"team_{team_id}_transactions.txt"):
+            path = LEAGUE / "news/txt/teams" / name
+            if path.exists():
+                rows += [(name, i, raw) for i, raw in enumerate(path.read_bytes().splitlines())]
+    con.register("logs", pd.DataFrame(rows, columns=["file", "line_no", "raw"]))
+    con.execute("create table league_team_logs as select * from logs")
 
 
 if __name__ == "__main__":

@@ -1,32 +1,30 @@
 slot,vs,current,cur_xwar,id,name,bats,age,org,his_xwar,season_gain,cost
-1B,RHP,Joaquín Rosa,0.46,62669,Khuraman Bagabzade,Left,25,Colorado,2.66,1.7,5.29
-LF,RHP,FERNANDO JIMÉNEZ,0.67,61514,Edgardo Fei,Left,25,Milwaukee,2.81,1.66,5.94
+1B,RHP,Joaquín Rosa,0.46,62669,Khuraman Bagabzade,Left,25,Colorado,2.66,1.7,5.69
+LF,RHP,FERNANDO JIMÉNEZ,0.67,61514,Edgardo Fei,Left,25,Milwaukee,2.81,1.66,5.77
+LF,RHP,FERNANDO JIMÉNEZ,0.67,62039,Lucien Salieri,Switch,24,Black Hills,2.73,1.6,5.76
 1B,RHP,Joaquín Rosa,0.46,51862,Matt Boulter,Left,28,FA,2.48,1.56,2.43
-LF,RHP,FERNANDO JIMÉNEZ,0.67,64586,Nour bin Hakeem,Left,24,Shadowland,2.47,1.39,4.63
-1B,RHP,Joaquín Rosa,0.46,65229,Carmem Vasconcelos,Left,23,Woonsocket,2.22,1.36,4.4
-LF,RHP,FERNANDO JIMÉNEZ,0.67,64174,Ian Nepomnyashchiy,Left,24,Los Angeles,2.28,1.25,3.47
-3B,RHP,José Hernández,2.41,69969,Roba Nabih,Left,23,Charleston,3.99,1.23,5.84
-CF,RHP,Sergio Munchkin,1.4,61514,Edgardo Fei,Left,25,Milwaukee,2.97,1.21,5.94
+LF,RHP,FERNANDO JIMÉNEZ,0.67,64586,Nour bin Hakeem,Left,24,Shadowland,2.47,1.39,5.18
+1B,RHP,Joaquín Rosa,0.46,65229,Carmem Vasconcelos,Left,23,Woonsocket,2.22,1.36,5.0
+CF,RHP,Sergio Munchkin,1.4,61794,Bastiaan Veloukhiotis,Right,25,Texas,3.11,1.32,5.98
+CF,RHP,Sergio Munchkin,1.4,67096,Dani Limón,Left,23,Texas,3.05,1.27,5.9
+3B,RHP,José Hernández,2.41,69969,Roba Nabih,Left,23,Charleston,3.99,1.23,5.9
+CF,RHP,Sergio Munchkin,1.4,61514,Edgardo Fei,Left,25,Milwaukee,2.97,1.21,5.77
 DH,RHP,Felipe Fonseca,0.57,51862,Matt Boulter,Left,28,FA,2.05,1.15,2.43
-DH,RHP,Felipe Fonseca,0.57,62669,Khuraman Bagabzade,Left,25,Colorado,1.95,1.06,5.29
-DH,RHP,Felipe Fonseca,0.57,69969,Roba Nabih,Left,23,Charleston,1.79,0.94,5.84
-SS,RHP,Mishe Truevtsev,3.08,69969,Roba Nabih,Left,23,Charleston,4.25,0.9,5.84
-C,RHP,Imamverdi Kobiashvili,1.61,64602,Alexandru Buita,Left,24,New Orleans,2.77,0.9,5.02
-CF,RHP,Sergio Munchkin,1.4,67356,Bill Branham,Right,25,Salt Lake,2.51,0.86,4.64
-CF,RHP,Sergio Munchkin,1.4,64586,Nour bin Hakeem,Left,24,Shadowland,2.43,0.79,4.63
-DH,LHP,Christian Yfantis,0.23,50549,Britt Keller,Right,30,FA,3.2,0.67,3.32
-DH,LHP,Christian Yfantis,0.23,42003,Vrezh Osepian,Right,35,FA,2.61,0.54,2.08
-C,RHP,Imamverdi Kobiashvili,1.61,64856,Apollo Theodoratos,Switch,24,Tampa Bay,2.3,0.53,5.2
+DH,RHP,Felipe Fonseca,0.57,62669,Khuraman Bagabzade,Left,25,Colorado,1.95,1.06,5.69
+DH,RHP,Felipe Fonseca,0.57,62039,Lucien Salieri,Switch,24,Black Hills,1.9,1.03,5.76
+SS,RHP,Mishe Truevtsev,3.08,69969,Roba Nabih,Left,23,Charleston,4.25,0.9,5.9
+C,RHP,Imamverdi Kobiashvili,1.61,64602,Alexandru Buita,Left,24,New Orleans,2.77,0.9,5.48
+C,RHP,Imamverdi Kobiashvili,1.61,64856,Apollo Theodoratos,Switch,24,Tampa Bay,2.3,0.53,5.97
 1B,LHP,Felipe Fonseca,2.01,50549,Britt Keller,Right,30,FA,4.32,0.53,3.32
-DH,LHP,Christian Yfantis,0.23,61796,Akihiro Kimura,Right,24,Ottawa,2.36,0.48,5.97
 1B,LHP,Felipe Fonseca,2.01,42003,Vrezh Osepian,Right,35,FA,3.85,0.42,2.08
-2B,RHP,Bob Miller,3.1,62669,Khuraman Bagabzade,Left,25,Colorado,3.61,0.4,5.29
+2B,RHP,Bob Miller,3.1,62669,Khuraman Bagabzade,Left,25,Colorado,3.61,0.4,5.69
 C,RHP,Imamverdi Kobiashvili,1.61,52332,Manuel Rosales,Left,28,FA,2.12,0.4,2.65
-2B,RHP,Bob Miller,3.1,69969,Roba Nabih,Left,23,Charleston,3.58,0.37,5.84
+2B,RHP,Bob Miller,3.1,69969,Roba Nabih,Left,23,Charleston,3.58,0.37,5.9
 C,LHP,Imamverdi Kobiashvili,1.75,52202,Jake Murray,Right,29,FA,3.38,0.37,0.79
 3B,RHP,José Hernández,2.41,51862,Matt Boulter,Left,28,FA,2.87,0.36,2.43
 LF,LHP,FERNANDO JIMÉNEZ,1.34,51211,Frank Ríos,Right,34,FA,2.88,0.35,4.2
 SS,LHP,Mishe Truevtsev,3.08,52135,Minoru Takahashi,Right,28,Texas,4.48,0.32,5.75
+LF,LHP,FERNANDO JIMÉNEZ,1.34,62039,Lucien Salieri,Switch,24,Black Hills,2.73,0.32,5.76
 3B,LHP,José Hernández,3.68,50549,Britt Keller,Right,30,FA,5.07,0.32,3.32
-C,LHP,Imamverdi Kobiashvili,1.75,61352,Isaac Whitehead,Right,25,Milwaukee,3.13,0.32,5.63
+C,LHP,Imamverdi Kobiashvili,1.75,61352,Isaac Whitehead,Right,25,Milwaukee,3.13,0.32,4.55
 LF,LHP,FERNANDO JIMÉNEZ,1.34,49067,Juan Béisbol,Right,31,FA,2.69,0.31,5.41

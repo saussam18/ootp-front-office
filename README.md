@@ -1,12 +1,14 @@
-# rlb-analysis
+# ootp-front-office
 
 Analysis of the RLB online league (OOTP 27) from in-game CSV exports.
+
+Setup: `python3 -m venv .venv && .venv/bin/pip install -r requirements-export.txt` on the Mac running OOTP (`requirements.txt` alone is enough to run the model and the web app on existing data). MIT licensed.
 
 ## Web app
 
 ```bash
 .venv/bin/python serve.py                 # http://127.0.0.1:8000 (serves the built UI + the API)
-cd ui && pnpm install && pnpm build       # once, and after UI changes
+cd ui && pnpm install && pnpm build       # once, and after UI changes (builds into public/)
 cd ui && pnpm dev                         # while editing the UI: http://localhost:5173, hot reload, API proxied to :8000
 ```
 
@@ -16,7 +18,7 @@ Pages: **team plan** (the home page: one-page view of next season's lineups vs R
 
 Model data is read from `rlb.duckdb` and rebuilt in memory when that file changes, so after `refresh.py` just reload. Your plans, trade block, move notes and **contract end dates** live in `data/app.sqlite`. The export counts team option years as guaranteed, so set when a player's control really ends (declined/exercised options, releases) on the Free agency page; lineups, free agency, the team plan and the 40-man all follow it. That file is never touched by refreshes; the first run seeds it from the strategy notes you kept before.
 
-Hosting: the data has to be produced on the machine running OOTP, so the simplest way to reach it elsewhere is to keep it running here and share it privately (e.g. Tailscale): `APP_PASSWORD=... .venv/bin/python serve.py --host 0.0.0.0`. With `APP_PASSWORD` set, everything asks for the password (any username). To put it on a server instead, copy the repo (with `ui/dist`) plus `rlb.duckdb` and `data/app.sqlite` after each refresh.
+Hosting: the public demo runs on Vercel from this repo (`index.py` → `web/app.py`, UI built into `public/`, see `vercel.json`). It's read-only (`READ_ONLY=1`, on by default on Vercel): every page works, edits are refused, and your plans are whatever `data/app.sqlite` held when you last pushed. To update it, refresh, then commit and push `rlb.duckdb` (plus `data/app.sqlite` for your plans). Everything the app needs from the league folder (team names, standings, transaction logs) is copied into `rlb.duckdb` at refresh, so it runs without OOTP. To use it with edits from elsewhere, keep it running here and share it privately (e.g. Tailscale): `APP_PASSWORD=... .venv/bin/python serve.py --host 0.0.0.0`. With `APP_PASSWORD` set, everything asks for the password (any username).
 
 ## Refresh after each league file download
 

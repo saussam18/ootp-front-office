@@ -3,7 +3,7 @@
 import hashlib
 import re
 
-from load import LEAGUE
+from load import LEAGUE, db_table
 
 LINK = re.compile(r'<a href="\.\./(players|teams|coaches)/(?:player|team|coach)_(\d+)\.html">([^<]*)</a>')
 # kind -> pattern, first match wins; "roster" and "injury" are the day-to-day shuffles.
@@ -46,11 +46,15 @@ def moves(team_id, trades=()):
     Trade lines in the logs are plain text, so trades come from `trades` instead (built from the
     player histories, with every player linked): [(date, parts)]."""
     seen, out = set(), []
+    saved = None
     for name in (f"team_{team_id}_all_transactions.txt", f"team_{team_id}_transactions.txt"):
         path = LEAGUE / "news/txt/teams" / name
-        if not path.exists():
-            continue
-        for raw in open(path, "rb"):
+        if path.exists():
+            lines = open(path, "rb")
+        else:  # no league folder (e.g. hosted): the copy saved at the last refresh
+            saved = db_table("league_team_logs") if saved is None else saved
+            lines = [] if saved is None else saved[saved.file == name].sort_values("line_no").raw
+        for raw in lines:
             try:
                 line = raw.decode("utf-8")
             except UnicodeDecodeError:  # some logs are Windows-1252

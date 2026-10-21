@@ -16,7 +16,7 @@ import duckdb
 import pandas as pd
 
 import talent
-from load import DB, LEAGUE
+from load import DB, LEAGUE, db_table
 
 pd.set_option("display.width", 250)
 pd.set_option("display.max_columns", 40)
@@ -39,6 +39,12 @@ left join cur_pit_stats s on s.player_id = p.id left join cur_contracts k on k.p
 
 
 def standings():
+    """Latest W-L per MLB team, as saved in the database (else read from the box scores)."""
+    t = db_table("league_standings")
+    return parse_standings() if t is None else t
+
+
+def parse_standings():
     """Latest W-L per MLB team (export short names) from box score headers."""
     latest = {}
     for f in glob.glob(str(LEAGUE / "news/html/box_scores/*.html")):

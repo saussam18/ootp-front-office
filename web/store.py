@@ -3,12 +3,23 @@
 Kept in data/app.sqlite, separate from rlb.duckdb (which is rebuilt on every refresh).
 """
 
+import os
+import shutil
 import sqlite3
 from datetime import date
+from pathlib import Path
 
 from load import ROOT
 
 PATH = ROOT / "data" / "app.sqlite"
+# Read-only (the public demo; on by default on Vercel): the API refuses edits, and the app reads a scratch
+# copy because the deployed files can't be written to.
+READ_ONLY = os.environ.get("READ_ONLY", "1" if os.environ.get("VERCEL") else "") == "1"
+if READ_ONLY:
+    scratch = Path("/tmp/app.sqlite")
+    if not scratch.exists() and PATH.exists():
+        shutil.copy(PATH, scratch)
+    PATH = scratch
 
 SCHEMA = """
 create table if not exists notes (key text primary key, body text not null default '', updated text);

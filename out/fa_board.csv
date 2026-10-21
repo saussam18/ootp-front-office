@@ -1,6 +1,5 @@
 id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 59849,Evegnii Gabuzov,1B,1B,27,Texas,non-tender?,3.3,9.5,20.9,11.9,,Normal,Normal,Normal
-56436,Fabi Rudzutak,2B,SS,27,Oklahoma City,contract ends,3.1,9.0,19.5,11.3,,Normal,Normal,Normal
 60671,Nori Sato,3B,2B,30,Tampa Bay,contract ends,3.0,8.3,18.1,10.8,,Normal,Low,Normal
 63620,Jacob Thomas,CF,CF,28,Oklahoma City,contract ends,2.6,7.3,14.8,9.4,,Normal,Normal,High
 61509,Kiyomori Kishita,1B,2B,28,Milwaukee,contract ends,2.6,7.2,14.5,9.3,,Normal,Normal,Normal
@@ -14,7 +13,6 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 46505,Jim Clement,C,C,36,Akron,contract ends,2.1,5.8,10.8,7.6,,Normal,Normal,Normal
 54120,Ken Smith,3B,2B,32,Halifax,contract ends,2.1,5.6,10.2,7.3,21.2,Normal,Normal,Normal
 45404,John Wells,SP,SP,33,Black Hills,contract ends,2.1,5.9,10.0,7.2,,Wrecked,Normal,Low
-50199,Liu-chun Li,RP,SP,31,Oklahoma City,contract ends,2.0,5.8,9.8,7.1,,Normal,Normal,Low
 54187,Preston Whitfield,2B,2B,32,Black Hills,contract ends,2.0,5.5,9.7,7.1,,Fragile,Normal,Normal
 45728,Hoyt Nelson,SP,SP,33,Milwaukee,contract ends,2.0,5.8,9.7,7.1,,Normal,Normal,Normal
 65761,Rodrigo Boubret,SP,SP,40,Colorado,contract ends,2.0,5.5,9.6,7.0,,Normal,High,High
@@ -26,20 +24,17 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 60096,Vitenka Daragan,CF,CF,31,Houston,contract ends,1.9,5.3,9.0,6.8,,Fragile,High,Normal
 59430,Foul Jalali,CL,RP,27,Tampa Bay,contract ends,1.9,5.7,20.6,11.7,,Normal,High,Low
 59777,Tewfik Akua,SP,SP,31,,unsigned now,1.9,5.4,8.8,6.6,,Normal,High,Low
-59630,Sergio García,SS,SS,31,Akron,contract ends,1.9,5.1,8.7,6.6,,Normal,Normal,Normal
 60458,Bogdashha Pachin,SP,SP,30,Black Hills,contract ends,1.9,5.2,8.6,6.5,,Durable,Normal,High
 56294,Valerik Efimkin,1B,1B,28,Muscatine,non-tender?,1.9,5.2,8.5,6.5,,Normal,Normal,Normal
 47260,Jason Sweet,SP,SP,31,Texas,contract ends,1.9,5.3,8.5,6.5,,Normal,High,Low
-54597,Florin Gorie,RP,SP,29,Oklahoma City,contract ends,1.9,5.2,8.3,6.4,,Normal,Normal,Normal
 52875,Brad Manning,SP,SP,33,Houston,contract ends,1.9,5.3,8.3,6.4,,Normal,Normal,Normal
 47291,Ryan King,SS,2B,31,,unsigned now,1.8,4.9,8.2,6.3,2.4,Normal,Normal,Normal
-60853,Paco Fernández,SP,SP,30,Black Hills,contract ends,1.8,5.1,7.9,6.2,,Normal,Normal,Normal
-60329,Steve Kellerman,1B,3B,28,Motor City,contract ends,1.8,5.0,7.9,6.2,,Normal,Normal,Normal
+60853,Paco Fernández,SP,SP,30,Black Hills,non-tender?,1.8,5.1,7.9,6.2,,Normal,Normal,Normal
+60329,Steve Kellerman,1B,3B,28,Motor City,non-tender?,1.8,5.0,7.9,6.2,,Normal,Normal,Normal
 48093,Scottie Scheffler,SP,SP,35,Baltimore,contract ends,1.8,5.1,7.8,6.1,,Fragile,Normal,Normal
 54596,Kateb El Borolossy,3B,3B,29,,unsigned now,1.8,4.9,7.8,6.1,6.2,Normal,High,Normal
 51028,Hilton Field,1B,2B,34,Colorado,contract ends,1.8,4.7,7.4,5.9,,Normal,High,Low
 60634,Alberto Díaz,RF,RF,30,,unsigned now,1.7,4.5,7.1,5.8,4.8,Normal,Normal,Normal
-60147,Artur Ludwikowski,SP,SP,29,Muscatine,contract ends,1.7,4.8,7.1,5.7,,Normal,Normal,Normal
 46862,Sergio Dallaglio,RP,SP,32,,unsigned now,1.7,4.9,7.0,5.7,2.0,Fragile,Normal,Normal
 54483,Shane Howe,SS,3B,32,Milwaukee,contract ends,1.7,4.6,7.0,5.7,,Fragile,Normal,High
 68188,Nabi Ulmalhamah Aladdin,SP,SP,31,Akron,non-tender?,1.7,4.7,6.8,5.6,,,Normal,Normal
@@ -52,9 +47,7 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 60303,Kiyonori Higoshi,SP,SP,31,Long Beach,non-tender?,1.6,4.6,6.3,5.3,,Fragile,High,Low
 41891,Sam Kelley,SP,SP,34,Mars,contract ends,1.6,4.5,6.2,5.2,,Normal,High,Low
 39574,Bernardo Anes,SP,SP,37,Los Angeles,contract ends,1.6,4.4,6.2,5.2,,Normal,Normal,Normal
-59211,Dusty Whittier,SS,SS,27,Milwaukee,non-tender?,1.6,4.4,6.0,5.1,,Normal,High,Normal
-59990,Naim bin Yasser,SP,SP,31,Lunar City,contract ends,1.6,4.5,5.9,5.1,,Normal,Normal,Normal
-57756,Quinn Psaros,SS,SS,26,New Orleans,non-tender?,1.6,4.6,5.9,5.1,,Fragile,High,Normal
+59990,Naim bin Yasser,SP,SP,31,Lunar City,non-tender?,1.6,4.5,5.9,5.1,,Normal,Normal,Normal
 41886,David Williams,3B,SS,34,Milwaukee,contract ends,1.6,4.3,5.9,5.1,,Fragile,High,Normal
 43926,Don Sloan,SP,SP,34,Milwaukee,contract ends,1.6,4.5,5.9,5.0,,Wrecked,Normal,High
 46824,Gioacchino Fiori,SP,SP,33,Long Beach,contract ends,1.6,4.4,5.8,5.0,,Normal,Normal,Normal
@@ -65,13 +58,10 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 57495,Jeremy Manziel III,SP,SP,31,Los Angeles,contract ends,1.5,4.3,5.3,4.7,,Wrecked,Normal,Low
 44028,Joe Fox,SP,SP,34,,unsigned now,1.5,4.2,5.2,4.7,2.6,Normal,Normal,Normal
 59776,Francesco Canarica,LF,LF,27,Motor City,non-tender?,1.5,4.1,5.2,4.7,,Normal,Normal,Low
-60670,Bob Chaney,CL,SP,30,Lunar City,contract ends,1.5,4.1,5.2,4.7,,Normal,Normal,Normal
+60670,Bob Chaney,CL,SP,30,Lunar City,non-tender?,1.5,4.1,5.2,4.7,,Normal,Normal,Normal
 50590,Alex Underwood,SP,SP,29,Akron,contract ends,1.5,4.1,5.2,4.6,,Normal,Normal,Normal
-57474,Pavlushenka Nyurnberg,SP,SP,29,Alaska,non-tender?,1.5,4.2,5.2,4.6,,Wrecked,Normal,Low
-59839,Lorenzo Donini,1B,1B,27,Akron,contract ends,1.5,4.0,5.1,4.6,,Normal,Normal,Normal
-57306,Clint Alexander,SS,SS,30,Buffalo,non-tender?,1.5,3.9,5.1,4.6,,Normal,Low,High
+59839,Lorenzo Donini,1B,1B,27,Akron,non-tender?,1.5,4.0,5.1,4.6,,Normal,Normal,Normal
 60333,Damien Guerrieri,RF,RF,28,Ottawa,non-tender?,1.5,4.0,5.0,4.5,,Normal,Low,High
-54902,Valerio Bologni,CL,RP,28,Roswell,contract ends,1.5,4.2,15.1,9.5,,Normal,Normal,Normal
 53041,Naizen Sasaki,SP,SP,29,,unsigned now,1.5,3.9,4.8,4.4,,Normal,Low,High
 48741,Jaa Halcorr,SP,SP,31,Miami,contract ends,1.5,4.0,4.8,4.4,,Normal,Normal,High
 62291,Mas Keira,C,C,27,Shadowland,contract ends,1.5,4.0,4.8,4.4,,Normal,Normal,Normal
@@ -84,49 +74,46 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 51211,Frank Ríos,RF,CF,34,Colorado,contract ends,1.4,3.8,4.5,4.2,,Fragile,Normal,Normal
 62358,Noboru Morita,CF,CF,26,New Orleans,non-tender?,1.4,3.8,4.3,4.1,,Normal,Normal,Normal
 59438,Mike Britton,SP,SP,31,Lunar City,contract ends,1.4,3.8,4.3,4.1,,Normal,Normal,Normal
-53175,Vincent Adjo,2B,2B,29,Motor City,non-tender?,1.4,3.6,4.2,4.0,,Normal,Normal,Normal
 52874,Roberto Miranda,SP,SP,34,,unsigned now,1.4,3.8,4.2,4.0,,Iron Man,High,Normal
-59941,Pepe Cabrera,RF,RF,31,Long Beach,contract ends,1.4,3.5,3.9,3.8,,Normal,Normal,High
-59644,Raoul Saia,RP,SP,27,Houston,non-tender?,1.4,4.0,3.9,3.8,,Fragile,Low,Normal
-47056,Tim Baker,SP,SP,32,Akron,contract ends,1.4,3.8,3.9,3.8,,Iron Man,Normal,Normal
+59941,Pepe Cabrera,RF,RF,31,Long Beach,non-tender?,1.4,3.5,3.9,3.8,,Normal,Normal,High
+47056,Tim Baker,SP,SP,32,Akron,non-tender?,1.4,3.8,3.9,3.8,,Iron Man,Normal,Normal
 60865,Stephen Kreskas,SP,SP,29,,unsigned now,1.4,3.7,3.9,3.8,,Normal,Normal,Normal
 42143,Júlio Jefferson,SP,SP,34,Tampa Bay,contract ends,1.3,3.7,3.8,3.7,,Normal,High,Low
 54359,Roger Kirk,SP,SP,33,Black Hills,non-tender?,1.3,3.7,3.7,3.7,,Normal,Low,High
 54268,Adam Tinter,RP,SP,31,Buffalo,contract ends,1.3,3.7,3.6,3.6,,Fragile,Low,High
 59886,Enrique Costa,2B,2B,27,Black Hills,non-tender?,1.3,3.5,3.6,3.6,,Normal,High,Low
 57425,Sonny Gibson,LF,LF,30,New Orleans,contract ends,1.3,3.4,3.6,3.6,,Normal,Normal,Normal
-60181,Bob Stanley,SS,2B,29,Phoenix,non-tender?,1.3,3.5,3.6,3.6,,Durable,Normal,Low
 64366,António Vázquez,2B,2B,29,Akron,non-tender?,1.3,3.4,3.5,3.6,,Normal,Low,Low
-63523,Qorkhmaz Gamsakhurdia,CF,CF,29,Milwaukee,non-tender?,1.3,3.4,3.5,3.6,,Normal,High,Low
-61045,Anastasio Gabriel,RF,CF,30,Lunar City,non-tender?,1.3,3.3,3.5,3.5,,Normal,Normal,High
 60959,Fyodor Maizus,LF,CF,27,Phoenix,non-tender?,1.3,3.5,3.5,3.5,,Normal,Normal,Normal
 46591,Rafael García,SP,SP,34,,unsigned now,1.3,3.6,3.5,3.5,1.6,Fragile,Low,High
-59684,Seweryn Cwojdak,SP,SP,31,Charleston,contract ends,1.3,3.5,3.4,3.5,,Normal,Low,Normal
+59684,Seweryn Cwojdak,SP,SP,31,Charleston,non-tender?,1.3,3.5,3.4,3.5,,Normal,Low,Normal
 62276,Luis Pérez,2B,SS,29,Woonsocket,non-tender?,1.3,3.4,3.3,3.4,,Normal,Normal,Normal
-62527,Akio Nakano,RP,SP,28,Lunar City,non-tender?,1.3,3.6,3.3,3.4,,Normal,Normal,Normal
+62667,José Romero,LF,LF,25,Mars,non-tender?,1.3,4.4,3.3,3.4,,Normal,Normal,Low
 43654,Chris Clark,RP,SP,34,Lunar City,contract ends,1.3,3.5,3.2,3.3,,Iron Man,Normal,Normal
 50549,Britt Keller,3B,3B,30,Milwaukee,non-tender?,1.3,3.2,3.2,3.3,,Normal,Normal,High
 62512,Lucien Michelozzi,SP,SP,26,Charleston,non-tender?,1.3,3.7,3.2,3.3,,Normal,Normal,Low
 60131,José Torres,RF,RF,27,,unsigned now,1.3,3.3,3.1,3.2,2.4,Normal,Low,Normal
 48405,Anatole Moundalexakis,SP,SP,32,,unsigned now,1.3,3.5,3.0,3.2,,Normal,Low,Normal
+59203,Anastasio Torres,SP,SP,32,Black Hills,non-tender?,1.3,3.5,3.0,3.2,,Normal,Low,High
+57761,Noburo Sato,3B,3B,27,,non-tender?,1.2,3.3,3.0,3.2,,Normal,Normal,Normal
 40354,Ray Hunter,SP,SP,35,,unsigned now,1.2,3.4,3.0,3.2,2.4,Fragile,High,Normal
 52205,Craig Kenney,SP,SP,29,,unsigned now,1.2,3.4,2.9,3.1,,Fragile,Normal,Normal
-50485,Darwin Baker,2B,2B,30,Phoenix,contract ends,1.2,3.1,2.9,3.1,,Normal,Normal,Normal
+50485,Darwin Baker,2B,2B,30,Phoenix,non-tender?,1.2,3.1,2.9,3.1,,Normal,Normal,Normal
 57434,Maurice Cooper,C,C,30,Black Hills,non-tender?,1.2,3.2,2.9,3.1,,Normal,Normal,High
-51360,Tim Bright,SP,SP,34,Houston,contract ends,1.2,3.4,2.8,3.0,,Normal,Normal,Normal
+51360,Tim Bright,SP,SP,34,Houston,non-tender?,1.2,3.4,2.8,3.0,,Normal,Normal,Normal
+51266,Jason King,RP,SP,33,Black Hills,non-tender?,1.2,3.4,2.8,3.0,,Normal,Normal,Normal
 59846,Tusya Ivantaev,2B,2B,27,Houston,non-tender?,1.2,3.3,2.8,3.0,,Fragile,Normal,Low
-61326,Guillermo García,SP,SP,29,Shadowland,contract ends,1.2,3.3,2.8,3.0,,Normal,Normal,Low
+61326,Guillermo García,SP,SP,29,Shadowland,non-tender?,1.2,3.3,2.8,3.0,,Normal,Normal,Low
 62273,César Rojas,SP,SP,30,Salt Lake,contract ends,1.2,3.3,2.7,3.0,,Normal,High,Low
-60831,Adrien Giacconi,RP,SP,26,Buffalo,non-tender?,1.2,3.6,2.7,2.9,,Fragile,Normal,Low
 59393,Teika Seki,C,C,27,Redstar,non-tender?,1.2,3.2,2.6,2.9,,Normal,Normal,High
 47919,Patrick Morris,C,C,36,Boston,contract ends,1.2,3.2,2.6,2.9,,Fragile,Normal,Normal
 49382,Steve Daff,SP,SP,34,Milwaukee,contract ends,1.2,3.3,2.6,2.9,,Normal,Normal,Normal
+62604,Giorgio Bussotti,2B,2B,28,Black Hills,non-tender?,1.2,3.1,2.6,2.9,,Normal,High,Low
 61704,Armanno Montagnana,SS,SS,29,Ottawa,contract ends,1.2,3.0,2.5,2.8,,Normal,Normal,Normal
 56012,Orion Balthar,LF,RF,31,Milwaukee,contract ends,1.2,3.0,2.5,2.8,,Normal,Normal,Normal
 60113,Andrés Serpa,RF,RF,32,Black Hills,contract ends,1.2,2.9,2.5,2.8,,Normal,High,High
-48813,Ongwe Ababa,3B,3B,30,Milwaukee,contract ends,1.2,3.0,2.4,2.7,,Normal,Normal,Normal
+48813,Ongwe Ababa,3B,3B,30,Milwaukee,non-tender?,1.2,3.0,2.4,2.7,,Normal,Normal,Normal
 52332,Manuel Rosales,C,C,28,Colorado,non-tender?,1.2,3.1,2.3,2.6,,Normal,Low,High
-59806,Wienczyslaw Damaski,3B,3B,27,Milwaukee,non-tender?,1.2,3.0,2.3,2.6,,Normal,Normal,Normal
 69525,Sayyid Bahir,2B,2B,30,Black Hills,non-tender?,1.2,2.9,2.3,2.6,,Normal,Normal,Low
 59984,Kevin McNuir,SP,SP,27,Republic,non-tender?,1.2,3.4,2.2,2.6,,Normal,Normal,Normal
 37983,Jasper Gibson,RP,SP,36,Motor City,contract ends,1.2,3.1,2.2,2.5,,Wrecked,Low,Normal
@@ -134,50 +121,38 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 51029,Julián Hernández,SP,SP,34,,unsigned now,1.2,3.1,2.2,2.5,,Fragile,High,Low
 50460,Jeff Peterson,RF,CF,29,Milwaukee,contract ends,1.2,2.9,2.1,2.5,,Iron Man,Normal,Normal
 51862,Matt Boulter,3B,3B,28,Oklahoma City,non-tender?,1.1,3.0,2.1,2.4,,Iron Man,Normal,Normal
+62435,Gian Marinelli,SS,SS,27,Alaska,non-tender?,1.1,3.0,2.1,2.4,,Normal,High,Normal
 60716,Hoshi Fujita,RF,RF,29,Roswell,non-tender?,1.1,2.9,2.0,2.4,,Fragile,Low,High
 59310,Melancton Christodoulou,2B,2B,28,Texas,non-tender?,1.1,2.9,2.0,2.4,,Normal,Normal,High
 56060,Tiven Aelios,CF,CF,31,,unsigned now,1.1,2.8,2.0,2.3,,Iron Man,Normal,Normal
-59212,Juan Ramírez,SP,SP,27,Lunar City,non-tender?,1.1,3.3,1.9,2.2,,Normal,Normal,Normal
-63727,Han-lee Park,SS,SS,27,Charleston,contract ends,1.1,2.9,1.9,2.2,,Durable,Normal,Low
-61173,Soterios Stasi,3B,3B,25,Miami,non-tender?,1.1,4.1,1.7,2.1,,Normal,Normal,Low
+63727,Han-lee Park,SS,SS,27,Charleston,non-tender?,1.1,2.9,1.9,2.2,,Durable,Normal,Low
 59469,Manuel Cardenas,SP,SP,29,Texas,non-tender?,1.1,3.0,1.7,2.1,,Fragile,Normal,Low
 42003,Vrezh Osepian,1B,2B,35,Houston,contract ends,1.1,2.8,1.7,2.1,,Normal,Low,High
 61035,Viorel Matei,RP,RP,30,Colorado,contract ends,1.1,3.0,10.5,7.5,,Fragile,Normal,Normal
 60171,Paul Armstrong,DH,RF,27,Redstar,non-tender?,1.1,2.8,1.6,2.0,,Normal,Normal,Normal
-62711,Ayaz bin Ibrahim,CF,CF,28,Los Angeles,non-tender?,1.1,2.7,1.5,1.9,,Normal,Normal,Normal
-57862,Attis Kiriakopoulos,3B,3B,26,Akron,non-tender?,1.1,3.1,1.5,1.9,,Normal,Normal,Normal
 43899,Jerry Jones,SP,SP,33,,unsigned now,1.1,3.0,1.5,1.9,,Fragile,Normal,Low
 60151,Kawanari Yamada,SP,SP,31,,unsigned now,1.1,2.9,1.5,1.9,6.5,Normal,Normal,Normal
 64310,Cyril Kourempes,RF,CF,25,Redstar,non-tender?,1.1,3.1,1.5,1.9,,Fragile,Normal,High
-66855,Nick McCsker,CF,RF,26,Phoenix,non-tender?,1.1,3.0,1.5,1.9,,Normal,Low,Low
-60666,Martín Castillo,LF,RF,26,Muscatine,non-tender?,1.1,2.8,1.5,1.9,,Normal,Normal,Normal
 60332,Felipe López,SP,SP,29,,unsigned now,1.1,2.9,1.4,1.8,2.4,Fragile,Normal,High
 54803,Cirillo Lunghi,SP,SP,28,,unsigned now,1.1,2.9,1.4,1.8,,Normal,Normal,High
 62330,Nestor Oxinos,C,C,29,Black Hills,non-tender?,1.1,2.8,1.4,1.8,,Normal,Normal,Normal
-50635,Arthur Sweet,LF,LF,29,Oklahoma City,contract ends,1.1,2.7,1.4,1.8,,Normal,High,Normal
+50635,Arthur Sweet,LF,LF,29,Oklahoma City,non-tender?,1.1,2.7,1.4,1.8,,Normal,High,Normal
 54563,Keith Harris,C,C,32,Milwaukee,non-tender?,1.1,2.6,1.4,1.8,,Normal,Normal,Normal
 63733,Masamune Yoshida,1B,1B,27,Alaska,non-tender?,1.1,2.8,1.4,1.7,,Durable,Normal,Normal
 45022,Travis Kelly,SP,SP,34,,unsigned now,1.1,2.9,1.4,1.7,1.7,Wrecked,Normal,Normal
 54627,Bonifazio Montagnani,3B,3B,29,Los Angeles,non-tender?,1.1,2.7,1.4,1.7,,Normal,Normal,Normal
-45622,Bill Jacobs,RP,SP,33,Black Hills,non-tender?,1.1,3.0,1.4,1.7,,Wrecked,Normal,Low
 43497,Didier Guérin,RP,SP,36,Akron,contract ends,1.1,2.9,1.3,1.7,,Fragile,Normal,Low
 30068,Tommy Veeck,SP,SP,36,,unsigned now,1.1,2.8,1.3,1.7,3.4,Normal,Normal,Low
 62769,Filip Sapegin,2B,SS,28,Woonsocket,non-tender?,1.1,2.9,1.3,1.7,,Fragile,Normal,Normal
 54335,Kevin Morris,SP,SP,32,,unsigned now,1.1,2.9,1.3,1.6,,Wrecked,Normal,Low
-63611,Nour bin Houd,RP,SP,29,Charleston,non-tender?,1.1,2.9,1.3,1.6,,Normal,Normal,Normal
 42201,Randy Holley,SP,SP,35,,unsigned now,1.1,2.9,1.3,1.6,2.4,Wrecked,High,Low
 46851,Jean-Michel Laroche,SP,SP,33,,unsigned now,1.1,2.9,1.3,1.6,,Normal,High,High
-56383,Bu-wei Jiu,C,C,27,Black Hills,non-tender?,1.1,2.8,1.3,1.6,,Normal,High,Low
-52237,Artie Hardin,1B,1B,29,Halifax,contract ends,1.0,2.6,1.2,1.6,7.5,Normal,High,High
-59826,Evgeny Ajnikov,LF,LF,27,Black Hills,non-tender?,1.0,2.7,1.2,1.5,,Normal,Normal,Normal
+52237,Artie Hardin,1B,1B,29,Halifax,non-tender?,1.0,2.6,1.2,1.6,7.5,Normal,High,High
 46787,Drew Kyriakou,CF,CF,33,Texas,contract ends,1.0,2.6,1.2,1.5,,Normal,Low,Normal
 60052,Richard Owen,C,C,31,Vancouver,contract ends,1.0,2.6,1.1,1.5,,Normal,Normal,Normal
 68199,Mattia Branca,SP,SP,33,,unsigned now,1.0,2.8,1.1,1.4,,Normal,Normal,Normal
-63336,Isra'il Tahir,2B,2B,25,Buffalo,non-tender?,1.0,3.1,1.1,1.4,,Normal,Normal,Low
-62721,Nelson Avery,SP,SP,29,Lincoln,non-tender?,1.0,2.8,1.1,1.4,,Fragile,Normal,Normal
-59548,Anastagio Salvoldelli,SP,SP,27,Buffalo,non-tender?,1.0,2.8,1.1,1.3,,Normal,Low,High
 60411,Yoshi Ueda,C,C,27,Salt Lake,non-tender?,1.0,2.7,1.0,1.3,,Normal,Normal,High
-57174,Mark Harris,LF,RF,30,Phoenix,contract ends,1.0,2.5,1.0,1.3,,Normal,High,Low
+57174,Mark Harris,LF,RF,30,Phoenix,non-tender?,1.0,2.5,1.0,1.3,,Normal,High,Low
 52872,Juan Batista,SS,SS,33,Akron,contract ends,1.0,2.5,1.0,1.3,,Normal,High,Normal
 50566,Bryan Towns,SP,SP,30,,unsigned now,1.0,2.7,1.0,1.2,,Normal,Normal,Normal
 54269,Victor Salinas,SP,SP,33,,unsigned now,1.0,2.8,0.9,1.1,,Durable,Normal,Normal
@@ -194,11 +169,9 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 62466,Alje Bergen,SP,SP,30,,unsigned now,1.0,2.5,0.8,0.8,,Fragile,Low,Normal
 60339,Yoshino Suzuki,RF,RF,32,Black Hills,contract ends,1.0,2.2,0.8,0.8,,Normal,Normal,Low
 45713,Marmaduke Pippen,2B,SS,32,Milwaukee,contract ends,0.9,2.2,0.8,0.8,,Normal,Low,High
-52037,Carlton Cunningham,C,C,28,Woonsocket,contract ends,0.9,2.4,0.8,0.8,,Normal,Normal,Low
 49044,Murray Abrams,SS,SS,31,Tampa Bay,contract ends,0.9,2.2,0.8,0.8,,Fragile,Normal,Normal
 48046,John Baseball Jr.,SP,SP,35,Charleston,contract ends,0.9,2.4,0.8,0.8,,Fragile,Normal,High
 59871,Domeneco Pantoliano,SP,SP,27,,unsigned now,0.9,2.5,0.8,0.8,2.4,Fragile,Low,Normal
-47517,Kuno Akayo,C,C,31,Phoenix,contract ends,0.9,2.1,0.8,0.8,,Iron Man,Low,High
 43647,Bob Price,SP,SP,33,,unsigned now,0.9,2.4,0.8,0.8,,Normal,High,High
 42104,John Orr,RP,SP,35,Akron,contract ends,0.9,2.4,0.8,0.8,,Fragile,Normal,Normal
 56340,Kensaku Sasaki,1B,2B,27,,unsigned now,0.9,2.2,0.8,0.8,16.0,Normal,Low,High
@@ -212,5 +185,4 @@ id,name,pos,best_pos,age,org,source,xwar_next,x3,worth,price,ask,prone,loy,fin
 51694,Marwan Hamdan,2B,2B,30,Shadowland,contract ends,0.8,1.9,0.8,0.8,,Fragile,Normal,Normal
 45540,Jesús Barrera,1B,2B,33,Tampa Bay,contract ends,0.8,1.8,0.8,0.8,,Normal,Normal,Normal
 66077,Kwang-rak Kim,SP,SP,26,Boston,contract ends,0.8,2.5,0.8,0.8,,Normal,Normal,Normal
-55806,Randy Rojas,C,C,31,Shadowland,contract ends,0.8,1.8,0.8,0.8,,Normal,Normal,Normal
 46276,Travis Jones,SP,SP,37,Motor City,contract ends,0.8,2.2,0.8,0.8,,Fragile,Normal,Normal
