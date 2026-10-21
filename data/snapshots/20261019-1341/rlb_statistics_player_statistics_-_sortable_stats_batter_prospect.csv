@@ -1,0 +1,626 @@
+POS,Name,Age,B,T,OVR,POT,LEA,WE,INT,Prone,CON,POW,CON P,POW P,C FRM,IF RNG,OF RNG,RUN,DEM,SctAcc
+SP,A. Walid,27,R,R,-,,Low,Low,Normal,Normal,40,50,40,50,25,40,45,50,-,Very High
+C,H. Ahn,24,R,R,-,,Normal,High,High,Normal,60,50,60,50,55,35,40,40,-,Very High
+C,K. Akayo,31,R,R,-,,Normal,High,Normal,Iron Man,45,50,45,50,60,25,30,30,-,Very High
+C,C. Allen,35,R,R,-,,Normal,Normal,Normal,Normal,45,55,45,55,70,45,25,20,-,Very High
+C,A. Amilakhori,29,L,R,-,,Normal,Normal,Normal,Normal,45,55,45,55,60,45,30,30,-,High
+C,O. Athanasiadis,24,R,R,-,,Normal,Normal,Normal,Normal,45,35,60,35,45,30,45,20,-,Average
+C,E. Bilsky,27,R,R,-,,Low,Normal,Normal,Normal,45,45,45,45,50,30,45,20,-,Average
+C,I. bin Nur al Din,23,S,R,-,,Normal,Normal,Low,Normal,40,35,40,40,55,35,50,20,-,Very High
+C,A. Black,19,S,R,-,,Low,Normal,Low,Normal,30,30,45,40,55,35,40,20,-,Average
+C,A. Borbolla,21,R,R,-,,Normal,High,Low,Durable,25,25,40,40,50,30,45,35,-,Average
+C,A. Buita,24,L,R,-,,Normal,Normal,Normal,Normal,50,45,50,50,65,35,40,30,-,Very High
+C,L. Cantagalli,26,R,R,-,,Normal,Normal,High,Normal,40,40,45,45,60,30,50,20,-,Very High
+C,M. Capelli,20,L,R,-,,Unknown,Unknown,Unknown,Fragile,25,25,40,45,55,35,35,30,-,Low
+C,J. Carrasco,30,S,R,-,,High,Normal,Normal,Normal,40,50,40,50,50,30,45,35,-,High
+C,M. Castro,24,R,R,-,,High,High,Normal,Normal,40,60,45,60,50,30,35,25,-,Average
+C,H. Chang,21,R,R,-,,Unknown,Unknown,Unknown,Normal,20,20,30,20,35,30,40,20,-,Low
+C,B. Clark,23,R,R,-,,Normal,High,Normal,Normal,45,45,55,50,45,30,55,20,-,Very High
+C,B. Clarke,38,S,R,-,,High,High,Normal,Normal,40,55,40,55,55,25,25,35,-,High
+C,M. Cooper,30,R,R,-,,Normal,Normal,Low,Normal,60,35,60,35,55,25,60,50,-,High
+C,T. Cuevas,25,S,R,-,,Normal,High,Normal,Normal,40,50,45,50,55,30,50,20,-,High
+C,C. Cunningham,28,R,R,-,,Normal,High,High,Normal,40,65,40,65,60,25,35,25,-,Very High
+C,T. Davis,30,R,R,-,,High,High,High,Normal,45,55,45,55,55,30,40,50,-,Very High
+C,M. Delgado,38,S,R,-,,Normal,Normal,Normal,Normal,45,45,45,45,55,25,25,25,$100k,Very High
+C,Z. Deligiorgis,29,R,R,-,,High,Normal,Normal,Normal,55,50,55,50,60,30,30,25,-,Very High
+C,E. Diomedes,28,R,R,-,,Normal,Normal,Normal,Normal,45,50,45,50,60,35,35,20,-,High
+C,S. Domínguez,25,R,R,-,,Normal,High,Normal,Durable,35,35,40,45,65,35,45,20,-,High
+C,F. Egotov,24,S,R,-,,Normal,Normal,Normal,Normal,45,50,45,50,60,30,55,30,-,High
+C,A. Feogoro,32,R,R,-,,Normal,Normal,Normal,Normal,35,55,35,55,55,35,35,30,-,High
+C,L. Ferreira,25,R,R,-,,High,High,Normal,Normal,55,35,55,35,50,30,55,25,-,Very High
+C,J. Flores,27,R,R,-,,Normal,Normal,Normal,Normal,40,50,40,50,60,30,40,20,-,High
+C,A. Franco,27,R,R,-,,Low,Low,Normal,Normal,40,50,40,50,70,30,40,30,-,High
+C,R. Frazier,26,L,R,-,,Normal,Normal,Normal,Normal,50,50,50,50,55,35,30,20,-,Very High
+C,O. Féliz,28,R,R,-,,Normal,High,Normal,Normal,45,40,45,40,60,30,30,25,-,High
+C,L. Gadomsky,28,R,R,-,,High,Normal,High,Normal,45,50,45,50,40,45,45,50,-,Very High
+C,C. Gobbi,25,R,R,-,,Normal,Normal,Normal,Normal,50,45,50,45,60,35,45,40,-,High
+C,H. Graves,30,R,R,-,,Normal,Normal,Normal,Normal,50,45,50,45,60,30,35,65,-,Very High
+C,L. Gregoretti,25,L,R,-,,Normal,High,Normal,Normal,50,50,50,50,55,35,35,30,-,High
+C,M. Grzybowski,20,R,R,-,,Normal,Normal,High,Normal,30,25,40,35,40,35,55,35,-,Average
+C,H. Hanif,25,L,R,-,,Normal,Normal,Normal,Normal,50,50,50,55,50,50,55,20,-,Very High
+C,B. Harper,29,R,R,-,,Low,Normal,Normal,Normal,55,40,55,40,55,30,35,30,-,High
+C,L. Hathaway,37,R,R,-,,Normal,Normal,Normal,Normal,40,45,40,45,60,25,45,25,-,Very High
+C,H. Im,26,R,R,-,,Normal,Normal,Normal,Normal,50,40,50,40,65,30,50,25,-,High
+C,K. Imai,30,R,R,-,,Normal,Normal,Normal,Durable,40,45,40,45,60,40,45,35,-,Very High
+C,S. Jensen,30,R,R,-,,Normal,High,Low,Normal,50,50,50,50,65,25,40,40,-,Very High
+C,J. Johnson,35,L,R,-,,Normal,Normal,High,Fragile,45,50,45,50,65,30,25,20,-,Very High
+C,M. Keira,27,R,R,-,,Normal,Normal,High,Normal,45,55,45,55,60,30,40,35,-,Very High
+C,I. Kobiashvili,28,R,R,-,,Normal,Normal,Normal,Normal,45,50,45,55,65,30,35,35,-,High
+C,R. Kogawa,30,S,R,-,,High,High,Normal,Fragile,45,50,45,50,60,25,50,25,-,Very High
+C,D. Komninos,26,R,R,-,,High,Normal,Normal,Normal,45,50,50,55,75,40,40,35,-,Very High
+C,X. Koundouriotis,32,R,R,-,,High,High,Normal,Normal,40,40,40,40,55,45,45,30,-,High
+C,V. Lazutkin,37,R,R,-,,High,High,Normal,Fragile,40,45,40,45,60,30,45,45,-,Very High
+C,B. Liachames,26,R,R,-,,Normal,Normal,Normal,Normal,50,50,50,50,55,60,45,50,-,High
+C,G. Liotta,23,R,R,-,,Normal,Normal,Normal,Normal,40,35,40,35,60,35,55,25,-,Average
+C,F. Liyv,31,L,R,-,,High,High,Normal,Normal,40,40,40,40,70,25,25,30,-,High
+C,T. Lyusternik,23,R,R,-,,Unknown,Unknown,Unknown,Normal,25,25,30,35,60,30,40,60,-,Low
+C,P. López,24,R,R,-,,Unknown,Unknown,Unknown,Durable,40,55,40,70,50,35,45,35,-,Low
+C,A. Mailman,26,L,R,-,,Low,Low,Normal,Durable,55,35,60,40,50,30,50,25,-,High
+C,S. Manvelov,24,R,R,-,,Normal,Low,Normal,Fragile,30,30,35,35,55,35,40,25,-,Average
+C,K. Marmalade,31,R,R,-,,Normal,Normal,Normal,Normal,40,40,40,40,60,30,45,25,-,Very High
+C,L. Martínez,24,R,R,-,,Normal,High,Normal,Normal,50,55,60,60,45,50,40,30,-,Very High
+C,L. Mateschitz,28,R,R,-,,Normal,Normal,Normal,Fragile,45,45,50,45,55,30,25,30,-,Very High
+C,C. Migliorati,24,R,R,-,,High,High,Normal,Normal,50,30,55,35,55,40,45,25,-,Very High
+C,P. Morris,24,R,R,-,,Normal,Normal,Normal,Normal,40,40,40,40,50,35,50,70,-,Average
+C,P. Morris,35,R,R,-,,Low,High,High,Fragile,50,40,50,40,65,25,25,20,-,High
+C,C. Morán,28,R,R,-,,High,Normal,High,Normal,40,75,40,75,55,45,55,45,-,Very High
+C,J. Murray,29,R,R,-,,Low,Normal,Normal,Fragile,50,40,55,40,60,55,45,20,-,Very High
+C,S. Niyazi,24,S,R,-,,Normal,High,Normal,Normal,40,40,50,55,50,30,50,20,-,High
+C,T. Ofengenden,26,R,R,-,,Normal,Normal,High,Normal,55,55,55,55,55,25,50,50,-,Very High
+C,R. Owen,31,R,R,-,,High,High,High,Normal,40,50,40,50,65,25,35,25,-,High
+C,N. Oxinos,29,R,R,-,,Normal,Normal,Normal,Normal,55,40,55,40,60,30,50,65,-,Very High
+C,E. Paige,31,R,R,-,,Normal,Normal,Normal,Normal,45,45,45,45,60,30,45,25,-,High
+C,R. Park,21,S,R,-,,Normal,Normal,High,Normal,25,20,40,30,50,35,45,30,-,Average
+C,C. Paunescu,24,R,R,-,,High,Normal,Normal,Normal,45,55,45,55,55,35,45,20,-,Very High
+C,Z. Pavlakakis,21,R,R,-,,Normal,Low,Normal,Normal,30,25,35,25,40,30,25,70,-,High
+C,S. Peterson,29,R,R,-,,Normal,Normal,Normal,Normal,45,50,45,55,60,40,40,25,-,High
+C,J. Peña,18,R,R,-,,Normal,High,Normal,Normal,25,20,35,20,35,30,55,40,-,Average
+C,L. Rojas,25,L,R,-,,Normal,Normal,Normal,Normal,40,45,45,50,65,35,50,40,-,High
+C,R. Rojas,31,R,R,-,,Normal,Normal,Low,Normal,45,40,45,40,65,25,35,25,-,High
+C,M. Rosales,28,L,R,-,,Low,Low,Normal,Normal,50,55,55,55,55,25,35,35,-,Very High
+C,B. Samuels,35,R,R,-,,Normal,Normal,High,Normal,40,35,40,35,70,30,30,40,-,Very High
+C,A. Scott,25,R,R,-,,Normal,Normal,Normal,Normal,65,40,65,40,40,35,50,20,-,Very High
+C,T. Seki,27,S,R,-,,High,Normal,Normal,Normal,45,45,45,50,65,30,40,25,-,Very High
+C,A. Theodoratos,24,S,R,-,,Normal,Normal,High,Normal,55,45,55,45,60,65,45,25,-,Very High
+C,Y. Ueda,27,R,R,-,,Normal,Normal,Low,Normal,50,35,50,35,65,40,50,60,-,Very High
+C,G. Urajtsev,24,L,R,-,,Normal,Low,Normal,Durable,55,35,65,40,60,45,50,20,-,High
+C,A. Vidu,27,R,R,-,,Normal,High,Normal,Normal,50,50,50,50,60,30,40,40,-,Very High
+C,T. Vorfolomeev,29,S,R,-,,High,Normal,Normal,Normal,35,55,35,55,65,30,50,20,-,High
+C,R. Walters,28,R,R,-,,Normal,Normal,Normal,Normal,40,40,40,40,50,30,45,30,-,Average
+C,I. Whitehead,24,R,R,-,,Normal,Low,Low,Normal,50,50,55,50,55,35,40,50,-,Very High
+C,D. Williams,32,S,R,-,,Normal,Normal,Normal,Normal,60,35,60,35,55,25,45,40,-,Very High
+C,A. Xydis,24,R,R,-,,Low,Normal,Normal,Normal,60,50,60,55,50,50,50,35,-,Very High
+1B,A. Angelopoulos,24,R,R,-,,Normal,Normal,High,Normal,40,35,65,65,30,40,35,35,-,High
+1B,J. Barrera,33,L,R,-,,Normal,Normal,High,Normal,50,45,50,45,20,55,30,70,-,Very High
+1B,R. Bertoletti,24,R,R,-,,Low,High,High,Normal,50,45,50,45,45,55,35,50,-,Very High
+1B,K. bin Azim,36,R,R,-,,Normal,High,Normal,Normal,40,60,40,60,20,45,45,20,-,Very High
+1B,J. Brito,23,R,R,-,,Normal,Low,Normal,Normal,55,60,55,75,20,40,40,60,-,Very High
+1B,K. Bullar,29,S,L,-,,Normal,High,Normal,Normal,50,50,50,50,20,55,35,20,-,High
+1B,J. Castillo,22,R,R,-,,Normal,High,Normal,Durable,50,60,55,60,20,45,35,20,-,Very High
+1B,M. Dawson,33,L,L,-,,Normal,Normal,Normal,Normal,50,75,50,75,20,40,30,25,-,Very High
+1B,P. DeMarchi,25,L,L,-,,Low,Low,Normal,Normal,65,55,65,55,20,50,50,50,-,Very High
+1B,D. Diakogeorgiou,17,R,R,-,,Unknown,Unknown,Unknown,Normal,25,25,40,45,20,30,50,35,-,Low
+1B,L. Donini,27,L,L,-,,Normal,Normal,Low,Normal,60,50,60,50,20,45,45,20,-,Very High
+1B,V. Efimkin,27,R,R,-,,High,Normal,Normal,Normal,60,60,60,60,20,45,40,55,-,Very High
+1B,Z. Eisa,25,R,R,-,,Normal,Normal,Normal,Durable,55,45,60,55,20,45,30,30,-,Very High
+1B,Z. Ejlov,26,R,R,-,,Low,Normal,Normal,Normal,60,50,60,55,25,50,45,70,-,Very High
+1B,P. Eksler,24,L,R,-,,Low,Normal,Normal,Normal,55,55,60,55,20,60,55,65,-,Very High
+1B,H. Field,34,R,R,-,,Normal,High,High,Normal,65,40,65,40,25,55,35,70,-,Very High
+1B,F. Fonseca,26,R,R,-,,Normal,High,Normal,Fragile,60,45,60,45,25,60,50,50,$3.5m,Very High
+1B,R. Francis,32,R,R,-,,Normal,Normal,Normal,Normal,50,55,50,55,20,30,35,60,-,High
+1B,E. Gabuzov,27,R,R,-,,Normal,High,Normal,Normal,70,70,70,70,20,40,45,20,-,Very High
+1B,J. Garza,24,L,R,-,,Normal,Normal,Normal,Normal,40,70,45,70,30,50,45,45,-,Very High
+1B,P. Gonzáles,32,R,R,-,,Low,Low,Normal,Durable,65,30,65,30,20,45,35,70,-,Very High
+1B,S. González,25,R,R,-,,Normal,Normal,Normal,Normal,55,50,55,50,25,40,40,20,-,Very High
+1B,J. Griffith,31,R,R,-,,Low,Normal,Normal,Normal,55,50,55,50,20,40,40,65,-,Very High
+1B,A. Hardin,28,R,R,-,,Normal,Normal,Normal,Normal,55,50,55,55,20,55,45,80,$8.9m,Very High
+1B,R. Hellmich,24,R,R,-,,Normal,Normal,Normal,Normal,55,75,55,75,20,50,45,50,-,Very High
+1B,G. Herring,33,L,L,-,,High,Normal,Normal,Normal,50,50,50,50,20,50,40,20,-,Very High
+1B,A. Hines,31,R,R,-,,Normal,Normal,Low,Normal,50,55,50,55,20,40,30,50,-,High
+1B,S. Horton,31,R,R,-,,Normal,High,Normal,Normal,40,70,40,70,25,30,40,50,-,Very High
+1B,S. Kellerman,28,L,R,-,,Normal,Low,Low,Normal,55,60,55,60,20,60,30,30,-,Very High
+1B,U. Kim,32,L,L,-,,Normal,Normal,Normal,Normal,35,80,35,80,25,35,45,20,-,Very High
+1B,S. Kimball,25,S,R,-,,Normal,Normal,Normal,Normal,60,55,60,55,20,60,40,25,-,Very High
+1B,K. Kishita,28,R,R,-,,Normal,Normal,Normal,Normal,50,70,50,70,20,60,30,50,-,Very High
+1B,V. Kountouroudas,26,R,R,-,,Normal,High,Normal,Normal,65,45,65,45,20,35,40,25,-,Very High
+1B,G. Kozel,29,R,R,-,,High,High,High,Normal,55,65,60,65,20,45,40,45,-,Very High
+1B,K. Lee,25,R,R,-,,High,Normal,Low,Durable,50,55,50,55,20,60,45,40,-,Average
+1B,Y. Lee,22,R,R,-,,Normal,High,Normal,Normal,55,40,60,45,20,55,50,65,-,Very High
+1B,J. Longoria,30,L,L,-,,High,Normal,Normal,Normal,55,55,55,55,20,30,45,40,-,Very High
+1B,M. Massari,24,L,R,-,,High,High,Normal,Normal,60,70,60,70,20,55,55,35,-,Very High
+1B,E. Matlah,27,L,L,-,,Low,Low,High,Normal,50,75,50,75,20,35,50,30,-,Very High
+1B,B. Matzenkopf,30,R,R,-,,Normal,Normal,Normal,Normal,55,60,55,60,20,45,40,70,-,Very High
+1B,A. Mavromikhalis,22,R,R,-,,Normal,High,Normal,Normal,35,25,40,30,20,35,30,20,-,Average
+1B,N. McKay,26,L,L,-,,Normal,Normal,Normal,Normal,55,45,60,45,20,50,45,20,-,Very High
+1B,V. Mehnin,21,R,R,-,,High,Normal,Normal,Normal,40,70,40,70,45,40,45,25,-,Very High
+1B,V. Melifov,25,S,R,-,,High,High,Normal,Normal,50,50,50,50,20,55,55,60,-,Very High
+1B,A. Molina,26,R,R,-,,Normal,Normal,Normal,Normal,70,50,70,50,20,65,50,70,-,Very High
+1B,T. Mustafayev,25,R,R,-,,Normal,Normal,Normal,Normal,55,50,55,55,20,55,45,55,-,Very High
+1B,A. Navarro,25,R,R,-,,Normal,Normal,Normal,Normal,55,55,60,55,30,50,35,45,-,Very High
+1B,N. Navegero,23,R,R,-,,Unknown,Unknown,Unknown,Normal,30,30,35,40,25,30,45,40,-,Low
+1B,T. Nishi,27,R,R,-,,Normal,Normal,High,Normal,50,50,50,50,25,60,50,60,-,Very High
+1B,V. Osepian,34,R,R,-,,Low,Low,Normal,Normal,50,45,50,45,20,55,40,75,-,High
+1B,Y. Oyama,23,R,R,-,,High,High,High,Normal,50,50,50,50,20,40,45,40,-,Very High
+1B,C. Park,29,R,R,-,,Normal,Low,Low,Normal,40,65,40,65,55,40,35,35,-,High
+1B,M. Park,27,S,R,-,,Low,Normal,Normal,Normal,50,70,50,70,25,35,45,40,-,Very High
+1B,N. Patrick,25,R,R,-,,Normal,Normal,Normal,Normal,40,65,40,65,20,55,40,50,-,Very High
+1B,S. Ponikarov,28,R,R,-,,Low,Low,Normal,Normal,55,70,60,70,25,55,45,50,-,Very High
+1B,M. Puzitsky,28,R,R,-,,Normal,High,Low,Normal,50,50,50,50,25,40,30,25,-,High
+1B,K. Rice,30,L,L,-,,Normal,Normal,Normal,Iron Man,50,60,50,60,25,35,25,25,-,Very High
+1B,F. Rodríguez,30,R,R,-,,Normal,High,Normal,Normal,55,35,55,35,25,45,40,70,-,Average
+1B,M. Rodríguez,34,R,R,-,,High,Normal,Normal,Normal,40,50,40,50,30,45,35,50,-,Very High
+1B,J. Rosa,29,R,R,-,,Normal,High,Low,Durable,45,60,45,60,25,50,40,50,$18.6m,Very High
+1B,A. Ruíz,23,L,R,-,,Normal,Normal,Normal,Normal,55,45,65,60,20,55,40,45,-,Very High
+1B,D. Sacarea,23,L,R,-,,Unknown,Unknown,Unknown,Normal,35,25,40,30,20,40,40,20,-,Low
+1B,K. Sasaki,27,L,R,-,,Low,Low,Normal,Normal,50,50,50,50,20,50,40,35,-,High
+1B,W. Stewart,33,R,L,-,,Normal,High,Normal,Normal,45,65,45,65,20,60,30,45,-,High
+1B,M. Tozzi,31,R,R,-,,Normal,Normal,Normal,Durable,65,45,65,45,25,45,45,40,-,Very High
+1B,A. Tsaousidis,29,L,L,-,,Normal,High,Normal,Normal,50,45,50,45,20,45,55,50,-,Very High
+1B,K. Tsuchiya,29,L,R,-,,Normal,Normal,Normal,Normal,70,40,70,40,20,35,35,35,-,Very High
+1B,A. Varkevisser,24,R,R,-,,Low,Normal,Normal,Normal,50,50,55,50,20,50,35,40,-,Average
+1B,R. Velásquez,27,L,L,-,,High,High,Low,Normal,50,60,50,60,20,35,50,35,-,Very High
+1B,K. Vonnex,36,L,R,-,,Normal,High,High,Iron Man,35,65,35,65,20,40,30,45,-,Very High
+1B,L. Woitetsky,26,R,R,-,,Normal,Normal,Normal,Fragile,60,60,60,60,20,50,45,45,-,Very High
+1B,M. Yoshida,27,L,L,-,,Normal,Normal,Low,Durable,70,40,70,40,20,40,35,35,-,Very High
+2B,M. Adams,35,R,R,-,,Normal,Normal,Normal,Normal,55,50,55,50,20,60,30,80,-,Very High
+2B,V. Adjo,29,R,R,-,,Normal,Normal,Normal,Normal,60,35,60,35,20,60,35,70,-,High
+2B,A. Ammar,25,R,R,-,,Normal,High,High,Normal,45,75,45,75,20,60,50,30,-,Very High
+2B,A. Anasa,24,R,R,-,,High,High,High,Normal,65,50,65,50,20,55,35,60,-,Very High
+2B,A. Anum,29,R,R,-,,Low,Normal,Normal,Normal,45,40,45,40,20,65,55,80,-,High
+2B,R. Arrington,26,R,R,-,,Normal,Normal,High,Normal,50,45,50,50,20,65,50,65,-,Very High
+2B,K. Bagabzade,25,L,R,-,,Normal,Normal,Normal,Fragile,60,45,65,45,20,55,40,70,-,Very High
+2B,D. Baker,30,R,R,-,,Normal,Normal,Normal,Normal,55,45,55,45,25,55,35,60,-,Very High
+2B,S. Bem,27,R,R,-,,Normal,High,High,Normal,45,40,45,40,20,70,45,85,-,High
+2B,P. Blevins,32,R,R,-,,Normal,Normal,Normal,Normal,50,50,50,50,20,65,35,65,-,Average
+2B,A. Chasovschikov,29,R,R,-,,Normal,Normal,Normal,Normal,45,60,45,60,20,65,35,75,-,Very High
+2B,M. Christodoulou,28,L,R,-,,Normal,Normal,High,Normal,55,35,55,35,20,65,50,70,-,High
+2B,P. Cruz,32,R,R,-,,Low,Low,Normal,Normal,45,45,45,45,20,70,35,85,-,High
+2B,T. Daniel,27,R,R,-,,Normal,High,Low,Durable,55,60,55,60,20,60,50,45,-,Very High
+2B,E. Davis,27,R,R,-,,Normal,High,High,Normal,50,40,50,40,20,75,40,75,-,Very High
+2B,J. Donaldson,21,R,R,-,,Low,High,Normal,Durable,40,30,50,30,20,55,30,40,-,Very High
+2B,Á. Díaz,29,L,R,-,,Normal,Normal,Normal,Normal,40,65,40,65,20,65,50,75,-,Very High
+2B,Q. Eristavi,24,R,R,-,,Normal,Normal,High,Durable,45,65,45,65,20,60,45,65,-,Very High
+2B,L. Fisik,21,S,R,-,,Normal,Normal,Normal,Durable,30,25,40,40,20,50,35,30,-,High
+2B,L. Forrest,30,L,R,-,,High,High,Normal,Normal,55,55,55,55,20,70,50,50,-,High
+2B,E. Fry,24,R,R,-,,Normal,High,Normal,Normal,50,70,50,70,20,65,40,60,-,High
+2B,E. Gamble,25,R,R,-,,Normal,Normal,Normal,Normal,60,50,60,55,20,55,35,40,-,Very High
+2B,G. Georgeakopoulos,23,L,R,-,,Low,Normal,Normal,Durable,60,40,60,45,20,65,35,55,-,Very High
+2B,R. Guerrero,24,R,R,-,,Normal,High,Low,Normal,70,40,75,40,25,70,45,65,-,Very High
+2B,M. Hamdan,30,L,R,-,,High,High,Normal,Fragile,40,65,40,65,20,60,40,65,-,Very High
+2B,L. Hardin,41,L,R,-,,Normal,High,Normal,Wrecked,45,60,45,60,20,45,25,65,-,High
+2B,F. Hernández,25,R,R,-,,Normal,Normal,Normal,Normal,45,45,50,45,25,65,45,30,-,High
+2B,H. Hotheh,29,R,R,-,,Normal,High,Normal,Normal,55,45,55,50,20,60,40,55,-,Very High
+2B,T. Hsiao,25,L,R,-,,Normal,High,Normal,Fragile,70,35,70,35,20,60,45,40,-,Very High
+2B,E. Iovchuk,25,S,R,-,,Normal,Normal,Normal,Normal,50,40,50,45,20,55,35,65,-,Very High
+2B,M. Karamanlis,28,R,R,-,,Normal,Low,Low,Normal,60,45,60,45,25,70,40,65,-,Very High
+2B,N. Kitamura,23,R,R,-,,Normal,Normal,High,Durable,50,45,55,50,20,55,50,65,-,Very High
+2B,A. Kodwo,28,L,R,-,,Normal,High,Normal,Normal,45,55,45,55,25,65,50,40,-,High
+2B,A. Kopano,24,R,R,-,,Low,Normal,Normal,Durable,55,45,70,45,20,50,50,40,-,Very High
+2B,E. Lamberti,19,L,R,-,,Normal,Normal,High,Normal,30,25,40,40,20,40,50,45,-,Average
+2B,B. Lee,30,S,R,-,,Low,Low,Low,Normal,45,85,45,85,20,60,40,80,-,High
+2B,V. Leonard,25,R,R,-,,Normal,High,Normal,Normal,45,50,45,50,20,60,50,70,-,Very High
+2B,B. Lewis,26,R,R,-,,Normal,Normal,Normal,Normal,45,40,45,40,25,45,45,45,-,Very High
+2B,A. Lianis,23,R,R,-,,Low,Normal,High,Normal,50,65,55,65,25,55,50,55,-,Very High
+2B,R. Maldonado,26,R,R,-,,Normal,Normal,High,Normal,35,50,40,65,25,55,40,60,-,High
+2B,M. Maydón,23,L,R,-,,Normal,High,Normal,Normal,50,40,55,40,20,65,50,60,-,Very High
+2B,B. Miller,27,R,R,-,,Low,Normal,High,Normal,55,45,55,45,25,65,50,55,-,Very High
+2B,M. Morgan,30,R,R,-,,Normal,High,Normal,Normal,50,45,50,45,25,65,55,30,-,High
+2B,Z. NIEDZWIECKI,26,R,R,-,,Low,Normal,Low,Normal,45,40,55,50,25,60,55,70,$1.2m,High
+2B,I. Ochoa,32,S,R,-,,Normal,High,High,Normal,40,60,40,60,20,65,30,55,-,Very High
+2B,I. Olaru,29,L,R,-,,Normal,High,Normal,Normal,50,55,50,55,20,65,45,70,-,Very High
+2B,T. Orbelianov,27,L,R,-,,Low,High,Normal,Normal,55,45,55,45,20,65,50,40,-,High
+2B,J. Ortíz,26,R,R,-,,Normal,High,Normal,Normal,55,50,55,50,30,65,50,65,-,High
+2B,E. Pantani,25,R,R,-,,High,Normal,Normal,Normal,50,35,50,35,20,65,40,40,-,Very High
+2B,J. Papoulis,28,R,R,-,,Low,Normal,Normal,Normal,50,55,50,55,20,70,30,65,-,Very High
+2B,R. Pavlenishvili,25,S,R,-,,Normal,Normal,Normal,Normal,55,50,55,50,20,45,50,65,-,Very High
+2B,L. Pérez,29,S,R,-,,Normal,Normal,Normal,Normal,50,45,50,45,25,60,40,80,-,High
+2B,B. Ramírez,25,R,R,-,,Normal,Normal,Normal,Normal,55,40,65,40,25,45,45,35,-,Very High
+2B,R. Reid,32,S,R,-,,Normal,Normal,Normal,Normal,45,40,45,40,25,70,35,60,-,High
+2B,F. Rudzutak,27,R,R,-,,Normal,Normal,Normal,Normal,55,55,55,60,20,65,40,75,-,Very High
+2B,F. Sapegin,28,R,R,-,,Low,Normal,Low,Fragile,45,60,45,60,20,60,45,45,-,Very High
+2B,T. Soto,31,R,R,-,,Normal,Normal,High,Fragile,50,35,50,35,20,60,45,20,-,Very High
+2B,J. Sáenz,25,R,R,-,,Normal,High,Normal,Normal,55,50,55,50,20,65,45,80,-,Very High
+2B,J. Sánchez,25,R,R,-,,Low,Normal,Normal,Normal,55,40,60,50,20,60,50,45,-,Very High
+2B,I. Tahir,25,R,R,-,,Normal,High,Normal,Normal,45,50,45,50,25,65,30,70,-,Very High
+2B,Z. Thomason,28,S,R,-,,Normal,High,Normal,Normal,45,50,45,50,20,65,35,65,-,Very High
+2B,T. Turner,31,R,R,-,,Normal,Normal,Normal,Normal,45,45,45,45,20,60,30,65,-,Very High
+2B,Q. Umair,21,R,R,-,,Low,Normal,Normal,Normal,55,45,60,50,20,60,50,65,-,High
+2B,F. Urzica,25,R,R,-,,Normal,High,Normal,Normal,55,50,55,50,20,60,35,30,-,High
+2B,V. Venturini,23,R,R,-,,Low,High,Low,Normal,65,40,70,40,45,55,50,50,-,Very High
+2B,E. Vernescu,28,R,R,-,,Normal,Normal,Normal,Normal,50,40,55,40,20,60,55,65,-,Very High
+2B,A. Vázquez,29,R,R,-,,Normal,Normal,Normal,Normal,40,70,40,70,20,55,55,65,-,Very High
+2B,T. Wadi,24,R,R,-,,Normal,Normal,Normal,Normal,60,50,65,50,20,65,50,65,-,Very High
+2B,P. Whitfield,32,R,R,-,,Normal,Normal,Normal,Fragile,55,40,55,40,20,55,40,35,-,Very High
+2B,P. Williams,31,L,R,-,,Normal,Normal,Normal,Wrecked,55,40,55,40,25,45,30,75,-,High
+2B,M. Wise,22,S,R,-,,Normal,Normal,Normal,Normal,50,55,60,55,25,55,50,50,-,Very High
+2B,V. Zavaliev,24,R,R,-,,Normal,Normal,Normal,Normal,40,50,45,60,20,60,40,70,-,High
+3B,M. Abdul-Salam,27,R,R,-,,Normal,High,Normal,Normal,50,60,50,60,20,50,60,35,-,Very High
+3B,T. Adams,27,S,R,-,,Normal,Normal,Normal,Normal,50,45,50,45,20,60,45,55,-,High
+3B,F. Alexander,30,R,R,-,,High,High,High,Normal,50,45,50,45,55,60,40,80,-,Very High
+3B,J. Arroyo,32,L,R,-,,Normal,Normal,High,Normal,45,50,45,50,25,50,45,50,-,Very High
+3B,J. Arévalo,18,L,R,-,,High,Normal,Normal,Normal,25,20,50,30,25,45,45,35,-,High
+3B,J. Atanacio,30,R,R,-,,Normal,Normal,Normal,Durable,65,50,65,50,20,65,45,20,-,Very High
+3B,L. Awotwe,27,R,R,-,,Normal,Normal,Normal,Normal,50,45,55,45,20,60,40,25,-,High
+3B,A. Barakah,25,L,R,-,,Normal,Normal,Normal,Durable,50,45,55,50,20,40,55,50,$1.2m,High
+3B,C. Bascombe,23,R,R,-,,High,Normal,Normal,Normal,50,50,55,60,25,45,45,40,-,Very High
+3B,J. Benzekri,24,L,R,-,,Low,Normal,Normal,Normal,65,35,65,35,25,60,60,35,-,Very High
+3B,A. bin Imad,23,R,R,-,,Normal,Normal,High,Normal,40,55,40,70,20,55,60,60,-,Very High
+3B,M. Boulter,28,L,R,-,,Normal,High,Normal,Iron Man,60,45,60,45,20,40,25,25,-,Very High
+3B,W. Bradshaw,32,R,R,-,,Normal,Normal,Normal,Normal,50,50,50,50,30,60,25,35,-,Very High
+3B,C. Byrne,26,R,R,-,,Normal,High,High,Normal,55,40,55,40,20,70,45,20,-,High
+3B,B. Chapman,29,L,R,-,,Normal,High,Low,Normal,45,45,45,45,20,65,30,25,-,Very High
+3B,K. Cheng,31,R,R,-,,Normal,High,Normal,Normal,45,40,45,40,20,65,40,75,-,Very High
+3B,C. Cirilli,23,R,R,-,,Unknown,Unknown,Unknown,Normal,35,25,40,25,20,50,35,25,-,Low
+3B,S. Cornestean,25,R,R,-,,Normal,Normal,Normal,Normal,50,50,50,50,25,50,40,25,-,Very High
+3B,J. Crossin,33,L,R,-,,Normal,Normal,Normal,Normal,50,50,50,50,20,55,45,25,-,Very High
+3B,W. Damaski,27,S,R,-,,Normal,Normal,Normal,Normal,55,45,55,45,30,55,45,45,-,Very High
+3B,E. Davis,18,S,R,-,,Low,Normal,Low,Normal,20,25,30,55,20,50,35,30,-,High
+3B,J. Díaz,29,S,R,-,,Normal,Normal,Normal,Fragile,60,45,60,45,20,55,45,20,-,Very High
+3B,K. El Borolossy,29,S,R,-,,High,High,Normal,Normal,50,50,55,50,20,50,45,50,-,Very High
+3B,P. Faustov,29,R,R,-,,Normal,Normal,Normal,Normal,50,45,55,45,20,55,45,35,-,Very High
+3B,B. Frémont,25,R,R,-,,Normal,Normal,High,Durable,40,45,50,60,25,50,40,55,-,Very High
+3B,L. Galvanoni,21,R,R,-,,Normal,Normal,Normal,Normal,25,25,30,35,20,45,45,25,-,Average
+3B,B. Gaona,25,R,R,-,,High,High,Normal,Normal,75,60,75,60,20,55,50,40,-,Very High
+3B,Y. Garibova,25,R,R,-,,High,High,Normal,Normal,45,65,45,70,20,40,40,55,-,High
+3B,B. Hamilton,30,R,R,-,,Normal,High,Normal,Fragile,50,60,50,60,30,50,40,75,-,Very High
+3B,J. Hernández,25,R,R,-,,Normal,High,Normal,Normal,50,50,50,50,25,60,40,40,$4.1m,Very High
+3B,K. Hudson,24,R,R,-,,Low,High,High,Normal,45,40,45,45,20,50,45,50,-,High
+3B,B. Ilie,25,R,R,-,,Low,Low,Normal,Durable,60,50,65,55,20,60,50,35,-,Very High
+3B,B. Kandybo,28,R,R,-,,High,Normal,Low,Normal,50,55,50,55,25,60,45,45,-,Very High
+3B,B. Keller,30,R,R,-,,Normal,High,Normal,Normal,50,45,50,45,25,50,30,40,-,Very High
+3B,Q. Kherkheulidze,27,R,R,-,,Normal,High,Normal,Normal,65,40,65,40,25,60,50,65,-,Very High
+3B,J. Kim,24,R,R,-,,High,High,Normal,Normal,55,40,55,70,20,65,65,40,-,Very High
+3B,M. Kim,25,R,R,-,,High,Normal,High,Normal,45,50,45,50,20,60,45,50,-,Very High
+3B,A. Kimura,24,R,R,-,,Normal,Normal,Normal,Normal,55,65,60,65,50,55,35,25,-,Very High
+3B,K. Kiprotich,29,R,R,-,,Normal,Normal,High,Normal,60,40,60,40,25,65,40,20,-,Very High
+3B,A. Kiriakopoulos,26,R,R,-,,Normal,Normal,Low,Normal,50,45,55,45,25,50,30,60,-,High
+3B,J. Knoll,32,L,R,-,,Normal,High,Normal,Fragile,60,60,60,60,50,60,30,30,-,Very High
+3B,C. Kreskas,23,R,R,-,,Normal,Normal,Normal,Durable,50,45,55,50,20,50,35,30,-,Very High
+3B,S. Kumatani,20,R,R,-,,Low,Low,Normal,Normal,35,30,40,40,20,40,60,45,-,Average
+3B,Z. Lezov,33,S,R,-,,Normal,Normal,Low,Normal,45,55,45,55,20,65,20,70,-,Very High
+3B,S. Lombroso,29,S,R,-,,Normal,High,Normal,Normal,40,50,40,50,20,60,50,80,-,Very High
+3B,N. López,26,R,R,-,,Normal,Low,Normal,Fragile,60,45,65,45,20,50,35,75,-,High
+3B,V. Martínez,28,R,R,-,,Normal,High,High,Durable,55,65,55,70,45,50,40,60,-,Very High
+3B,D. Mashuhuri,20,R,R,-,,Normal,High,Normal,Normal,25,35,30,50,20,45,45,40,-,Average
+3B,F. Matafonov,22,R,R,-,,Normal,Normal,Normal,Normal,50,50,55,50,20,45,55,50,-,High
+3B,K. Meloncelli,29,R,R,-,,Normal,Normal,Normal,Iron Man,60,65,60,65,20,60,45,70,-,Very High
+3B,J. Miller,29,R,R,-,,Normal,High,Normal,Durable,60,40,60,40,20,65,50,60,-,Very High
+3B,S. Morales,25,R,R,-,,High,Normal,Normal,Durable,45,70,50,70,20,60,30,35,-,Very High
+3B,B. Muller,19,R,R,-,,Normal,Normal,Low,Normal,30,25,45,30,20,45,45,20,-,Average
+3B,F. Mutasa,24,R,R,-,,High,High,High,Durable,50,40,50,45,20,65,55,20,-,High
+3B,A. Muñóz,30,R,R,-,,Normal,Normal,Normal,Normal,55,35,55,35,35,55,65,35,-,High
+3B,R. Nabih,23,L,R,-,,Low,Low,Normal,Normal,55,40,60,40,20,60,55,65,-,Very High
+3B,H. Nakai,26,R,R,-,,Normal,Normal,Normal,Normal,40,55,40,65,20,50,50,40,-,High
+3B,Y. Nakamura,22,S,R,-,,Unknown,Unknown,Unknown,Normal,20,30,20,35,20,40,35,20,-,Low
+3B,H. Neil,24,R,R,-,,Normal,High,High,Normal,45,50,45,55,25,45,40,50,-,Very High
+3B,Q. Niarkhos,28,S,R,-,,Normal,High,Normal,Normal,45,75,45,75,20,50,30,20,-,Very High
+3B,Y. Noda,24,R,R,-,,Low,Normal,Normal,Normal,50,45,55,60,25,45,55,40,-,Very High
+3B,J. Ortíz,25,R,R,-,,High,Normal,Normal,Normal,45,45,50,50,20,55,35,50,-,High
+3B,T. Ortíz,25,R,R,-,,Normal,Normal,Normal,Normal,40,35,60,50,20,60,50,70,-,Very High
+3B,L. Patterson,31,R,R,-,,Normal,Normal,Normal,Normal,35,50,35,50,25,60,45,50,-,Very High
+3B,K. Sakata,26,R,R,-,,Low,Low,Normal,Normal,55,45,55,50,20,55,45,20,-,Very High
+3B,N. Sato,27,R,R,-,,High,Normal,Normal,Normal,65,40,65,40,20,45,35,40,-,Very High
+3B,N. Sato,29,R,R,-,,Normal,Normal,Normal,Normal,65,35,65,35,20,60,40,85,-,Very High
+3B,P. Schmidt,22,R,R,-,,Normal,Normal,Normal,Normal,40,30,45,30,25,55,55,20,-,Average
+3B,K. Smith,32,R,R,-,,Low,Normal,High,Normal,60,55,60,55,20,55,45,55,$22.0m,Very High
+3B,N. Takata,26,R,R,-,,High,High,Normal,Normal,35,30,40,35,20,55,45,40,-,Very High
+3B,L. Tudose,25,S,R,-,,Low,High,Normal,Normal,60,40,65,45,20,50,35,55,-,Very High
+3B,C. Vasconcelos,23,L,R,-,,Normal,Normal,High,Normal,50,65,50,70,20,45,45,50,-,Very High
+3B,D. Williams,34,R,R,-,,Normal,High,Normal,Fragile,40,60,40,60,20,65,40,85,-,Very High
+3B,G. Zdraevsky,25,R,R,-,,Normal,High,Normal,Normal,55,50,55,50,20,55,45,45,-,Very High
+SS,H. Abe,23,L,R,-,,Normal,Normal,Normal,Normal,55,40,65,45,20,55,50,80,-,Very High
+SS,M. Abrams,31,R,R,-,,Normal,Normal,Normal,Fragile,50,45,50,45,20,75,45,85,-,Very High
+SS,C. Baker,31,S,R,-,,High,High,Normal,Normal,40,40,40,40,20,70,25,65,-,Very High
+SS,Q. bin Wasim,31,R,R,-,,Normal,Normal,Normal,Normal,50,25,50,25,25,75,40,75,-,High
+SS,M. Brown,33,S,R,-,,Normal,Normal,Normal,Wrecked,55,35,55,35,20,65,45,70,-,Very High
+SS,G. Carver,33,R,R,-,,Low,High,Normal,Normal,50,45,50,45,35,65,45,75,-,Very High
+SS,N. Castillo,31,R,R,-,,Low,Normal,Normal,Normal,50,40,50,40,30,65,60,75,-,High
+SS,J. Chappell,22,R,R,-,,Normal,Normal,High,Normal,45,65,50,65,25,65,35,50,-,Very High
+SS,R. Cholokaev,29,R,R,-,,High,High,Normal,Normal,45,35,50,35,20,65,50,45,-,Very High
+SS,S. Craig,31,R,R,-,,Normal,High,Normal,Normal,60,25,60,25,25,65,55,85,-,Very High
+SS,C. Curran,30,R,R,-,,High,High,Normal,Fragile,50,55,50,55,25,70,35,55,-,Very High
+SS,F. Dalsoglio,24,R,R,-,,Normal,High,Normal,Durable,40,40,50,40,20,60,50,60,-,High
+SS,A. Davis,31,R,R,-,,Low,Normal,Normal,Normal,45,40,45,40,20,70,50,85,-,Very High
+SS,J. Escobar,22,R,R,-,,Low,Low,Normal,Normal,55,40,70,40,20,60,55,65,-,Very High
+SS,P. Ferguson,28,L,R,-,,Normal,High,Normal,Fragile,65,40,70,40,20,70,35,70,-,Very High
+SS,J. Fitzpatrick,30,R,R,-,,Normal,Normal,Normal,Normal,50,45,50,45,25,70,50,65,-,Very High
+SS,S. Frederick,36,R,R,-,,High,Normal,Normal,Normal,40,40,40,40,20,70,45,85,-,Very High
+SS,A. Galatti,26,R,R,-,,High,Normal,Normal,Normal,35,55,40,65,25,60,55,60,-,High
+SS,S. García,31,R,R,-,,Normal,Normal,Normal,Normal,55,40,55,40,20,60,50,20,-,Very High
+SS,R. Grace,28,R,R,-,,Low,Normal,Low,Normal,40,40,40,40,30,60,45,70,-,High
+SS,M. Greene,25,R,R,-,,High,Normal,Normal,Normal,60,40,65,40,20,55,50,60,-,Very High
+SS,A. Gruppi,29,R,R,-,,Low,Normal,Normal,Normal,50,35,50,35,20,60,45,60,-,High
+SS,S. Howe,32,R,R,-,,Low,Normal,Normal,Fragile,50,50,50,50,25,60,40,65,-,Very High
+SS,N. Iatrides,21,L,R,-,,Normal,High,Normal,Normal,30,25,40,30,20,45,50,70,-,High
+SS,O. Ibarra,31,R,R,-,,Normal,High,High,Normal,40,45,40,45,20,65,70,65,-,Average
+SS,T. Ichikawa,32,S,R,-,,Normal,Normal,High,Normal,50,35,50,35,25,70,45,60,-,High
+SS,T. Iwasaki,29,R,R,-,,Normal,Normal,Normal,Fragile,55,40,55,40,20,70,40,70,-,Very High
+SS,A. Karpov,27,R,R,-,,Low,High,High,Normal,40,45,40,50,20,70,30,70,-,Average
+SS,L. Kiriakopoulos,25,R,R,-,,Normal,Normal,Normal,Normal,60,40,70,45,20,65,60,65,-,Very High
+SS,N. Kobayashi,29,R,R,-,,High,Normal,Normal,Normal,50,30,50,30,25,60,35,50,-,High
+SS,Z. Kolovos,28,R,R,-,,Normal,Normal,Low,Normal,60,35,60,35,40,60,35,60,-,Very High
+SS,J. Lane,32,R,R,-,,Normal,Normal,Normal,Normal,40,40,40,40,20,65,40,70,-,High
+SS,W. Lefort,23,R,R,-,,Low,High,Normal,Normal,50,45,50,45,25,55,50,35,-,High
+SS,M. López,35,R,R,-,,High,Normal,Low,Normal,45,50,45,50,20,60,45,80,-,Very High
+SS,A. Manea,27,R,R,-,,High,Normal,Normal,Normal,45,40,45,40,20,50,45,50,-,Very High
+SS,A. Manu,31,L,R,-,,Normal,High,Normal,Normal,35,65,35,65,30,75,50,85,-,Very High
+SS,G. Marinelli,26,R,R,-,,Normal,Normal,Normal,Normal,50,45,50,45,20,70,35,25,-,Very High
+SS,H. Masuda,29,R,R,-,,Normal,Normal,Normal,Durable,50,45,50,45,20,65,50,75,-,Very High
+SS,A. Milescu,23,R,R,-,,Normal,Normal,Normal,Fragile,65,40,65,40,20,70,40,50,-,Very High
+SS,C. Mills,24,R,R,-,,Normal,Normal,Normal,Normal,55,40,60,40,20,65,45,65,-,Very High
+SS,B. Minic,33,R,R,-,,Normal,Normal,Normal,Fragile,60,25,60,25,20,75,25,75,-,High
+SS,A. Montagnana,29,R,R,-,,Normal,Low,Normal,Normal,45,45,45,45,20,65,50,65,-,Very High
+SS,J. Moore,26,R,R,-,,Normal,Normal,Normal,Normal,50,45,50,50,20,65,45,35,$1.2m,High
+SS,T. Moyo,25,L,R,-,,Low,Normal,Normal,Normal,55,35,55,35,20,70,65,65,-,Very High
+SS,R. Orbeliani,23,R,R,-,,Normal,High,Normal,Normal,45,40,45,45,20,65,55,55,-,Very High
+SS,T. Pan,30,R,R,-,,Normal,High,Normal,Normal,60,45,60,45,20,70,45,80,-,Very High
+SS,D. Park,26,L,R,-,,High,High,High,Normal,45,50,45,50,25,65,45,55,-,High
+SS,H. Park,27,R,R,-,,Normal,High,Normal,Durable,45,55,45,55,20,65,40,65,-,High
+SS,D. Piña,31,R,R,-,,Normal,High,High,Fragile,50,40,50,40,20,75,50,85,-,Very High
+SS,Q. Psaros,26,R,R,-,,Normal,Normal,Normal,Fragile,50,45,50,50,25,70,55,60,-,High
+SS,R. Ray,30,R,R,-,,Normal,Normal,Normal,Normal,40,30,40,30,20,65,50,70,-,High
+SS,A. Rea,23,R,R,-,,Normal,Low,Low,Normal,50,35,65,40,20,60,45,55,-,Very High
+SS,G. Rodríguez,26,S,R,-,,Normal,Normal,High,Normal,60,35,60,35,20,60,50,75,-,Very High
+SS,S. Rustamhanli,30,S,R,-,,Normal,High,High,Normal,45,45,45,45,35,65,55,60,-,Very High
+SS,K. Sascheikov,28,R,R,-,,Normal,Normal,Normal,Normal,45,35,50,40,20,60,40,65,-,Very High
+SS,J. Serrano,19,R,R,-,,Unknown,Unknown,Unknown,Normal,25,20,40,20,20,50,25,40,-,Low
+SS,M. Smith Jr,31,S,R,-,,Normal,Normal,Normal,Wrecked,50,30,50,30,20,70,50,60,-,Very High
+SS,B. Stanley,29,S,R,-,,Normal,High,Normal,Durable,50,50,50,50,20,55,25,65,-,Very High
+SS,R. Steele,23,R,R,-,,Normal,Normal,Low,Normal,50,40,50,40,20,70,45,65,-,High
+SS,M. Takahashi,28,R,R,-,,Normal,Normal,Normal,Normal,60,25,60,25,25,70,35,75,-,Very High
+SS,H. Tanaka,29,R,R,-,,Normal,Normal,Low,Normal,60,35,60,40,25,70,35,75,-,Very High
+SS,A. Torres,23,R,R,-,,Normal,Normal,Normal,Durable,35,30,45,45,20,60,45,45,-,Average
+SS,Y. Treumov,28,R,R,-,,Low,Low,Normal,Fragile,60,40,60,40,20,75,45,70,-,Very High
+SS,M. Truevtsev,27,R,R,-,,Normal,Normal,Normal,Normal,65,35,65,35,20,65,35,75,-,High
+SS,L. Trzebiatowski,22,R,R,-,,Normal,Normal,Low,Normal,35,35,35,35,20,50,50,65,-,Average
+SS,E. Tsakolov,29,R,R,-,,High,Normal,Normal,Normal,45,45,45,45,20,60,45,20,-,Very High
+SS,H. TURKISTANISHVILI,26,R,R,-,,High,Normal,High,Normal,45,40,50,40,30,65,45,65,$1.3m,High
+SS,I. Urzica,26,R,R,-,,Low,High,High,Normal,40,55,40,60,45,70,55,70,$1.3m,Very High
+SS,D. Warren,26,R,R,-,,Normal,Normal,Normal,Normal,40,40,50,45,20,60,45,70,-,High
+SS,D. Whittier,27,R,R,-,,Normal,High,Normal,Normal,50,50,50,50,20,65,45,60,-,High
+SS,R. Wolf,28,L,R,-,,Normal,Normal,Normal,Normal,55,20,55,20,20,70,45,85,-,Very High
+SS,D. Zhvykin,28,S,R,-,,Normal,Normal,Normal,Normal,45,35,45,35,25,70,50,45,-,High
+LF,E. Ajnikov,27,R,R,-,,Normal,Normal,Normal,Normal,65,45,65,50,25,35,55,20,-,High
+LF,X. Alatza,24,L,L,-,,Normal,Normal,Normal,Durable,40,65,50,65,20,35,50,60,-,Very High
+LF,A. Anninos,24,R,R,-,,Normal,Normal,Normal,Normal,45,40,45,50,20,35,50,30,-,High
+LF,M. Baca,28,L,L,-,,Low,High,Normal,Normal,50,45,55,45,25,25,55,50,-,Very High
+LF,R. Barraclough,29,R,L,-,,Normal,Normal,Normal,Normal,45,65,45,65,20,25,50,55,-,Very High
+LF,B. Baseball,27,L,L,-,,Normal,High,Normal,Normal,60,70,60,70,20,30,65,70,-,Very High
+LF,W. Belghazi,24,L,L,-,,Normal,Normal,Normal,Normal,45,55,45,60,20,35,60,30,-,Very High
+LF,N. bin Hakeem,24,L,R,-,,High,High,Normal,Normal,55,40,70,45,20,35,60,55,-,Very High
+LF,H. bin Nazeeh,25,R,R,-,,High,High,Normal,Normal,40,60,45,70,20,40,50,55,-,Very High
+LF,D. Brock,29,S,R,-,,Normal,Normal,Low,Fragile,55,55,55,55,20,35,50,50,-,Very High
+LF,M. Brown,29,L,L,-,,Low,Normal,High,Normal,50,50,50,55,20,35,60,25,-,Very High
+LF,L. Burdzel,22,R,L,-,,High,High,High,Normal,55,50,55,50,25,45,55,65,-,Very High
+LF,E. Burger,23,L,L,-,,Normal,High,Normal,Normal,45,50,50,70,25,35,60,55,-,Very High
+LF,J. Béisbol,31,R,L,-,,Normal,High,Normal,Normal,65,40,65,40,20,45,65,90,-,High
+LF,J. Camacho,23,R,R,-,,High,High,High,Normal,45,45,50,60,20,45,60,45,-,Very High
+LF,F. Canarica,27,S,R,-,,Normal,Normal,Normal,Normal,60,45,60,50,20,25,65,65,-,High
+LF,M. Castillo,26,R,R,-,,High,Normal,Normal,Normal,55,55,55,60,20,45,60,20,-,Very High
+LF,B. Cherry,26,R,R,-,,Normal,High,Normal,Normal,40,35,45,40,20,60,50,25,-,Very High
+LF,J. Colón,29,R,R,-,,Normal,Normal,Normal,Normal,70,45,70,45,20,25,65,80,-,Very High
+LF,K. Curry,34,L,L,-,,Normal,Normal,Normal,Fragile,40,60,40,60,20,30,45,65,-,High
+LF,N. Damdinov,22,R,R,-,,Normal,Normal,Normal,Normal,60,40,60,45,20,40,60,70,-,Very High
+LF,A. Demopoulos,24,L,L,-,,Normal,Normal,Normal,Normal,60,30,65,30,20,30,60,50,-,Very High
+LF,C. Douglas,33,R,R,-,,Low,Normal,Normal,Iron Man,45,45,45,45,20,25,55,75,-,High
+LF,S. Esparza,27,L,L,-,,Normal,Normal,Normal,Normal,50,40,55,45,20,30,50,60,-,High
+LF,V. Femia,31,R,R,-,,High,High,High,Normal,50,60,50,60,20,35,60,65,-,Very High
+LF,J. Foster,30,R,R,-,,Normal,Low,Normal,Normal,65,55,65,55,20,25,35,25,-,Very High
+LF,G. Garafaio,28,L,L,-,,High,Normal,Normal,Wrecked,50,45,50,50,20,30,60,35,-,Very High
+LF,Z. Georgenes,28,R,R,-,,Normal,High,Normal,Normal,55,40,55,45,20,30,65,40,-,High
+LF,S. Gibson,30,L,L,-,,Normal,Normal,Normal,Normal,60,55,60,55,25,30,55,45,-,Very High
+LF,A. Grigoras,30,R,R,-,,Normal,High,Low,Normal,45,45,45,45,25,25,50,25,-,High
+LF,J. Groves,35,R,L,-,,Low,Normal,Normal,Normal,50,55,50,55,20,25,40,20,-,High
+LF,M. Harris,30,L,L,-,,High,Normal,High,Normal,65,35,65,35,20,25,50,50,-,High
+LF,R. Henry,24,R,R,-,,Low,Low,Normal,Normal,55,60,55,60,25,30,65,65,-,Very High
+LF,L. Hernández,25,R,R,-,,Normal,Low,Normal,Normal,50,45,50,50,25,35,65,45,-,High
+LF,F. JIMÉNEZ,25,S,R,-,,Normal,Normal,Normal,Normal,45,50,55,55,20,40,65,65,$1.2m,Very High
+LF,J. Johnson,30,R,L,-,,Normal,High,Normal,Durable,50,45,50,45,20,25,60,35,-,Very High
+LF,A. Karamanlis,25,R,R,-,,Normal,Normal,Normal,Normal,55,35,70,40,20,35,55,55,-,Very High
+LF,R. Khokhonichev,29,R,R,-,,Normal,High,Normal,Durable,50,55,50,55,20,45,50,30,-,Average
+LF,E. Kinyor,28,S,R,-,,Normal,Normal,Normal,Normal,70,55,70,60,20,35,65,80,-,Very High
+LF,J. Koryzis,29,R,L,-,,Low,Normal,Normal,Normal,45,50,45,50,20,25,60,60,-,High
+LF,F. Krzywicki,26,L,R,-,,Low,Low,Normal,Normal,55,40,55,40,20,40,65,70,-,Very High
+LF,P. LEDESMA,23,R,R,-,,Normal,High,High,Normal,45,40,55,45,20,30,65,65,$1.2m,Very High
+LF,C. Lee,26,L,L,-,,Normal,Normal,Normal,Fragile,50,45,50,50,25,50,55,45,-,Very High
+LF,D. Lee,27,L,R,-,,Normal,Normal,High,Normal,50,65,50,65,20,30,50,50,-,Very High
+LF,K. Lee,27,R,L,-,,Normal,Normal,High,Normal,40,55,40,55,20,30,60,80,-,Very High
+LF,R. Lee,27,R,R,-,,Normal,Normal,Normal,Normal,60,40,60,40,25,35,50,60,-,High
+LF,B. Long,31,L,R,-,,Normal,Normal,Low,Normal,50,50,50,50,25,25,60,75,-,Very High
+LF,P. Loveiko,29,L,L,-,,Normal,High,Low,Fragile,55,45,55,45,20,40,60,55,-,Very High
+LF,E. Lowe,25,L,L,-,,Normal,Normal,Normal,Normal,65,35,65,35,20,45,60,70,-,Very High
+LF,E. Magos,26,R,R,-,,Normal,High,Normal,Normal,50,45,50,50,20,40,50,65,-,Very High
+LF,F. Maizus,27,S,R,-,,Normal,Normal,Low,Normal,50,50,50,55,20,35,65,70,-,Very High
+LF,S. Marcoullides,24,L,L,-,,Normal,Normal,High,Normal,30,35,45,55,20,40,60,25,-,High
+LF,E. Martínez,31,L,R,-,,Low,Low,Normal,Normal,55,45,55,45,20,25,60,30,-,Very High
+LF,D. Mentis,31,L,L,-,,High,Normal,Normal,Fragile,40,50,40,50,20,25,60,85,-,High
+LF,A. Michalaras,30,L,L,-,,Normal,High,Normal,Normal,50,40,50,40,20,30,60,60,-,High
+LF,B. Moore,27,R,R,-,,Normal,Normal,Normal,Normal,40,70,40,70,20,35,45,35,-,Very High
+LF,D. Moore,25,L,R,-,,Low,Normal,Low,Normal,50,60,50,60,20,25,60,55,-,Very High
+LF,S. Moore,24,L,L,-,,High,Normal,High,Normal,50,70,50,70,25,35,50,40,-,Very High
+LF,J. Morales,29,R,R,-,,Low,High,Normal,Fragile,40,65,45,65,20,35,60,50,-,Very High
+LF,I. Morán,26,L,L,-,,Normal,High,Normal,Fragile,65,45,65,45,20,30,45,55,-,High
+LF,P. Murphy,26,L,L,-,,Normal,Normal,High,Normal,40,70,40,70,25,30,55,60,-,Very High
+LF,S. Murphy,27,S,R,-,,High,Normal,Normal,Normal,50,45,50,50,20,50,60,55,-,Very High
+LF,M. Méndez,21,R,R,-,,Normal,Low,Normal,Normal,30,25,45,40,20,35,45,20,-,Average
+LF,M. Nakashima,23,L,L,-,,Low,Normal,Normal,Normal,65,45,65,45,20,30,50,45,-,Very High
+LF,S. Neff,26,R,R,-,,Low,Normal,Normal,Fragile,60,45,60,60,25,45,50,55,-,Very High
+LF,J. Occhena,23,R,R,-,,Normal,Normal,Normal,Normal,60,45,60,45,25,45,45,25,-,High
+LF,R. Odescalchi,25,L,R,-,,Normal,Low,Low,Normal,45,45,50,45,25,30,65,75,-,Very High
+LF,A. Onicescu,31,S,R,-,,High,Normal,Normal,Durable,50,45,50,45,55,25,65,25,-,Very High
+LF,J. Ramos,25,S,L,-,,High,High,Normal,Normal,35,35,45,45,25,25,55,55,-,Very High
+LF,J. Ramírez,23,R,R,-,,Normal,Normal,Normal,Normal,50,50,50,50,20,60,50,25,-,Very High
+LF,J. Romero,25,R,R,-,,Normal,Normal,Normal,Normal,60,40,65,45,20,30,50,60,-,High
+LF,R. Salas,27,R,R,-,,Low,Normal,Normal,Durable,50,70,60,70,20,35,60,25,-,Very High
+LF,L. Salieri,24,S,R,-,,Normal,Normal,Low,Normal,70,55,70,55,20,35,55,55,-,Very High
+LF,M. Sato,24,R,L,-,,High,Normal,Normal,Durable,60,45,60,45,20,30,65,70,-,Very High
+LF,S. Son,30,L,L,-,,Normal,Normal,Normal,Normal,50,45,50,45,25,45,55,80,-,Very High
+LF,A. Sweet,29,L,L,-,,Normal,Normal,Normal,Normal,50,65,50,65,25,25,50,70,-,Very High
+LF,D. Thompson,29,S,R,-,,Normal,Normal,Normal,Normal,55,40,60,40,25,35,60,70,-,Average
+LF,T. Valdéz,29,R,R,-,,Normal,High,Low,Normal,45,45,45,45,30,50,60,65,-,Very High
+LF,P. van Campen,29,R,L,-,,Normal,Low,Low,Normal,45,40,45,40,25,25,60,45,-,High
+LF,A. Vega,29,L,L,-,,Normal,High,High,Normal,45,50,45,50,20,25,60,55,-,Very High
+LF,R. Vidyapin,30,L,L,-,,Normal,High,High,Normal,60,45,60,45,25,25,50,25,-,Very High
+LF,R. Wallace,32,L,L,-,,Normal,High,Normal,Fragile,50,50,50,50,20,30,55,65,$17.0m,Very High
+LF,S. Wilson,29,L,L,-,,Low,Normal,Normal,Wrecked,40,70,40,70,20,30,50,75,-,Very High
+CF,H.,30,L,L,-,,Normal,High,High,Fragile,55,35,55,35,20,35,70,80,-,Very High
+CF,S. Abamelek,28,R,R,-,,Normal,Normal,Normal,Normal,50,45,55,45,20,35,65,70,-,Very High
+CF,R. Abdul-Sabur,23,L,L,-,,Normal,High,Normal,Normal,55,50,60,60,20,65,65,70,-,High
+CF,I. Al-Fayed,32,L,L,-,,Normal,Normal,Low,Normal,45,50,45,50,20,20,65,75,-,High
+CF,G. Allucingoli,20,R,R,-,,Normal,Normal,Normal,Durable,30,20,40,35,25,30,60,50,-,Average
+CF,L. Anthony,33,R,R,-,,Normal,Normal,Normal,Normal,50,45,50,45,20,30,70,55,-,Average
+CF,V. Asqui,23,R,R,-,,Normal,High,Normal,Normal,50,40,50,45,20,35,65,65,-,High
+CF,H. Auvray,23,R,R,-,,Unknown,Unknown,Unknown,Normal,40,30,45,30,20,25,55,40,-,Low
+CF,N. Baldini,32,S,R,-,,High,High,Normal,Normal,50,45,50,45,20,55,70,75,-,High
+CF,K. Barter,17,R,R,-,,High,High,High,Durable,20,30,35,55,20,25,50,25,-,High
+CF,I. bin Othman,24,R,R,-,,Low,High,Normal,Normal,55,55,55,60,30,40,70,65,-,Very High
+CF,N. bin Shafiq,23,L,L,-,,Normal,High,Normal,Durable,45,40,45,40,25,40,60,35,-,Very High
+CF,T. Booker,29,R,R,-,,Normal,High,Normal,Normal,50,35,50,35,20,25,65,75,-,High
+CF,B. Branham,24,R,R,-,,High,High,Normal,Fragile,55,40,55,45,20,25,70,55,-,High
+CF,R. Burch,18,R,R,-,,High,Normal,Normal,Normal,25,20,45,30,20,30,50,35,-,High
+CF,F. Cadoni,26,R,R,-,,High,High,Normal,Durable,40,40,50,55,20,35,65,75,-,High
+CF,Y. Chanishvili,28,R,R,-,,Normal,Low,Normal,Fragile,50,50,50,50,20,35,70,70,-,Very High
+CF,L. Collins,28,L,L,-,,Normal,High,Normal,Durable,50,50,55,55,20,35,65,75,-,Very High
+CF,J. Cortéz,25,R,R,-,,Low,Normal,Normal,Normal,45,50,45,50,20,35,65,35,-,High
+CF,M. Cuevas,21,L,R,-,,Normal,Low,Low,Normal,30,30,35,35,25,25,55,25,-,Average
+CF,M. Daicoviciu,25,L,R,-,,Normal,High,Normal,Normal,45,45,55,50,20,30,65,80,-,Very High
+CF,V. Daragan,31,R,L,-,,Normal,High,Normal,Fragile,40,70,40,70,25,30,65,80,-,Very High
+CF,M. Dawson,26,R,R,-,,Normal,Normal,Normal,Fragile,50,35,50,35,25,45,65,45,-,Very High
+CF,K. Eizhvertin,27,R,R,-,,Normal,High,High,Normal,40,60,40,65,20,35,70,80,-,High
+CF,W. Eudzerski,19,L,L,-,,Low,High,Normal,Fragile,25,25,40,30,20,35,55,40,-,Average
+CF,J. Ford,35,L,R,-,,Normal,Normal,Low,Normal,45,40,45,40,20,30,65,80,-,High
+CF,W. Galindo,20,S,R,-,,High,Normal,Normal,Durable,35,30,45,30,20,25,60,60,-,Average
+CF,Q. Gamsakhurdia,29,L,R,-,,Normal,High,Normal,Normal,45,50,45,50,20,35,65,75,-,Very High
+CF,D. Gibson,31,L,L,-,,Normal,Normal,Normal,Normal,45,35,45,35,25,50,70,85,-,Average
+CF,R. Gill,31,R,R,-,,High,Normal,Normal,Fragile,50,45,50,45,20,40,70,80,-,High
+CF,D. González,22,L,L,-,,Normal,High,Normal,Normal,35,25,50,30,20,35,55,35,-,Average
+CF,F. González,22,L,R,-,,Low,Normal,Normal,Normal,30,25,40,40,25,35,55,40,-,Average
+CF,C. Hays,30,L,R,-,,Normal,Normal,High,Normal,55,40,55,40,30,40,65,80,-,Very High
+CF,L. Howell,28,R,R,-,,Normal,High,Normal,Normal,45,45,45,45,20,30,60,55,-,Average
+CF,R. Howell,25,L,L,-,,Normal,High,Normal,Normal,45,45,45,55,20,30,70,50,-,High
+CF,J. Icaza,31,S,R,-,,Normal,High,Normal,Normal,45,50,45,50,20,35,65,85,-,Very High
+CF,S. Iida,28,L,L,-,,Normal,Normal,Normal,Normal,55,50,55,50,20,35,65,65,-,Very High
+CF,S. Ishida,27,R,R,-,,Normal,High,Normal,Fragile,50,45,50,45,25,35,60,70,-,Very High
+CF,B. Jackson,32,L,L,-,,Low,Low,Normal,Normal,55,45,55,45,20,40,80,85,-,Very High
+CF,M. Jenkins,26,R,R,-,,Low,Normal,Normal,Normal,50,40,50,40,20,40,60,45,-,Very High
+CF,M. Jiang,24,R,R,-,,Normal,High,Normal,Normal,45,35,65,35,20,35,70,65,-,Very High
+CF,Y. Jiang,25,L,L,-,,Normal,Normal,Low,Durable,65,40,65,40,20,45,60,65,-,Very High
+CF,Y. Jukhotsky,29,R,R,-,,High,Normal,Normal,Normal,55,50,55,50,20,30,65,65,-,Very High
+CF,F. Kapitsyn,22,R,L,-,,Normal,Normal,High,Normal,55,40,65,45,20,40,60,65,-,High
+CF,Z. Karkampasis,28,R,L,-,,Low,High,High,Normal,60,65,65,65,20,40,70,70,-,Very High
+CF,W. Kessler,21,R,R,-,,Unknown,Unknown,Unknown,Normal,35,25,40,30,30,40,55,55,-,Low
+CF,E. Kijana,23,R,R,-,,High,High,High,Normal,55,40,65,40,25,35,60,50,-,Very High
+CF,O. Kinkladze,26,L,L,-,,Normal,High,Normal,Normal,60,50,60,50,20,35,70,75,-,Very High
+CF,K. Klarkowski,24,R,R,-,,Normal,Normal,High,Normal,45,55,50,65,20,45,60,30,-,Very High
+CF,D. Kyriakou,33,R,R,-,,Normal,High,Normal,Normal,45,55,45,55,20,40,70,50,-,Very High
+CF,D. Limón,23,L,L,-,,Normal,Normal,Normal,Normal,50,45,55,65,20,30,65,30,-,Very High
+CF,D. Major,28,R,R,-,,Low,Normal,High,Normal,45,40,45,40,20,40,70,75,-,Very High
+CF,E. Martínez,31,R,R,-,,Normal,High,Normal,Normal,45,45,45,45,20,50,70,45,-,Average
+CF,F. Matson,22,R,R,-,,High,High,Normal,Normal,40,30,45,40,20,25,60,30,-,Average
+CF,M. Mavlutdinov,21,R,R,-,,High,Normal,Normal,Normal,35,30,45,35,20,35,60,50,-,Average
+CF,O. Mbaya,20,L,L,-,,Unknown,Unknown,Unknown,Normal,35,25,45,40,25,30,60,65,-,Low
+CF,N. McCsker,26,R,R,-,,High,High,High,Normal,50,40,50,40,25,30,60,65,-,Very High
+CF,I. Merico,18,L,L,-,,Normal,High,Normal,Durable,25,20,45,40,25,25,60,20,-,Average
+CF,N. Morita,26,L,L,-,,Normal,Normal,Normal,Normal,50,40,55,45,20,35,65,45,-,Very High
+CF,S. Munchkin,25,R,R,-,,Normal,High,High,Durable,45,50,50,50,20,50,70,45,$3.8m,Very High
+CF,I. Novichkov,29,R,L,-,,Normal,High,Low,Wrecked,70,50,70,50,20,50,65,85,-,Very High
+CF,A. O' Neill,25,R,R,-,,Normal,Normal,Low,Normal,60,30,60,30,20,25,70,85,-,Very High
+CF,B. Olsen,27,R,R,-,,Normal,High,Normal,Normal,50,35,55,35,20,35,65,70,-,High
+CF,P. Paige,19,R,R,-,,Normal,Normal,Normal,Normal,30,25,55,35,20,30,55,70,-,Average
+CF,L. Papanastasiou,19,R,R,-,,Low,Normal,Normal,Normal,30,20,40,25,20,30,55,35,-,Average
+CF,C. Park,26,R,R,-,,Normal,Normal,Normal,Normal,50,30,55,30,20,30,65,65,-,Very High
+CF,K. Park,23,L,L,-,,Normal,Normal,Normal,Normal,70,45,70,45,20,30,70,65,-,Very High
+CF,V. Pellegrino,27,S,R,-,,Normal,Low,Normal,Normal,50,35,50,40,20,25,65,65,-,High
+CF,K. Pentzopoulos,22,L,L,-,,Normal,Normal,Normal,Normal,40,30,60,65,20,30,50,55,-,Very High
+CF,C. Perani,32,L,L,-,,Normal,High,High,Normal,45,45,45,45,25,25,65,80,-,Very High
+CF,M. Perpoli,22,S,R,-,,Normal,High,Normal,Normal,45,30,50,30,20,25,65,20,-,Average
+CF,R. Peña,22,R,R,-,,Normal,Normal,Normal,Normal,40,30,40,30,20,35,55,50,-,Average
+CF,W. Pin,20,R,R,-,,Unknown,Unknown,Unknown,Normal,25,20,45,30,20,25,60,35,-,Low
+CF,T. Powell,26,R,L,-,,Unknown,Unknown,Unknown,Normal,40,35,45,40,20,25,65,55,-,Low
+CF,V. Propenzicotti,26,L,L,-,,Normal,Normal,Normal,Normal,55,50,55,50,20,65,65,70,-,Very High
+CF,C. Robinson,29,L,R,-,,Low,Normal,Normal,Fragile,45,50,45,50,25,30,65,65,-,Very High
+CF,C. Rosário,30,R,R,-,,Normal,Normal,Normal,Durable,50,45,50,45,20,40,65,60,-,High
+CF,M. Sato,29,L,R,-,,High,Normal,High,Normal,60,30,60,30,20,40,70,80,-,Very High
+CF,F. Shumpert,31,L,L,-,,Normal,Normal,Low,Normal,50,35,50,35,20,45,70,80,-,Very High
+CF,J. Simmons,25,R,R,-,,High,Normal,Normal,Normal,25,40,35,50,20,40,60,55,-,High
+CF,D. SMITH,23,R,R,-,,Normal,Normal,High,Normal,55,45,55,45,25,25,70,65,$1.2m,High
+CF,D. Tapanelli,23,L,R,-,,Normal,Normal,Normal,Normal,30,25,35,30,20,30,55,45,-,Average
+CF,J. Tatum,25,R,R,-,,Low,Low,Normal,Normal,60,55,60,55,25,50,70,80,-,Very High
+CF,J. Thomas,28,S,L,-,,Normal,High,Normal,Normal,60,35,60,35,20,30,70,85,-,Very High
+CF,G. Tucker,24,L,R,-,,High,High,Normal,Normal,30,30,45,35,20,35,55,30,-,Low
+CF,M. Tusishvili,24,R,L,-,,Normal,Normal,Low,Normal,40,40,45,65,20,40,65,65,-,Very High
+CF,D. Vasile,26,S,R,-,,Normal,Normal,Normal,Normal,50,40,60,40,20,30,60,70,-,Very High
+CF,B. Veloukhiotis,25,R,R,-,,Normal,High,Normal,Normal,55,40,55,40,20,30,70,65,-,Very High
+CF,C. Villa,26,R,L,-,,Normal,Normal,Normal,Normal,45,35,45,35,25,40,65,75,-,Average
+CF,T. Wakabayashi,26,R,R,-,,Normal,Normal,Normal,Fragile,60,40,60,40,30,30,70,75,-,Very High
+CF,M. Warren,25,L,L,-,,Low,Normal,Normal,Normal,40,35,50,35,20,25,65,55,-,Average
+CF,G. Wukoloff,27,L,L,-,,High,High,High,Normal,55,30,55,30,25,35,65,70,-,High
+CF,L. Yahontov,27,R,R,-,,Normal,High,High,Normal,45,45,45,45,25,35,70,65,-,High
+RF,S. Abraha,25,R,R,-,,Normal,Normal,Normal,Normal,55,50,55,55,20,30,50,35,-,Very High
+RF,C. Angelou,24,L,L,-,,Normal,Normal,Normal,Normal,45,50,50,50,20,35,50,20,-,Average
+RF,A. Antonatos,29,R,L,-,,Low,Normal,Normal,Normal,45,40,45,40,20,35,65,70,-,Very High
+RF,P. Ballard,34,L,R,-,,High,High,Normal,Normal,55,55,55,55,20,35,60,80,-,Very High
+RF,G. Baroncelli,29,S,R,-,,Low,High,Normal,Normal,55,50,55,50,20,55,65,45,-,Very High
+RF,C. Basgil,27,R,R,-,,Normal,High,High,Normal,55,45,55,50,25,25,65,80,-,Very High
+RF,K. bin Haddad,27,L,L,-,,Normal,High,Normal,Fragile,50,45,50,45,20,35,55,75,-,Very High
+RF,P. Cabrera,31,L,L,-,,Normal,Normal,Normal,Normal,65,30,65,30,25,50,60,85,-,Very High
+RF,J. Candelária,18,L,L,-,,High,High,Normal,Normal,25,25,40,45,20,35,45,45,-,High
+RF,R. Carr,25,L,L,-,,Normal,Normal,Normal,Fragile,45,40,50,65,25,30,60,45,-,Very High
+RF,A. Christofis,24,L,L,-,,Normal,Normal,Low,Normal,55,40,55,40,20,30,55,40,-,High
+RF,R. Clark,29,L,L,-,,Low,Normal,Normal,Normal,55,65,55,65,20,45,70,75,-,High
+RF,G. Colón,20,R,R,-,,Unknown,Unknown,Unknown,Normal,30,30,40,40,30,30,55,20,-,Low
+RF,L. Costacurta,20,R,L,-,,High,Normal,Normal,Durable,25,30,40,40,20,35,50,35,-,Average
+RF,S. Cotichini,23,R,R,-,,Normal,Normal,Low,Normal,50,60,50,60,20,35,55,55,-,High
+RF,R. Cruz,26,R,R,-,,Normal,Normal,Normal,Durable,55,45,60,45,20,45,65,80,-,Very High
+RF,F. Córdova,25,R,L,-,,Normal,Normal,Normal,Normal,55,45,55,50,20,30,50,65,-,Very High
+RF,G. DeNiro,25,L,L,-,,Low,Low,Normal,Normal,60,45,60,45,25,35,65,70,-,Very High
+RF,T. Economou,24,L,L,-,,Normal,High,High,Durable,50,40,50,40,20,40,55,80,-,Very High
+RF,E. Fei,25,L,L,-,,Normal,Normal,High,Normal,55,40,55,45,25,30,65,75,-,Very High
+RF,H. Fujita,29,R,R,-,,Normal,Normal,Normal,Fragile,65,35,65,35,20,30,60,45,-,Very High
+RF,A. Gabriel,30,R,R,-,,High,High,Normal,Normal,55,45,55,45,25,35,65,75,-,Very High
+RF,B. Glezos,17,R,R,-,,Normal,Normal,Normal,Durable,20,20,40,20,20,25,35,40,-,Average
+RF,C. Graham,28,R,R,-,,High,High,Normal,Normal,55,45,55,45,20,30,55,40,-,Very High
+RF,D. Guerrieri,28,R,R,-,,Low,Normal,Normal,Normal,55,45,55,45,20,25,55,70,-,Very High
+RF,J. Henry,24,R,R,-,,Unknown,Unknown,Unknown,Normal,30,50,35,55,25,25,40,40,-,Low
+RF,O. Holmes,27,R,R,-,,High,High,High,Normal,50,60,50,60,20,45,65,35,-,Very High
+RF,G. Karabachos,30,L,L,-,,Normal,Normal,Normal,Normal,45,75,45,75,20,65,55,25,-,Very High
+RF,G. Keys,31,R,L,-,,High,Normal,High,Normal,65,35,65,35,20,30,65,60,-,Very High
+RF,B. Kherkheulidze,25,L,L,-,,High,Normal,Normal,Normal,50,45,50,45,20,35,70,35,-,Very High
+RF,C. Kim,30,R,R,-,,Low,Normal,Normal,Normal,45,50,45,50,20,25,60,80,-,Very High
+RF,M. Konishi,32,R,R,-,,Normal,High,High,Normal,60,50,60,50,20,30,60,85,-,Very High
+RF,C. Kourempes,25,R,R,-,,Normal,Normal,Normal,Fragile,45,60,45,60,20,50,60,55,-,Very High
+RF,C. Lambrakis,27,L,L,-,,Normal,Normal,Normal,Fragile,40,50,40,50,20,30,55,75,-,High
+RF,D. Lewis,35,L,L,-,,Normal,Normal,Normal,Wrecked,45,50,45,50,20,45,50,65,$6.5m,Very High
+RF,D. Magellan,29,R,L,-,,Normal,Normal,High,Normal,50,60,50,65,20,30,55,20,-,High
+RF,O. Mapemba,30,S,R,-,,Normal,Normal,High,Fragile,40,70,40,70,20,25,60,60,-,Very High
+RF,G. Maresca,30,R,R,-,,Normal,High,Normal,Normal,50,55,50,55,20,35,55,50,-,Very High
+RF,F. Massari,32,L,L,-,,Low,Normal,Normal,Durable,45,45,45,45,20,30,65,80,-,Very High
+RF,O. Mavromihali,29,L,R,-,,Normal,High,High,Normal,55,40,55,40,20,30,65,65,-,Average
+RF,I. Mitev,23,L,L,-,,Normal,Normal,High,Normal,40,40,40,45,25,35,55,50,-,Average
+RF,M. Mukhransky,32,R,R,-,,High,High,High,Normal,55,30,55,30,20,25,65,75,-,High
+RF,T. Nelson,24,L,L,-,,Normal,Normal,Normal,Normal,50,40,55,45,25,45,55,45,-,High
+RF,C. Nero,27,R,R,-,,Normal,Normal,Normal,Normal,40,70,40,70,25,25,60,75,-,Very High
+RF,S. Ojima,27,L,R,-,,Normal,Normal,Low,Durable,40,65,40,65,20,30,60,75,-,Very High
+RF,K. Okamoto,25,S,R,-,,Low,High,Normal,Normal,50,60,50,60,20,30,70,40,-,Very High
+RF,S. Pautov,26,R,L,-,,Normal,Normal,Normal,Normal,50,40,50,40,20,35,55,85,-,Very High
+RF,P. Perry,26,L,R,-,,Normal,Normal,Normal,Normal,60,40,60,40,25,35,65,70,-,Very High
+RF,J. Peterson,29,S,R,-,,Normal,Normal,Normal,Iron Man,55,40,55,40,20,30,65,85,-,High
+RF,A. Pérez,27,L,L,-,,Normal,High,Normal,Normal,55,55,55,55,20,30,55,40,-,Very High
+RF,J. Renard,26,R,R,-,,Low,Normal,Normal,Normal,50,40,50,40,20,35,60,50,-,Very High
+RF,F. Ríos,34,R,R,-,,Normal,Normal,Normal,Fragile,55,45,55,45,20,30,65,75,-,High
+RF,F. Sauca,28,R,R,-,,High,Normal,High,Normal,45,45,45,45,25,25,65,70,-,Very High
+RF,A. Serpa,32,R,R,-,,Normal,High,Normal,Normal,50,50,50,50,20,25,55,50,-,Very High
+RF,R. Stephens,20,R,R,-,,High,Normal,Normal,Normal,30,30,35,45,20,55,45,20,-,Average
+RF,P. Taflambas,20,L,L,-,,Unknown,Unknown,Unknown,Normal,25,25,50,40,30,20,45,25,-,Low
+RF,A. Thompson,29,L,L,-,,Normal,Normal,Normal,Normal,45,45,50,45,20,45,60,55,-,Very High
+RF,G. Tilbrook,34,L,L,-,,Low,High,Normal,Normal,45,70,45,70,25,25,55,70,-,Very High
+RF,J. Underwood,29,R,R,-,,Low,Normal,High,Normal,55,45,55,50,20,40,55,50,-,Very High
+RF,E. Volare,38,L,L,-,,Normal,High,Normal,Normal,40,45,40,45,20,30,55,85,-,Very High
+RF,J. Warner,30,L,L,-,,Normal,Normal,Normal,Normal,60,40,60,40,20,35,65,80,-,Very High
+RF,K. Watanabe,29,R,R,-,,Low,Normal,Normal,Iron Man,50,45,50,50,20,35,60,35,-,Very High
+RF,M. Augustov,31,S,R,-,,Normal,Normal,Normal,Normal,40,60,40,60,25,35,60,35,-,Very High
+RF,M. Wilson,27,L,L,-,,High,Normal,Low,Normal,55,40,55,40,25,45,55,65,-,High
+DH,P. Armstrong,27,R,R,-,,Normal,Normal,Normal,Normal,45,55,50,60,20,25,60,45,-,High
+DH,S. Kum,28,R,R,-,,Normal,High,Normal,Normal,70,55,70,55,25,30,40,65,-,Very High
+DH,B. Martínez,33,R,L,-,,Normal,Normal,Normal,Wrecked,65,35,65,35,20,35,50,85,-,Average
+DH,V. Mniszech,37,L,R,-,,High,High,High,Wrecked,45,55,45,55,20,45,60,75,-,Very High

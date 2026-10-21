@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+ui/dist/
+ui/tsconfig.tsbuildinfo
+.vercel/
+.env*
+*.duckdb.wal

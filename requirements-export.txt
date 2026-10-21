@@ -1,0 +1,5 @@
+# Driving OOTP to export the league views (macOS only): export.py, ootp_ui.py, refresh.py
+-r requirements.txt
+opencv-python-headless==5.0.0.93
+pyobjc-framework-Cocoa==12.2.2
+pyobjc-framework-Quartz==12.2.2

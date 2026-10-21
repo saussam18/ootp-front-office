@@ -1,0 +1,81 @@
+slot,upgrade,id,name,age,org,lev,xwar,yrs,avg_cost,surplus,their_pct,their_needs,your_fits
+1B,4.17,62953,Bernardo Gaona,25,Black Hills,RLB,4.98,3,13.64,84.18,0.48,"SS -0.4, SP1 -0.2, CF -0.1",
+LF,4.16,56134,Endale Kinyor,28,Baltimore,RLB,4.98,5,32.5,2.17,0.61,"SP1 -0.2, SP2 -0.0",
+CF,3.99,54866,Zeno Karkampasis,28,Tampa Bay,RLB,5.65,6,35.5,12.76,0.57,"2B -2.9, 1B -1.5, 3B -0.7","John Moore (2B), Eisse van Elswijk (2B)"
+1B,3.1,63377,Mathieu Massari,24,Republic,RLB,3.91,2,11.58,38.86,0.49,"LF -1.3, 2B -0.6, 3B -0.3",
+CF,3.04,63629,Kyung-bae Park,23,Republic,RLB,4.7,3,11.25,62.79,0.49,"LF -1.3, 2B -0.6, 3B -0.3",
+1B,2.48,59849,Evegnii Gabuzov,27,Texas,RLB,3.3,1,21.25,0.0,0.51,"3B -1.0, 2B -0.6, SS -0.3",
+3B,2.4,51710,Kajetan Meloncelli,30,New Orleans,RLB,5.1,5,50.0,-67.43,0.51,"2B -0.5, CF -0.4, 1B -0.4",
+CF,2.34,45373,Bill Jackson,32,Shadowland,RLB,3.99,3,36.83,-30.99,0.44,"C -1.3, SS -1.1, DH -0.7","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)"
+CF,2.29,62267,Ron Clark,29,Tampa Bay,RLB,3.94,3,35.0,-26.35,0.57,"2B -2.9, 1B -1.5, 3B -0.7","John Moore (2B), Eisse van Elswijk (2B)"
+DH,2.25,54862,Si-xun Kum,28,Republic,RLB,2.74,3,27.25,-33.56,0.49,"LF -1.3, 2B -0.6, 3B -0.3",
+LF,2.13,52136,Jesús Colón,29,Salt Lake,RLB,2.95,5,15.5,20.84,0.58,"C -0.5, 3B -0.4, SP2 -0.3",
+SP,2.11,62526,Saqr Najjar,26,Boston,RLB,4.14,2,10.77,33.84,0.56,RF -0.2,
+LF,2.06,63399,Kunitaro Okamoto,25,Boston,RLB,2.88,3,8.08,34.66,0.56,RF -0.2,
+1B,2.03,63691,Spartak Ponikarov,28,Baltimore,RLB,2.84,5,31.5,-61.28,0.61,"SP1 -0.2, SP2 -0.0",
+1B,2.0,61857,Pavpv Eksler,24,Colorado,RLB,2.81,4,7.28,48.19,0.56,"LF -0.4, RF -0.1, CF -0.1",
+LF,1.98,60506,Bob Baseball,27,Tampa Bay,RLB,2.8,6,44.17,-124.62,0.57,"2B -2.9, 1B -1.5, 3B -0.7","John Moore (2B), Eisse van Elswijk (2B)"
+LF,1.91,62039,Lucien Salieri,24,Black Hills,RLB,2.73,4,6.64,41.15,0.48,"SS -0.4, SP1 -0.2, CF -0.1",
+SP,1.83,62976,Akihiko Takata,25,Milwaukee,RLB,3.85,3,9.4,46.35,0.52,"1B -0.3, SS -0.3, DH -0.0",
+C,1.82,65850,Dave Komninos,26,Redstar,RLB,3.46,2,9.21,24.14,0.51,"RP1 -0.6, 3B -0.3, 2B -0.3",
+SP,1.82,60268,Roberto Aguilera,27,Phoenix,RLB,3.84,6,49.47,-117.25,0.41,"SS -1.4, C -1.4, 3B -1.0","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)"
+1B,1.79,65104,Jack Brito,24,Boston,RLB,2.6,4,6.66,40.63,0.56,RF -0.2,
+1B,1.78,60999,Andrés Molina,26,Long Beach,RLB,2.59,2,9.7,27.17,0.48,"CF -2.1, LF -1.9, RF -0.8","LAZZARO BOCCHERINI (C), DARBY SMITH (LF), DARBY SMITH (CF)"
+RP,1.77,41954,Bryan Gould,34,Colorado,RLB,1.94,3,28.0,-21.97,0.56,"LF -0.4, RF -0.1, CF -0.1",
+RP,1.77,60580,Robert Hughes,26,Vancouver,RLB,1.94,2,8.98,22.71,0.55,"SP1 -0.9, SP2 -0.6, SS -0.5",
+1B,1.74,59395,Goathim Kozel,29,Houston,RLB,2.55,2,25.62,-13.83,0.54,"RF -1.2, CF -1.0, C -0.5",
+LF,1.66,65120,Ricardo Salas,27,Redstar,RLB,2.48,2,7.73,10.9,0.51,"RP1 -0.6, 3B -0.3, 2B -0.3",
+1B,1.59,62911,Taweel Wadi,24,Lincoln,RLB,2.4,4,8.56,62.68,0.56,"1B -0.8, SS -0.7, LF -0.5",
+DH,1.58,64912,Roger Hellmich,24,Black Hills,RLB,2.08,3,8.45,37.97,0.48,"SS -0.4, SP1 -0.2, CF -0.1",
+SP,1.57,59528,Marius Adabir,28,Los Angeles,RLB,3.59,2,9.53,26.13,0.5,"2B -0.4, DH -0.4, 3B -0.1",
+CF,1.57,64579,Ratib Abdul-Sabur,23,Republic,RLB,3.22,4,8.12,56.78,0.49,"LF -1.3, 2B -0.6, 3B -0.3",
+SP,1.55,57838,Achatius Wesselingh,26,Republic,RLB,3.57,1,10.43,12.92,0.49,"LF -1.3, 2B -0.6, 3B -0.3",
+1B,1.53,64916,Abu Anasa,24,Lunar City,RLB,2.34,3,8.36,37.17,0.39,"LF -2.0, SS -1.5, C -1.1","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C), DARBY SMITH (LF)"
+RP,1.53,61549,Vsevolod Pososhkov,26,Alaska,RLB,1.7,2,8.36,18.79,0.56,"1B -0.6, SS -0.5, RF -0.3",
+LF,1.51,63845,Mototsune Sato,24,Baltimore,RLB,2.33,4,6.12,34.79,0.61,"SP1 -0.2, SP2 -0.0",
+CF,1.51,51714,Ivan Novichkov,30,Redstar,RLB,3.17,2,20.0,-1.16,0.51,"RP1 -0.6, 3B -0.3, 2B -0.3",
+1B,1.49,64369,Vicente Martínez,28,Alaska,RLB,2.3,4,14.67,18.17,0.56,"1B -0.6, SS -0.5, RF -0.3",
+1B,1.49,62750,Paul DeMarchi,25,Oklahoma City,RLB,2.3,3,6.48,20.59,0.61,"CF -1.8, RF -0.8, DH -0.2",DARBY SMITH (CF)
+RP,1.47,50264,Bryant Hale,30,Salt Lake,RLB,1.64,3,12.5,9.44,0.58,"C -0.5, 3B -0.4, SP2 -0.3",
+1B,1.47,59574,Bum-kyoo Lee,31,Vancouver,RLB,2.28,1,29.06,-10.1,0.55,"SP1 -0.9, SP2 -0.6, SS -0.5",
+1B,1.46,61195,Santiago Morales,25,Buffalo,RLB,2.27,3,7.38,28.55,0.41,"C -1.3, 3B -0.5, RP1 -0.4","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)"
+LF,1.45,62584,Roland Henry,25,New Orleans,RLB,2.27,3,6.94,24.56,0.51,"2B -0.5, CF -0.4, 1B -0.4",
+CF,1.45,61794,Bastiaan Veloukhiotis,25,Texas,RLB,3.11,4,6.97,44.79,0.51,"3B -1.0, 2B -0.6, SS -0.3",
+RP,1.44,49767,Bob McDaniel,34,Vancouver,RLB,1.61,2,17.0,-1.23,0.55,"SP1 -0.9, SP2 -0.6, SS -0.5",
+SP,1.42,62373,Maks Fyurstenberg,30,Houston,RLB,3.44,2,15.0,12.54,0.54,"RF -1.2, CF -1.0, C -0.5",
+RP,1.41,60927,Jorge Ferreira,30,Milwaukee,RLB,1.58,2,11.5,8.26,0.52,"1B -0.3, SS -0.3, DH -0.0",
+1B,1.4,65229,Carmem Vasconcelos,23,Woonsocket,RLB,2.22,5,4.4,33.98,0.42,"C -1.3, RP1 -1.0, CF -0.9","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)"
+CF,1.39,65835,Vitantonio Propenzicotti,26,Boston,RLB,3.04,3,7.47,29.37,0.56,RF -0.2,
+SP,1.38,56390,Alessio Evola,27,Buffalo,RLB,3.4,1,10.09,11.79,0.41,"C -1.3, 3B -0.5, RP1 -0.4","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)"
+LF,1.37,48484,Masujiro Konishi,32,Salt Lake,RLB,2.19,3,40.83,-78.29,0.58,"C -0.5, 3B -0.4, SP2 -0.3",
+SP,1.36,61002,Katsumoto Tanaka,26,Republic,RLB,3.38,2,9.23,24.25,0.49,"LF -1.3, 2B -0.6, 3B -0.3",
+RP,1.35,66036,Cedric Ward,26,Alaska,RLB,1.51,4,6.08,34.7,0.56,"1B -0.6, SS -0.5, RF -0.3",
+LF,1.34,66043,Paul Perry,26,Colorado,RLB,2.16,3,5.59,12.72,0.56,"LF -0.4, RF -0.1, CF -0.1",
+CF,1.34,59954,Odele Holmes,27,Roswell,RLB,3.0,3,12.0,14.2,0.61,"LF -0.8, RP1 -0.6, DH -0.5",
+SP,1.34,67224,Juan Becerra,25,Redstar,RLB,3.37,3,8.34,37.0,0.51,"RP1 -0.6, 3B -0.3, 2B -0.3",
+LF,1.33,64859,Imad bin Othman,24,Baltimore,RLB,2.15,3,7.09,25.85,0.61,"SP1 -0.2, SP2 -0.0",
+1B,1.32,61039,José Atanacio,30,Boston,RLB,2.13,5,35.2,-37.76,0.56,RF -0.2,
+RP,1.32,47071,Harold Allen,32,Oklahoma City,RLB,1.48,4,16.0,-7.15,0.61,"CF -1.8, RF -0.8, DH -0.2",DARBY SMITH (CF)
+LF,1.31,63327,Steve Moore,24,Buffalo,RLB,2.13,2,7.34,12.44,0.41,"C -1.3, 3B -0.5, RP1 -0.4","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)"
+1B,1.31,67337,Telman Mustafayev,25,Ottawa,RLB,2.12,4,6.63,40.96,0.4,"SS -0.9, SP1 -0.9, 1B -0.8",
+SP,1.27,62066,Henri Anca,24,Los Angeles,RLB,3.29,4,8.66,62.69,0.5,"2B -0.4, DH -0.4, 3B -0.1",
+LF,1.26,61514,Edgardo Fei,25,Milwaukee,RLB,2.08,3,5.94,15.79,0.52,"1B -0.3, SS -0.3, DH -0.0",
+SP,1.25,62314,Michael Albert,27,Colorado,RLB,3.28,1,9.83,10.96,0.56,"LF -0.4, RF -0.1, CF -0.1",
+1B,1.24,61796,Akihiro Kimura,24,Ottawa,RLB,2.05,4,5.97,33.51,0.4,"SS -0.9, SP1 -0.9, 1B -0.8",
+SP,1.23,64296,Oreste Ganganelli,28,Tampa Bay,RLB,3.26,2,8.84,21.82,0.57,"2B -2.9, 1B -1.5, 3B -0.7","John Moore (2B), Eisse van Elswijk (2B)"
+SP,1.22,52760,Lindsay Moran,33,New Orleans,RLB,3.25,3,42.5,-61.87,0.51,"2B -0.5, CF -0.4, 1B -0.4",
+RP,1.22,56459,Costel Vladykin,35,Salt Lake,RLB,1.38,1,8.0,6.09,0.58,"C -0.5, 3B -0.4, SP2 -0.3",
+1B,1.2,64820,Zahid Eisa,25,Redstar,RLB,2.02,3,6.03,16.22,0.51,"RP1 -0.6, 3B -0.3, 2B -0.3",
+LF,1.2,66997,Dirk Moore,25,Woonsocket,RLB,2.02,4,4.55,17.56,0.42,"C -1.3, RP1 -1.0, CF -0.9","LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)"
+SP,1.2,50390,Iván Ochoa,30,Redstar,RLB,3.22,4,16.0,9.26,0.51,"RP1 -0.6, 3B -0.3, 2B -0.3",
+RP,1.19,59439,Talos Xanthou,27,Alaska,RLB,1.36,3,7.78,32.06,0.56,"1B -0.6, SS -0.5, RF -0.3",
+1B,1.19,62943,Steve Kimball,25,Los Angeles,RLB,2.0,4,5.44,27.65,0.5,"2B -0.4, DH -0.4, 3B -0.1",
+CF,1.18,57770,Antan O' Neill,25,Baltimore,RLB,2.84,1,8.93,7.99,0.61,"SP1 -0.2, SP2 -0.0",
+LF,1.18,61418,Giovannino Baroncelli,29,Los Angeles,RLB,2.0,1,7.28,2.57,0.5,"2B -0.4, DH -0.4, 3B -0.1",
+SP,1.17,60507,Ben Jones,26,Milwaukee,RLB,3.19,3,7.86,32.76,0.52,"1B -0.3, SS -0.3, DH -0.0",
+SP,1.16,63601,Edgar González,28,Houston,RLB,3.19,5,5.17,53.51,0.54,"RF -1.2, CF -1.0, C -0.5",
+SP,1.16,48409,Daniele Bulgarini,33,Houston,RLB,3.19,5,32.0,-55.45,0.54,"RF -1.2, CF -1.0, C -0.5",
+1B,1.16,53044,Bruno Matzenkopf,30,Charleston,RLB,1.97,1,21.33,-12.02,0.36,"LF -0.9, CF -0.9, RP1 -0.6",
+RP,1.15,63705,Shihab bin Shihab,24,Colorado,RLB,1.32,4,6.13,34.8,0.56,"LF -0.4, RF -0.1, CF -0.1",
+SP,1.14,63660,Mihai Olaru,27,Roswell,RLB,3.17,2,8.73,21.15,0.61,"LF -0.8, RP1 -0.6, DH -0.5",
+1B,1.14,62669,Khuraman Bagabzade,25,Colorado,RLB,1.95,5,5.29,51.56,0.56,"LF -0.4, RF -0.1, CF -0.1",

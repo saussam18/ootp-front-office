@@ -1,0 +1,342 @@
+
+== AGING: average change per season at each age (from 78738 OSA rating updates)
+ age  hitter xwRC+/yr  SP xFIP/yr
+  24              9.9       -0.15
+  25              4.2       -0.08
+  26              1.5       -0.06
+  27             -0.4       -0.03
+  28             -1.9       -0.00
+  29             -2.0        0.04
+  30             -2.3        0.07
+  31             -2.4        0.08
+  32             -2.8        0.06
+  33             -2.8        0.05
+  34             -2.9        0.05
+  35             -2.4        0.05
+  36             -2.4        0.06
+  37             -2.1        0.06
+
+== Halifax CONTRACT VALUE (surplus = discounted value minus cost over the years you control him, $M; xWAR full season x health)
+                 name pos  age lev  xwar_next  peak_xwar  control_years  avg_cost  surplus  oy
+          WILL WRIGHT  RP   23 RLB        2.2        3.2              6       4.9     60.7   0
+    Oktyabr Kinkladze  CF   26 RLB        4.1        4.1              4      10.7     55.0   0
+       José Hernández  3B   25 RLB        2.7        2.7              5       4.6     40.7   2
+           Ali Husain  CL   29 RLB        1.4        1.4              4       2.5     35.5   0
+       SEUNG-HAK PARK  RP   23 AAA        1.7        2.6              5       4.5     29.3   1
+      Mishe Truevtsev  SS   27 RLB        3.1        3.1              5      11.3     24.0   0
+           Koto Okawa  RP   25 RLB        2.5        2.8              3       6.9     23.8   0
+       Felipe Fonseca  1B   26 RLB        2.3        2.3              4       4.9     21.8   0
+           Bob Miller  2B   28 RLB        3.3        3.3              3      12.7     19.1   0
+Gianfrancesco Rugiero  SP   26 AAA        1.6        1.7              6       2.6     18.3   0
+    Eisse van Elswijk  2B   23 AAA        1.1        1.9              6       3.0     16.5   0
+        Theron McCain  RP   25 RLB        1.2        1.2              3       6.0     16.3   0
+          Janah Krbel  CL   25 AAA        1.9        2.4              3       5.9     14.9   0
+           Nick Ervin  RP   25 RLB        1.0        1.1              3       5.6     12.9   0
+      MANUEL PORTUGUS  SP   21  AA        0.1        1.8              8       1.6     11.8   0
+   LAZZARO BOCCHERINI   C   24 AAA        1.5        1.5              5       3.0     11.8   1
+       Leonard Abbott  SP   27 RLB        2.0        2.0              3       5.5     11.6   0
+      WASYLO BACHLEDA  SP   19   R       -0.9        2.2              8       1.2     11.5   0
+      Alexander Moody  RP   34 RLB        0.9        0.9              2       4.0      7.7   0
+      Sergio Munchkin  CF   25 RLB        1.7        1.8              3       5.0      7.3   0
+      Filip Bienienda  SP   30 RLB        3.2        3.2              4      16.3      7.1   0
+          DARBY SMITH  CF   23 RLB        1.3        1.3              5       2.7      6.8   1
+           John Moore  SS   26 RLB        1.4        1.4              4       3.1      4.9   1
+    Hisanobu Murakami  SP   31 RLB        2.0        2.0              2       6.1      4.9   0
+Imamverdi Kobiashvili   C   28 RLB        1.7        1.7              3       4.5      4.3   0
+   FREDERICK DECOURCY  1B   27 RLB        1.1        1.1              5       2.0      0.9   1
+         Joaquín Rosa  1B   29 RLB        0.5        0.5              1       5.7      0.0   0
+HAJY TURKISTANISHVILI  SS   26 RLB        1.0        1.0              4       2.5      0.0   1
+         Iorgu Urzica  SS   26 RLB        0.7        0.7              4       1.8      0.0   0
+            Je-ju Kim  RP   31 RLB        0.1        0.1              4       1.9      0.0   0
+         Fadeuka Liyv   C   31 RLB        1.1        1.1              2       3.5     -3.9   0
+      Naohiro Maekawa  RP   30 RLB        0.4        0.4              3       3.0     -5.0   0
+           Wally Cook  SP   26 RLB        2.4        2.5              3      17.5    -10.2   0
+        Jesús Cisnero  SP   33 RLB        1.9        1.9              1      37.5    -28.5   0
+         Artie Hardin  1B   29 RLB        1.0        1.0              0       NaN      NaN   0
+            Ken Smith  3B   32 RLB        2.1        2.1              0       NaN      NaN   0
+        Robby Wallace  LF   33 RLB        0.4        0.4              0       NaN      NaN   0
+           Dave Lewis  RF   35 RLB       -0.1       -0.1              0       NaN      NaN   0
+
+2132 payroll: $167.2M committed incl. projected arbitration, + $6.3M for 8 pre-arb players on the MLB roster
+
+== RE-SIGN OR LET WALK: Halifax players reaching free agency ($M; worth = most you should pay per year, typical = what the market usually pays)
+          name pos  age  now_salary  xwar_next   x3  worth_1y  worth_3y_aav  typical_price loyalty  greed                           best FA alternatives (xWAR, typical $M)
+     Ken Smith  3B   32        14.0        2.1  5.6      10.2           8.4            7.3  Normal Normal        Nori Sato 3.0/11; Quinn Niarkhos 2.0/7; Bill Chapman 1.7/5
+  Artie Hardin  1B   29         3.0        1.0  2.6       1.2           0.9            1.6    High   High Kiyomori Kishita 2.6/9; Steve Kellerman 1.8/6; Hilton Field 1.8/6
+Onofrio DeCaro  RP   29         NaN        0.8  2.3       0.8           0.8            0.8  Normal    Low            Josh Cote 2.2/8; Liu-chun Li 2.0/7; Florin Gorie 1.9/6
+ Robby Wallace  LF   33        10.0        0.4  0.6       0.8           0.8            0.8    High    Low     Robert Vidyapin 2.2/8; Juan Béisbol 1.7/5; Sonny Gibson 1.3/4
+    Dave Lewis  RF   35        20.0       -0.1 -0.8       0.8           0.8            0.8  Normal   High      Jason Warner 2.2/8; Gavin Karabachos 1.9/7; Frank Ríos 1.4/4
+Keon-chae Moon  LF   27         NaN       -0.8 -2.9       0.8           0.8            0.8  Normal Normal     Robert Vidyapin 2.2/8; Juan Béisbol 1.7/5; Sonny Gibson 1.3/4
+
+== Halifax ARBITRATION: projected award vs. what he's worth ($M)
+             name pos  age  xwar_next  award  worth    decision
+   Felipe Fonseca  1B   26        2.3    2.5   11.9      tender
+     Joaquín Rosa  1B   29        0.5    5.7    0.8 non-tender?
+  Sergio Munchkin  CF   25        1.7    3.2    7.3      tender
+   Leonard Abbott  SP   27        2.0    3.8    9.8      tender
+Hisanobu Murakami  SP   31        2.0    5.4    9.2      tender
+       Nick Ervin  RP   25        1.0    3.7    9.5      tender
+    Theron McCain  RP   25        1.2    4.2   11.7      tender
+       Koto Okawa  RP   25        2.5    4.7   14.0      tender
+      Janah Krbel  CL   25        1.9    3.5    8.5      tender
+
+== FREE AGENT BOARD: top 40 of 215 with >= 0.8 xWAR next season (worth / typical price / current ask, $M)
+              name pos best_pos  age           org        source  xwar_next  x3  worth  price  ask   prone    loy    fin
+   Evegnii Gabuzov  1B       1B   27         Texas   non-tender?        3.3 9.5   20.9   11.9  NaN  Normal Normal Normal
+     Fabi Rudzutak  2B       SS   27 Oklahoma City contract ends        3.1 9.0   19.5   11.3  NaN  Normal Normal Normal
+         Nori Sato  3B       2B   30     Tampa Bay contract ends        3.0 8.3   18.1   10.8  NaN  Normal    Low Normal
+      Jacob Thomas  CF       CF   28 Oklahoma City contract ends        2.6 7.3   14.8    9.4  NaN  Normal Normal   High
+  Kiyomori Kishita  1B       2B   28     Milwaukee contract ends        2.6 7.2   14.5    9.3  NaN  Normal Normal Normal
+  Christian Glaise  SP       SP   28       Roswell contract ends        2.4 6.9   13.1    8.7  NaN  Normal Normal   High
+        Chuck Paul  SP       SP   32        Ottawa contract ends        2.3 6.5   11.8    8.1  NaN  Normal   High    Low
+         Josh Cote  RP       SP   30         Akron contract ends        2.2 6.4   11.7    8.0  NaN  Normal    Low Normal
+    Donovan Barker  SP       SP   30 Oklahoma City contract ends        2.2 6.3   11.4    7.9  NaN  Normal Normal   High
+      Jason Warner  RF       RF   30 Oklahoma City contract ends        2.2 5.9   11.2    7.8  NaN  Normal Normal Normal
+ Norberto Castillo  SS       SS   31    Long Beach contract ends        2.2 5.9   11.1    7.7  NaN  Normal Normal Normal
+   Robert Vidyapin  LF       RF   30        Alaska contract ends        2.2 5.9   11.1    7.7  NaN  Normal Normal    Low
+       Jim Clement   C        C   36         Akron contract ends        2.1 5.8   10.8    7.6  NaN  Normal Normal Normal
+         Ken Smith  3B       2B   32       Halifax contract ends        2.1 5.6   10.2    7.3 21.2  Normal Normal Normal
+        John Wells  SP       SP   33   Black Hills contract ends        2.1 5.9   10.0    7.2  NaN Wrecked Normal    Low
+       Liu-chun Li  RP       SP   31 Oklahoma City contract ends        2.0 5.8    9.8    7.1  NaN  Normal Normal    Low
+ Preston Whitfield  2B       2B   32   Black Hills contract ends        2.0 5.5    9.7    7.1  NaN Fragile Normal Normal
+       Hoyt Nelson  SP       SP   33     Milwaukee contract ends        2.0 5.8    9.7    7.1  NaN  Normal Normal Normal
+   Rodrigo Boubret  SP       SP   40      Colorado contract ends        2.0 5.5    9.6    7.0  NaN  Normal   High   High
+       Jiggs Dinna  SP       SP   32      Colorado contract ends        2.0 5.7    9.5    7.0  NaN Durable Normal Normal
+    Quinn Niarkhos  3B       3B   28       Roswell contract ends        2.0 5.5    9.4    7.0  NaN  Normal Normal    Low
+            Yuk Ma  SP       SP   36         Miami contract ends        2.0 5.5    9.3    6.9  NaN  Normal    Low Normal
+      Lamar Wessel  SP       SP   32       Roswell contract ends        2.0 5.6    9.2    6.9  NaN  Normal Normal   High
+  Gavin Karabachos  RF       RF   30       Houston contract ends        1.9 5.3    9.1    6.8  NaN  Normal   High Normal
+   Vitenka Daragan  CF       CF   31       Houston contract ends        1.9 5.3    9.0    6.8  NaN Fragile   High Normal
+       Foul Jalali  CL       RP   27     Tampa Bay contract ends        1.9 5.7   20.6   11.7  NaN  Normal   High    Low
+       Tewfik Akua  SP       SP   31           NaN  unsigned now        1.9 5.4    8.8    6.6  NaN  Normal   High    Low
+     Sergio García  SS       SS   31         Akron contract ends        1.9 5.1    8.7    6.6  NaN  Normal Normal Normal
+  Bogdashha Pachin  SP       SP   30   Black Hills contract ends        1.9 5.2    8.6    6.5  NaN Durable Normal   High
+   Valerik Efimkin  1B       1B   28     Muscatine   non-tender?        1.9 5.2    8.5    6.5  NaN  Normal Normal Normal
+       Jason Sweet  SP       SP   31         Texas contract ends        1.9 5.3    8.5    6.5  NaN  Normal   High    Low
+      Florin Gorie  RP       SP   29 Oklahoma City contract ends        1.9 5.2    8.3    6.4  NaN  Normal Normal Normal
+      Brad Manning  SP       SP   33       Houston contract ends        1.9 5.3    8.3    6.4  NaN  Normal Normal Normal
+         Ryan King  SS       2B   31           NaN  unsigned now        1.8 4.9    8.2    6.3  2.4  Normal Normal Normal
+    Paco Fernández  SP       SP   30   Black Hills contract ends        1.8 5.1    7.9    6.2  NaN  Normal Normal Normal
+   Steve Kellerman  1B       3B   28    Motor City contract ends        1.8 5.0    7.9    6.2  NaN  Normal Normal Normal
+ Scottie Scheffler  SP       SP   35     Baltimore contract ends        1.8 5.1    7.8    6.1  NaN Fragile Normal Normal
+Kateb El Borolossy  3B       3B   29           NaN  unsigned now        1.8 4.9    7.8    6.1  6.2  Normal   High Normal
+      Hilton Field  1B       2B   34      Colorado contract ends        1.8 4.7    7.4    5.9  NaN  Normal   High    Low
+      Alberto Díaz  RF       RF   30           NaN  unsigned now        1.7 4.5    7.1    5.8  4.8  Normal Normal Normal
+
+== Halifax 2132 DEPTH CHART (players under control) vs. the median MLB team's player in that slot (hitters: full-season xWAR rate vs. each hand; xwar blends them at 77% vs. RHP)
+slot                vs RHP  xwar_vr                vs LHP  xwar_vl  xwar  league_median  vs_median
+   C Imamverdi Kobiashvili      1.6 Imamverdi Kobiashvili      1.7   1.6            1.7       -0.0
+  1B          Joaquín Rosa      0.5        Felipe Fonseca      2.0   0.8            1.4       -0.6
+  2B            Bob Miller      3.1            Bob Miller      3.2   3.1            2.6        0.5
+  3B        José Hernández      2.4        José Hernández      3.7   2.7            1.9        0.8
+  SS       Mishe Truevtsev      3.1       Mishe Truevtsev      3.1   3.1            2.5        0.6
+  LF      FERNANDO JIMÉNEZ      0.7      FERNANDO JIMÉNEZ      1.3   0.8            1.6       -0.8
+  CF       Sergio Munchkin      1.4       Sergio Munchkin      2.5   1.7            2.0       -0.4
+  RF     Oktyabr Kinkladze      3.4     Oktyabr Kinkladze      2.1   3.1            1.5        1.6
+  DH        Felipe Fonseca      0.6     Christian Yfantis      0.2   0.5            0.7       -0.2
+ SP1       Filip Bienienda      NaN                            NaN   3.2            3.0        0.2
+ SP2            Koto Okawa      NaN                            NaN   2.5            2.5       -0.0
+ SP3            Wally Cook      NaN                            NaN   2.4            2.1        0.3
+ SP4           WILL WRIGHT      NaN                            NaN   2.2            1.9        0.3
+ SP5        Leonard Abbott      NaN                            NaN   2.0            1.7        0.3
+ RP1            Ali Husain      NaN                            NaN   2.3            1.2        1.1
+ RP2         Theron McCain      NaN                            NaN   1.5            0.6        0.8
+ RP3            Nick Ervin      NaN                            NaN   1.3            0.5        0.8
+ RP4       Alexander Moody      NaN                            NaN   0.7            0.2        0.5
+ RP5     Hisanobu Murakami      NaN                            NaN   0.3            0.1        0.2
+ RP6       Naohiro Maekawa      NaN                            NaN   0.3            0.0        0.2
+ RP7         Jesús Cisnero      NaN                            NaN   0.2            0.0        0.1
+
+Halifax projected 2132 total: 36.2 xWAR before free agency (rank 8 of 32)
+
+== TRADE TARGETS: under control in 2132, biggest upgrades over your current 2132 option at any slot (yrs/avg_cost/surplus over the years he's controlled; their_pct = win %; their_needs = weakest slots vs. median; your_fits = your non-starters who'd upgrade them)
+slot  upgrade               name  age         org lev  xwar  yrs  avg_cost  surplus  their_pct                 their_needs                                                  your_fits
+  1B     4.17     Bernardo Gaona   25 Black Hills RLB  4.98    3     13.64    84.18       0.48  SS -0.4, SP1 -0.2, CF -0.1                                                           
+  LF     4.16      Endale Kinyor   28   Baltimore RLB  4.98    5     32.50     2.17       0.61          SP1 -0.2, SP2 -0.0                                                           
+  CF     3.99   Zeno Karkampasis   28   Tampa Bay RLB  5.65    6     35.50    12.76       0.57   2B -2.9, 1B -1.5, 3B -0.7                    John Moore (2B), Eisse van Elswijk (2B)
+  1B     3.10    Mathieu Massari   24    Republic RLB  3.91    2     11.58    38.86       0.49   LF -1.3, 2B -0.6, 3B -0.3                                                           
+  CF     3.04     Kyung-bae Park   23    Republic RLB  4.70    3     11.25    62.79       0.49   LF -1.3, 2B -0.6, 3B -0.3                                                           
+  1B     2.48    Evegnii Gabuzov   27       Texas RLB  3.30    1     21.25     0.00       0.51   3B -1.0, 2B -0.6, SS -0.3                                                           
+  3B     2.40 Kajetan Meloncelli   30 New Orleans RLB  5.10    5     50.00   -67.43       0.51   2B -0.5, CF -0.4, 1B -0.4                                                           
+  CF     2.34       Bill Jackson   32  Shadowland RLB  3.99    3     36.83   -30.99       0.44    C -1.3, SS -1.1, DH -0.7                  LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)
+  CF     2.29          Ron Clark   29   Tampa Bay RLB  3.94    3     35.00   -26.35       0.57   2B -2.9, 1B -1.5, 3B -0.7                    John Moore (2B), Eisse van Elswijk (2B)
+  DH     2.25         Si-xun Kum   28    Republic RLB  2.74    3     27.25   -33.56       0.49   LF -1.3, 2B -0.6, 3B -0.3                                                           
+  LF     2.13        Jesús Colón   29   Salt Lake RLB  2.95    5     15.50    20.84       0.58   C -0.5, 3B -0.4, SP2 -0.3                                                           
+  SP     2.11        Saqr Najjar   26      Boston RLB  4.14    2     10.77    33.84       0.56                     RF -0.2                                                           
+  LF     2.06   Kunitaro Okamoto   25      Boston RLB  2.88    3      8.08    34.66       0.56                     RF -0.2                                                           
+  1B     2.03  Spartak Ponikarov   28   Baltimore RLB  2.84    5     31.50   -61.28       0.61          SP1 -0.2, SP2 -0.0                                                           
+  1B     2.00       Pavpv Eksler   24    Colorado RLB  2.81    4      7.28    48.19       0.56   LF -0.4, RF -0.1, CF -0.1                                                           
+  LF     1.98       Bob Baseball   27   Tampa Bay RLB  2.80    6     44.17  -124.62       0.57   2B -2.9, 1B -1.5, 3B -0.7                    John Moore (2B), Eisse van Elswijk (2B)
+  LF     1.91     Lucien Salieri   24 Black Hills RLB  2.73    4      6.64    41.15       0.48  SS -0.4, SP1 -0.2, CF -0.1                                                           
+  SP     1.83     Akihiko Takata   25   Milwaukee RLB  3.85    3      9.40    46.35       0.52   1B -0.3, SS -0.3, DH -0.0                                                           
+   C     1.82      Dave Komninos   26     Redstar RLB  3.46    2      9.21    24.14       0.51  RP1 -0.6, 3B -0.3, 2B -0.3                                                           
+  SP     1.82   Roberto Aguilera   27     Phoenix RLB  3.84    6     49.47  -117.25       0.41    SS -1.4, C -1.4, 3B -1.0                  LAZZARO BOCCHERINI (C), IGNATIE SANDU (C)
+  1B     1.79         Jack Brito   24      Boston RLB  2.60    4      6.66    40.63       0.56                     RF -0.2                                                           
+  1B     1.78      Andrés Molina   26  Long Beach RLB  2.59    2      9.70    27.17       0.48   CF -2.1, LF -1.9, RF -0.8 LAZZARO BOCCHERINI (C), DARBY SMITH (LF), DARBY SMITH (CF)
+  RP     1.77        Bryan Gould   34    Colorado RLB  1.94    3     28.00   -21.97       0.56   LF -0.4, RF -0.1, CF -0.1                                                           
+  RP     1.77      Robert Hughes   26   Vancouver RLB  1.94    2      8.98    22.71       0.55 SP1 -0.9, SP2 -0.6, SS -0.5                                                           
+  1B     1.74      Goathim Kozel   29     Houston RLB  2.55    2     25.62   -13.83       0.54    RF -1.2, CF -1.0, C -0.5                                                           
+  LF     1.66      Ricardo Salas   27     Redstar RLB  2.48    2      7.73    10.90       0.51  RP1 -0.6, 3B -0.3, 2B -0.3                                                           
+  1B     1.59        Taweel Wadi   24     Lincoln RLB  2.40    4      8.56    62.68       0.56   1B -0.8, SS -0.7, LF -0.5                                                           
+  DH     1.58     Roger Hellmich   24 Black Hills RLB  2.08    3      8.45    37.97       0.48  SS -0.4, SP1 -0.2, CF -0.1                                                           
+  SP     1.57      Marius Adabir   28 Los Angeles RLB  3.59    2      9.53    26.13       0.50   2B -0.4, DH -0.4, 3B -0.1                                                           
+  CF     1.57  Ratib Abdul-Sabur   23    Republic RLB  3.22    4      8.12    56.78       0.49   LF -1.3, 2B -0.6, 3B -0.3                                                           
+
+== PLATOON / SPLIT UPGRADES: cheapest-to-fill (<= $6M) free agents and trade targets vs. one hand at each position (cur_xwar / his_xwar = full-season rate vs. that hand; season_gain = WAR over a season of that platoon; cost = typical FA price or current avg salary, $M)
+slot  vs               current  cur_xwar               name   bats  age         org  his_xwar  season_gain  cost
+  1B RHP          Joaquín Rosa      0.46 Khuraman Bagabzade   Left   25    Colorado      2.66         1.70  5.29
+  LF RHP      FERNANDO JIMÉNEZ      0.67        Edgardo Fei   Left   25   Milwaukee      2.81         1.66  5.94
+  1B RHP          Joaquín Rosa      0.46       Matt Boulter   Left   28          FA      2.48         1.56  2.43
+  LF RHP      FERNANDO JIMÉNEZ      0.67    Nour bin Hakeem   Left   24  Shadowland      2.47         1.39  4.63
+  1B RHP          Joaquín Rosa      0.46 Carmem Vasconcelos   Left   23  Woonsocket      2.22         1.36  4.40
+  LF RHP      FERNANDO JIMÉNEZ      0.67 Ian Nepomnyashchiy   Left   24 Los Angeles      2.28         1.25  3.47
+  3B RHP        José Hernández      2.41         Roba Nabih   Left   23  Charleston      3.99         1.23  5.84
+  CF RHP       Sergio Munchkin      1.40        Edgardo Fei   Left   25   Milwaukee      2.97         1.21  5.94
+  DH RHP        Felipe Fonseca      0.57       Matt Boulter   Left   28          FA      2.05         1.15  2.43
+  DH RHP        Felipe Fonseca      0.57 Khuraman Bagabzade   Left   25    Colorado      1.95         1.06  5.29
+  DH RHP        Felipe Fonseca      0.57         Roba Nabih   Left   23  Charleston      1.79         0.94  5.84
+  SS RHP       Mishe Truevtsev      3.08         Roba Nabih   Left   23  Charleston      4.25         0.90  5.84
+   C RHP Imamverdi Kobiashvili      1.61    Alexandru Buita   Left   24 New Orleans      2.77         0.90  5.02
+  CF RHP       Sergio Munchkin      1.40       Bill Branham  Right   25   Salt Lake      2.51         0.86  4.64
+  CF RHP       Sergio Munchkin      1.40    Nour bin Hakeem   Left   24  Shadowland      2.43         0.79  4.63
+  DH LHP     Christian Yfantis      0.23       Britt Keller  Right   30          FA      3.20         0.67  3.32
+  DH LHP     Christian Yfantis      0.23      Vrezh Osepian  Right   35          FA      2.61         0.54  2.08
+   C RHP Imamverdi Kobiashvili      1.61 Apollo Theodoratos Switch   24   Tampa Bay      2.30         0.53  5.20
+  1B LHP        Felipe Fonseca      2.01       Britt Keller  Right   30          FA      4.32         0.53  3.32
+  DH LHP     Christian Yfantis      0.23     Akihiro Kimura  Right   24      Ottawa      2.36         0.48  5.97
+  1B LHP        Felipe Fonseca      2.01      Vrezh Osepian  Right   35          FA      3.85         0.42  2.08
+  2B RHP            Bob Miller      3.10 Khuraman Bagabzade   Left   25    Colorado      3.61         0.40  5.29
+   C RHP Imamverdi Kobiashvili      1.61     Manuel Rosales   Left   28          FA      2.12         0.40  2.65
+  2B RHP            Bob Miller      3.10         Roba Nabih   Left   23  Charleston      3.58         0.37  5.84
+   C LHP Imamverdi Kobiashvili      1.75        Jake Murray  Right   29          FA      3.38         0.37  0.79
+  3B RHP        José Hernández      2.41       Matt Boulter   Left   28          FA      2.87         0.36  2.43
+  LF LHP      FERNANDO JIMÉNEZ      1.34         Frank Ríos  Right   34          FA      2.88         0.35  4.20
+  SS LHP       Mishe Truevtsev      3.08   Minoru Takahashi  Right   28       Texas      4.48         0.32  5.75
+  3B LHP        José Hernández      3.68       Britt Keller  Right   30          FA      5.07         0.32  3.32
+   C LHP Imamverdi Kobiashvili      1.75    Isaac Whitehead  Right   25   Milwaukee      3.13         0.32  5.63
+
+== GEMS: unsigned free agents you can sign today
+                 name pos  age  xwar_next  x3  peak_xwar  ask    prone
+          Tewfik Akua  SP   31        1.9 5.4        1.9  NaN   Normal
+            Ryan King  SS   31        1.8 4.9        1.8  2.4   Normal
+   Kateb El Borolossy  3B   29        1.8 4.9        1.8  6.2   Normal
+         Alberto Díaz  RF   30        1.7 4.5        1.7  4.8   Normal
+     Sergio Dallaglio  RP   32        1.7 4.9        1.7  2.0  Fragile
+          James Brown  SP   33        1.7 4.8        1.7  1.6  Wrecked
+Maximiliano Tartaglia  CF   29        1.6 4.2        1.6  NaN   Normal
+           Thom Sharp  SP   32        1.6 4.4        1.6  2.6   Normal
+              Joe Fox  SP   34        1.5 4.2        1.5  2.6   Normal
+        Naizen Sasaki  SP   29        1.5 3.9        1.5  NaN   Normal
+         Gerald Jones  3B   32        1.4 3.7        1.4  2.4   Normal
+Eustace Grammatakakis  SP   36        1.4 4.0        1.4  NaN   Normal
+      Willie Williams   C   31        1.4 3.7        1.4  1.6   Normal
+      Roberto Miranda  SP   34        1.4 3.8        1.4  NaN Iron Man
+      Stephen Kreskas  SP   29        1.4 3.7        1.4  NaN   Normal
+
+== GEMS: MLB-ready minor leaguers blocked in their org (not in its projected starting lineup/rotation/top-7 pen)
+              name pos  age         org lev  xwar_next  peak_xwar  control_years  surplus
+  Agatone Diomedes  3B   25 Black Hills AAA        2.0        2.3              3     15.0
+    Argo Pamungkas  SP   24   Baltimore AAA        2.0        2.6              6     44.3
+        Brad Flynn  RP   23 Los Angeles AAA        1.9        2.6              5     35.1
+Feliciano Fuchillo  SP   24   Baltimore  AA        1.8        2.0              6     28.6
+       Tapiwa Moyo  SP   25 Los Angeles AAA        1.8        1.8              6     23.3
+    Albert Daponte  RP   26  Charleston AAA        1.7        1.8              4     12.7
+   Ionut Georgescu  SP   26  Long Beach AAA        1.7        1.7              4     10.6
+    Vernon Wilhelm  3B   31 Black Hills AAA        1.7        1.7              1      0.1
+    Hideo Ichihara  SP   25   Baltimore AAA        1.7        2.2              3     11.4
+     Lien-ying Kin   C   25 New Orleans AAA        1.6        1.6              5     12.4
+      Ighlaf Ngumo  RP   26  Long Beach AAA        1.6        1.7              4     10.4
+ Vincente Gonzáles  SP   25      Boston AAA        1.6        1.8              6     21.3
+    Yerik Navashin  RP   25  Woonsocket AAA        1.6        2.0              6     26.5
+    Dusty Whittier  SS   27   Milwaukee AAA        1.6        1.6              1      0.0
+      Juan Maqueda  SP   23   Baltimore AAA        1.6        2.3              6     32.1
+        Juan Garza  RP   24 Los Angeles AAA        1.6        1.8              6     20.3
+      Hideo Yamada  RP   26       Miami AAA        1.6        1.6              6     16.9
+     Kent Jacobson  SP   29 Black Hills AAA        1.6        1.6              2      1.3
+        Jorge Peña  RP   27     Buffalo  AA        1.6        1.6              6     12.0
+    Michael Dodson  SP   29  Motor City AAA        1.5        1.5              6      9.9
+
+== GEMS: buy low, results well below what the ratings say (stat-watchers will undervalue them)
+                 name pos  age           org  wrc_plus   xwrc  fip  xfip  xwar_next  control_years  surplus
+       Aeneas Kokotis  RP   29    Long Beach      <NA>    NaN 6.63  4.72       1.90              2     4.08
+        Sergio García  SS   31         Akron        47  91.99  NaN   NaN       1.90              0      NaN
+       Tansy Nikolaou  SP   27    Charleston      <NA>    NaN 6.40  4.76       1.72              3     5.97
+           Iván Ochoa  2B   32       Houston        63  99.00  NaN   NaN       2.85              4   -16.49
+      Arnold Anderson  RP   22    Motor City      <NA>    NaN 6.28  4.99       1.96              5    38.32
+        César Rosário  CF   31   New Orleans        58  91.79  NaN   NaN       1.56              1     0.00
+       Takamori Nishi  3B   27   New Orleans        62  94.29  NaN   NaN       1.83              1     1.21
+        Robert Hughes  RP   26     Vancouver      <NA>    NaN 4.08  2.87       1.94              2    22.71
+       Mototsune Sato  CF   24     Baltimore        72 103.69  NaN   NaN       2.51              4    34.79
+          Jin-hoi Ahn  SP   27       Lincoln      <NA>    NaN 5.82  4.64       2.14              2     7.99
+Bastiaan Veloukhiotis  CF   25         Texas        67  97.67  NaN   NaN       3.11              4    44.79
+       Ricardo Aranda  SP   22        Boston      <NA>    NaN 6.27  5.13       1.55              6    33.55
+          Van Leonard  2B   25    Woonsocket        60  89.80  NaN   NaN       1.86              4    15.14
+            Ed Gamble  2B   25 Oklahoma City        94 122.72  NaN   NaN       3.82              3    43.56
+  Christian Issigonis  SP   26           NaN      <NA>    NaN 5.80  4.73       1.96              1     2.10
+
+== Halifax SELL HIGH: results well above the ratings
+           name pos  age     org  wrc_plus   xwrc  fip  xfip  xwar_next  control_years  surplus
+  Robby Wallace  LF   33 Halifax       116  89.09  NaN   NaN       0.39              0      NaN
+Mishe Truevtsev  SS   27 Halifax       132 108.42  NaN   NaN       3.08              5    23.97
+   Artie Hardin  1B   29 Halifax       124 103.07  NaN   NaN       1.05              0      NaN
+
+== POTENTIAL-JUMP ODDS, Halifax: chance OSA raises his potential total by 10+ on Jan 1 (cur/pot = sum of 3 core ratings; changes = last Jan 1)
+                 name pos  age     org lev  p_jump  cur  pot  cur_change  pot_change  xwar_next  peak_xwar     we  on40
+        Kyae-sung Cha  RP   24 Halifax AAA    0.42  150  160          30          30       0.09       0.22    Low False
+       Jorge Martínez  SP   24 Halifax  AA    0.34  110  125          20          25       0.65       1.14   High False
+           Nick Ervin  RP   25 Halifax RLB    0.33  170  175          20          20       1.01       1.12 Normal  True
+        Theron McCain  RP   25 Halifax RLB    0.32  160  175          25          25       1.19       1.24    Low  True
+Gianfrancesco Rugiero  SP   26 Halifax AAA    0.32  130  135          20          15       1.62       1.68 Normal False
+      Jeremy Sorensen  2B   23 Halifax  AA    0.31  130  130          30           5      -0.65      -0.14    Low False
+        Shura Shilkov  2B   21 Halifax AAA    0.30  120  125          40          10      -0.40       0.29 Normal False
+          DARBY SMITH  CF   23 Halifax RLB    0.29  140  145          25          15       1.34       1.35 Normal  True
+         IAN CACADINO  SP   22 Halifax  AA    0.27  100  130          20          15       0.47       1.34 Normal False
+    Gustave Camardiel  RP   23 Halifax   A    0.24  110  115           5          -5      -1.10      -0.96 Normal False
+        Igor Makienko  LF   22 Halifax  AA    0.24  115  135          30           5      -0.88       0.66   High False
+           Wally Cook  SP   26 Halifax RLB    0.23  155  160           5          10       2.44       2.50 Normal  True
+         Yakov Kataev  RP   24 Halifax  AA    0.23  115  125           5           0      -0.70      -0.58 Normal False
+         Javier Núñez  RP   26 Halifax  AA    0.23  120  140          15          10       1.05       1.10 Normal False
+        Enrique Román  SP   24 Halifax AAA    0.22  130  135          10          -5      -0.15      -0.10 Normal False
+
+== POTENTIAL-JUMP ODDS: best candidates in other orgs who already project as useful MLB players (peak xWAR >= 1)
+              name pos  age           org lev  p_jump  cur  pot  cur_change  pot_change  xwar_next  peak_xwar     we  on40
+    Brandon Wright  RP   22     Tampa Bay RLB    0.44  155  160          30          25       0.66       1.02   High  True
+  Barton Parkinson  SP   23        Alaska RLB    0.42  155  165          30          25       1.03       1.29    Low  True
+       Aswad Firas  SP   23    Long Beach AAA    0.40  140  155          40          30       2.33       2.89 Normal  True
+     Alfredo Goffi  SP   24       Phoenix AAA    0.39  135  135          20          15       1.29       1.35 Normal False
+  Marquise Bologni  RP   24       Lincoln AAA    0.37  135  155          35          30       1.15       1.51 Normal  True
+     Hae-young Kim  SP   23    Long Beach AAA    0.37  125  145          30          30       0.92       1.43 Normal  True
+        José Casas  SP   25    Charleston  AA    0.37  130  130          25          15       1.82       2.14 Normal False
+    Argo Pamungkas  SP   24     Baltimore AAA    0.36  130  140          25          10       2.01       2.60 Normal False
+  Eudor Nikolaides  RP   25 Oklahoma City RLB    0.35  145  155          30          15       2.94       3.56 Normal  True
+   Sisto Cotichini  RF   24   New Orleans RLB    0.35  170  170          40          25       1.20       1.35 Normal  True
+   George Escaseda  RP   24 Oklahoma City AAA    0.35  115  130          30          25       1.36       1.57   High False
+    Valerian Oprea  RP   23       Buffalo AAA    0.35  125  125          15          10       1.47       1.54 Normal False
+Carmem Vasconcelos  3B   23    Woonsocket RLB    0.33  175  180          35          25       2.22       2.40 Normal  True
+       John Fulton  SP   21    Motor City  AA    0.33  120  150          50          30       0.77       1.48 Normal False
+   Boris Efimovsky  SP   23   Los Angeles AAA    0.32  110  120          20           5       1.11       2.08   High False
+  Pabiyan Pantofel  SP   26         Miami RLB    0.31  130  140          20          20       1.93       1.99   High  True
+    Kyung-bae Park  CF   23      Republic RLB    0.31  175  175          25          15       4.70       4.92 Normal  True
+  Adrián Rodríguez  RP   24       Buffalo AAA    0.31  120  135          15          20       1.45       2.08   High False
+       Harun Yasir  SP   23     Muscatine RLB    0.31  135  150          15          20       2.67       3.10 Normal  True
+    Roger Hellmich  1B   24   Black Hills RLB    0.31  195  195          45          30       3.45       3.47 Normal  True
+  Valentin Ladanov  SP   24         Texas AAA    0.31  130  140          15          10       1.28       1.75 Normal False
+   Natale Spinello  SP   24        Alaska AAA    0.31  135  135          10           5       1.34       1.41   High  True
+       Taweel Wadi  2B   24       Lincoln RLB    0.30  155  165          30          15       3.94       3.95 Normal  True
+    Ramón Valéncia  SP   21 Oklahoma City   A    0.30  105  120          20           5       0.46       1.20 Normal False
+      Jung-tae Lee  RP   24        Alaska AAA    0.29  135  175          35          35       0.37       1.06 Normal  True
+
+== POTENTIAL-JUMP ODDS: unsigned free agents
+              name pos  age org lev  p_jump  cur  pot  cur_change  pot_change  xwar_next  peak_xwar     we  on40
+     Elie Travolta  SP   23 NaN  WL    0.23  110  130          10           5       0.56       1.01 Normal False
+    Argus Louvaris  SP   22 NaN NaN    0.23   65   80           5           5      -1.97      -1.62 Normal False
+     Moses Karyoti   C   21 NaN  WL    0.22  115  140          35           5      -1.49      -1.05 Normal False
+      Andrey Valov  RP   23 NaN NaN    0.21   70   80           5         -10      -2.40      -1.97 Normal False
+ Ludovico Ricciolo  SP   24 NaN NaN    0.21  105  120           5          -5       0.33       0.78 Normal False
+     Sal Marinetti  RP   20 NaN NaN    0.21   60   80           0          -5      -2.88      -2.64 Normal False
+        Seif Yasar  SP   23 NaN NaN    0.20   70  100          10           5      -2.29      -1.69 Normal False
+  Reginaldo Cravoa  SP   23 NaN NaN    0.20   90  110           5           0      -0.46       0.20 Normal False
+      Tarik Mas'ud  SP   20 NaN NaN    0.20   80  115          10          -5      -1.41      -0.50 Normal False
+Thomas Vardoulakis  RP   20 NaN NaN    0.20   65  110           5          20      -2.42      -1.62 Normal False
+
+full lists in /Users/samsausville/code/rlb-analysis/out/
