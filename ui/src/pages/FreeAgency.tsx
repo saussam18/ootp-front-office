@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { Anchor, Button, Group, Select, Stack, Table, Text, TextInput } from "@mantine/core";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
 import { api, type FaDeparture, type FaYear } from "../api";
 import { ContractEnds } from "../components/ContractEnds";
 import { FaTimeline } from "../components/FaTimeline";
-import { Failed, Loading, PageTitle, PlayerLink, Section } from "../components/ui";
-import { money, num } from "../format";
+import { Button, Combobox, Empty, Failed, Input, Loading, Num, PageTitle, PlayerLink, Section, Table, Td, TextLink, Th, useReadOnly } from "../components/ui";
+import { displayName, money } from "../format";
 
 type Departure = FaDeparture;
 type Year = FaYear;
@@ -24,54 +22,71 @@ function PlanCell({ year, d, pool }: { year: number; d: Departure; pool: Year["p
     onSuccess: () => { qc.invalidateQueries({ queryKey: ["fa"] }); qc.invalidateQueries({ queryKey: ["board"] }); },
   });
   return (
-    <Group gap={6} wrap="nowrap">
-      <Select size="xs" w={210} searchable clearable placeholder="Internal replacement" value={rid} onChange={setRid}
-        data={pool.map((p) => ({ value: String(p.id), label: `${p.name} · ${p.pos}${p.lev && p.lev !== "RLB" ? ` · ${p.lev}` : ""}` }))} />
-      {!rid && <TextInput size="xs" w={170} placeholder="or FA / trade target" value={label} onChange={(e) => setLabel(e.currentTarget.value)} />}
-      <TextInput size="xs" w={160} placeholder="Note" value={note} onChange={(e) => setNote(e.currentTarget.value)} />
-      <Button size="xs" variant={dirty ? "filled" : "default"} disabled={!dirty} loading={save.isPending} onClick={() => save.mutate()}>Save</Button>
-    </Group>
+    <div className="flex items-center gap-1.5">
+      <Combobox className="w-52" width={300} clearable placeholder="Internal replacement" value={rid} onChange={setRid}
+        options={pool.map((p) => ({ value: String(p.id), label: `${displayName(p.name)} · ${p.pos}${p.lev && p.lev !== "RLB" ? ` · ${p.lev}` : ""}` }))} />
+      {!rid && <Input className="w-44" placeholder="or FA / trade target" value={label} onChange={(e) => setLabel(e.currentTarget.value)} />}
+      <Input className="w-40" placeholder="Note" value={note} onChange={(e) => setNote(e.currentTarget.value)} />
+      <Button size="sm" variant={dirty ? "primary" : "secondary"} disabled={!dirty || save.isPending} onClick={() => save.mutate()}>Save</Button>
+    </div>
+  );
+}
+
+// The saved plan, as text (read-only demo).
+function PlanText({ d }: { d: Departure }) {
+  const p = d.plan;
+  const rep = p?.replacement_id ? <PlayerLink id={p.replacement_id} name={p.replacement_name ?? ""} /> : p?.replacement_label || null;
+  if (!rep && !p?.note) return <span className="text-[13px] font-medium text-bad">No plan</span>;
+  return (
+    <span className="text-[13px]">
+      {rep && <span className="text-muted">→ {rep}</span>}
+      {p?.note && <span className="ml-2 text-xs text-muted">{p.note}</span>}
+    </span>
   );
 }
 
 export function FreeAgency() {
+  const readOnly = useReadOnly();
   const q = useQuery({ queryKey: ["fa"], queryFn: () => api.get<{ years: Year[] }>("/api/fa") });
   if (q.isLoading) return <Loading />;
   if (q.error || !q.data) return <Failed error={q.error} />;
 
   return (
-    <Stack gap="lg">
+    <div className="space-y-4">
       <PageTitle sub={<>Each season lists who's gone before it (contract, extension or team control ends), what he'd be worth if you kept him,
         and your replacement plan. Internal options are the model's best org players under control that season at the same position group.
-        See also the <Anchor component={Link} to="/reports/fa_board">free agent board</Anchor> and <Anchor component={Link} to="/reports/resign">re-sign or let walk</Anchor>.</>}>
+        See also the <TextLink to="/reports/fa_board">free agent board</TextLink> and <TextLink to="/reports/resign">re-sign or let walk</TextLink>.</>}>
         Free agency planning
       </PageTitle>
       <FaTimeline years={q.data.years} />
       <ContractEnds />
       {q.data.years.map((y) => (
         <Section key={y.year} title={`Gone before ${y.year}`}>
-          <Table.ScrollContainer minWidth={1100}>
-            <Table fz="sm" verticalSpacing={6}>
-              <Table.Thead><Table.Tr><Table.Th>Player</Table.Th><Table.Th>Pos</Table.Th><Table.Th>Age</Table.Th><Table.Th ta="right">Salary</Table.Th>
-                <Table.Th ta="right" style={{ whiteSpace: "nowrap" }}>xWAR {y.year}</Table.Th><Table.Th ta="right">Worth</Table.Th><Table.Th ta="right">Typical</Table.Th>
-                <Table.Th>Internal options</Table.Th><Table.Th>Your plan</Table.Th></Table.Tr></Table.Thead>
-              <Table.Tbody>
+          {y.rows.length === 0 ? <Empty>No regulars leaving.</Empty> : (
+            <Table minWidth={1100}>
+              <thead><tr><Th>Player</Th><Th>Pos</Th><Th right>Age</Th><Th right>Salary</Th><Th right>xWAR {y.year}</Th><Th right>Worth</Th><Th right>Typical</Th>
+                <Th>Internal options</Th><Th>Your plan</Th></tr></thead>
+              <tbody>
                 {y.rows.map((d) => (
-                  <Table.Tr key={`${d.id}${d.label}`}>
-                    <Table.Td style={{ whiteSpace: "nowrap" }}><PlayerLink id={d.id} name={d.name} />{d.lev && d.lev !== "RLB" && <Text span fz="xs" c="dimmed"> {d.lev}</Text>}</Table.Td>
-                    <Table.Td>{d.pos}</Table.Td><Table.Td>{d.age}</Table.Td><Table.Td ta="right">{money(d.salary)}</Table.Td>
-                    <Table.Td ta="right">{num(d.xwar)}</Table.Td><Table.Td ta="right">{money(d.worth)}</Table.Td><Table.Td ta="right">{money(d.price)}</Table.Td>
-                    <Table.Td>
-                      <Stack gap={0} style={{ whiteSpace: "nowrap" }}>{d.options.map((o) => <Group key={o.id} gap={4} wrap="nowrap"><PlayerLink id={o.id} name={o.name} /><Text fz="xs" c="dimmed">{num(o.xwar)}</Text></Group>)}</Stack>
-                    </Table.Td>
-                    <Table.Td><PlanCell year={y.year} d={d} pool={y.pool} /></Table.Td>
-                  </Table.Tr>
+                  <tr key={`${d.id}${d.label}`}>
+                    <Td className="whitespace-nowrap"><PlayerLink id={d.id} name={d.name} />{d.lev && d.lev !== "RLB" && <span className="ml-1 text-xs text-faint">{d.lev}</span>}</Td>
+                    <Td className="text-muted">{d.pos}</Td><Td right>{d.age ?? ""}</Td><Td right>{money(d.salary)}</Td>
+                    <Td right><Num v={d.xwar} /></Td><Td right>{money(d.worth)}</Td><Td right>{money(d.price)}</Td>
+                    <Td>
+                      <div className="space-y-0.5 whitespace-nowrap">
+                        {d.options.map((o) => (
+                          <div key={o.id} className="flex items-center gap-1.5"><PlayerLink id={o.id} name={o.name} /><Num v={o.xwar} className="text-xs text-muted" /></div>
+                        ))}
+                      </div>
+                    </Td>
+                    <Td>{readOnly ? <PlanText d={d} /> : <PlanCell year={y.year} d={d} pool={y.pool} />}</Td>
+                  </tr>
                 ))}
-              </Table.Tbody>
+              </tbody>
             </Table>
-          </Table.ScrollContainer>
+          )}
         </Section>
       ))}
-    </Stack>
+    </div>
   );
 }

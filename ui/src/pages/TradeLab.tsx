@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import { Anchor, Button, Group, SimpleGrid, Stack, Table, Tabs, Text } from "@mantine/core";
+import { useEffect, useState, type ReactNode } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { api, qs, type Pick, type Table as T } from "../api";
 import { DataTable } from "../components/DataTable";
 import { PlayerPicker } from "../components/PlayerPicker";
-import { Failed, Loading, PageTitle, PlayerLink, Section } from "../components/ui";
+import { Button, Empty, Failed, Loading, Num, PageTitle, PlayerLink, Section, Segmented, Table, Td, TextLink, Th, cn } from "../components/ui";
 import { num, signed } from "../format";
 
 type Mode = "eval" | "shop" | "offer" | "comps";
@@ -27,24 +26,28 @@ function Eval({ give, get }: { give: number[]; get: number[] }) {
   if (q.isLoading) return <Loading />;
   if (q.error || !q.data) return <Failed error={q.error} />;
   const r = q.data;
-  const row = (label: string, value: React.ReactNode, sub?: string) => (
-    <Table.Tr><Table.Td c="dimmed" w={240}>{label}</Table.Td><Table.Td fw={700}>{value}</Table.Td><Table.Td c="dimmed" fz="sm">{sub}</Table.Td></Table.Tr>
+  const row = (label: string, value: ReactNode, sub?: string) => (
+    <div key={label} className="grid grid-cols-[minmax(0,14rem)_minmax(0,1fr)] gap-x-4 gap-y-0.5 border-b border-line/70 py-2 last:border-0 sm:grid-cols-[14rem_12rem_minmax(0,1fr)]">
+      <div className="text-muted">{label}</div>
+      <div className="num font-semibold">{value}</div>
+      {sub && <div className="col-start-2 text-xs text-muted sm:col-start-3 sm:text-[13px]">{sub}</div>}
+    </div>
   );
   return (
-    <Stack>
+    <div className="space-y-4">
       <Section title="The deal"><DataTable table={r.cards} filter={false} /></Section>
       <Section title="Verdict">
-        <Table fz="sm"><Table.Tbody>
-          {row("Value to us", <Text span c={r.surplus_gain >= 0 ? "teal" : "red"} fw={700}>{signed(r.surplus_gain)}M</Text>, "our ratings-based surplus gained")}
-          {row("How they'll see it", <Text span c={r.their_gain >= 0 ? "teal" : "orange"} fw={700}>{r.their_gain >= 0 ? "they gain" : "they lose"} {num(Math.abs(r.their_gain))}M</Text>,
+        <div className="text-[13px]">
+          {row("Value to us", <span className={r.surplus_gain >= 0 ? "text-good" : "text-bad"}>{signed(r.surplus_gain)}M</span>, "our ratings-based surplus gained")}
+          {row("How they'll see it", <span className={r.their_gain >= 0 ? "text-good" : "text-warn"}>{r.their_gain >= 0 ? "they gain" : "they lose"} {num(Math.abs(r.their_gain))}M</span>,
             r.their_gain >= 0 ? "they should like it" : "expect them to ask for more")}
           {row("Your next-season depth chart", `${num(r.depth[0])} → ${num(r.depth[1])}`, `${signed(r.depth[1] - r.depth[0])} xWAR`)}
           {r.partners.map((p: any) => row(`${p.org} depth chart`, `${num(p.before)} → ${num(p.after)}`, `${signed(p.after - p.before)} xWAR`))}
           {row("Your payroll", Object.entries(r.payroll).map(([s, v]) => `${s} ${signed(v as number)}M`).join(" · "))}
-        </Table.Tbody></Table>
-        {r.rentals.length > 0 && <Text c="orange" fz="sm" mt="xs">{r.rentals.join(", ")} reach free agency after this season.</Text>}
+        </div>
+        {r.rentals.length > 0 && <p className="mt-2 text-[13px] text-warn">{r.rentals.join(", ")} reach free agency after this season.</p>}
       </Section>
-    </Stack>
+    </div>
   );
 }
 
@@ -54,11 +57,11 @@ function Shop({ give }: { give: number[] }) {
   if (q.error || !q.data) return <Failed error={q.error} />;
   const r = q.data;
   return (
-    <Stack>
-      <Text>Selling <b>{r.names}</b>: worth <b>{num(r.surplus)}M</b> to us; other GMs likely see <b>{num(r.perceived)}M</b>, about {r.pick}.
-        Ask for players they value at up to ~{num(r.cap)}M.</Text>
+    <div className="space-y-4">
+      <p className="text-[13px] leading-relaxed">Selling <b className="font-semibold">{r.names}</b>: worth <b className="num font-semibold">{num(r.surplus)}M</b> to us;
+        other GMs likely see <b className="num font-semibold">{num(r.perceived)}M</b>, about {r.pick}. Ask for players they value at up to ~{num(r.cap)}M.</p>
       {r.lists.map((l: { title: string; table: T }) => <Section key={l.title} title={l.title}><DataTable table={l.table} /></Section>)}
-    </Stack>
+    </div>
   );
 }
 
@@ -69,27 +72,43 @@ function Offer({ get, protect }: { get: number[]; protect: number[] }) {
   const r = q.data;
   return (
     <Section title={`Packages for ${r.names}`}>
-      <Text fz="sm" mb="sm">Worth <b>{num(r.surplus)}M</b> to us; the other side thinks they give up <b>{num(r.perceived)}M</b>. These packages should look fair to them,
-        best for you first. Pool: {r.pool} of your players; protected: {r.protected}.</Text>
+      <p className="mb-3 text-[13px] text-muted">Worth <b className="num font-semibold text-fg">{num(r.surplus)}M</b> to us; the other side thinks they give up{" "}
+        <b className="num font-semibold text-fg">{num(r.perceived)}M</b>. These packages should look fair to them, best for you first.
+        Pool: {r.pool} of your players; protected: {r.protected}.</p>
       {r.packages.length ? (
-        <Table.ScrollContainer minWidth={700}>
-          <Table fz="sm" highlightOnHover>
-            <Table.Thead><Table.Tr><Table.Th>Package</Table.Th><Table.Th ta="right">They see</Table.Th><Table.Th ta="right">You give up</Table.Th>
-              <Table.Th ta="right">Your gain</Table.Th><Table.Th ta="right">Your depth Δ</Table.Th><Table.Th ta="right">Their depth Δ</Table.Th><Table.Th /></Table.Tr></Table.Thead>
-            <Table.Tbody>
-              {r.packages.map((p: any, i: number) => (
-                <Table.Tr key={i}>
-                  <Table.Td>{p.players.map((x: Pick, j: number) => <span key={x.id}>{j > 0 && ", "}<PlayerLink id={x.id} name={x.label} /></span>)}</Table.Td>
-                  <Table.Td ta="right">{num(p.perceived)}</Table.Td><Table.Td ta="right">{num(p.surplus_given)}</Table.Td><Table.Td ta="right">{num(p.your_gain)}</Table.Td>
-                  <Table.Td ta="right">{signed(p.your_depth)}</Table.Td><Table.Td ta="right">{signed(p.their_depth)}</Table.Td>
-                  <Table.Td><Anchor component={Link} fz="sm" to={`/trade?${qs({ mode: "eval", give: p.players.map((x: Pick) => x.id), get })}`}>evaluate</Anchor></Table.Td>
-                </Table.Tr>
-              ))}
-            </Table.Tbody>
-          </Table>
-        </Table.ScrollContainer>
-      ) : <Text c="dimmed">No package of up to three of your players reaches their price. Protect fewer players, or add picks in Evaluate.</Text>}
+        <Table minWidth={700}>
+          <thead><tr><Th>Package</Th><Th right>They see</Th><Th right>You give up</Th><Th right>Your gain</Th><Th right>Your depth Δ</Th><Th right>Their depth Δ</Th><Th /></tr></thead>
+          <tbody>
+            {r.packages.map((p: any, i: number) => (
+              <tr key={i} className="hover:bg-sunken/60">
+                <Td>{p.players.map((x: Pick, j: number) => <span key={x.id}>{j > 0 && <span className="text-faint">, </span>}<PlayerLink id={x.id} name={x.label} /></span>)}</Td>
+                <Td right><Num v={p.perceived} /></Td><Td right><Num v={p.surplus_given} /></Td><Td right><Num v={p.your_gain} /></Td>
+                <Td right><Num v={p.your_depth} signed /></Td><Td right><Num v={p.their_depth} signed /></Td>
+                <Td className="text-right"><TextLink to={`/trade?${qs({ mode: "eval", give: p.players.map((x: Pick) => x.id), get })}`}>Evaluate</TextLink></Td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      ) : <Empty>No package of up to three of your players reaches their price. Protect fewer players, or add picks in Evaluate.</Empty>}
     </Section>
+  );
+}
+
+function DealList({ deals, empty }: { deals: Deal[]; empty: string }) {
+  if (!deals.length) return <p className="text-[13px] text-muted">{empty}</p>;
+  return (
+    <div className="divide-y divide-line/70">
+      {deals.map((d, i) => (
+        <div key={i} className="flex gap-3 py-1.5 text-[13px]">
+          <span className="num w-20 shrink-0 pt-px text-xs text-faint">{d.date}</span>
+          <span className="min-w-0">
+            {d.sides.map((s, j) => <span key={j}>{j > 0 && <span className="text-faint"> · </span>}<b className="font-semibold">{s.team}</b> gave {s.items.map((it, k) => (
+              <span key={k}>{k > 0 && ", "}{it.id ? <PlayerLink id={it.id} name={it.label} /> : it.label}</span>))}</span>)}
+            {d.sides.length === 1 && <span className="text-muted"> · nothing listed in return</span>}
+          </span>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -99,17 +118,8 @@ function Comps({ id }: { id: number }) {
   if (q.error || !q.data) return <Failed error={q.error} />;
   return (
     <Section title="Comparable trades">
-      <Text fz="sm" c="dimmed" mb="sm">{q.data.title}</Text>
-      <Stack gap={6}>
-        {q.data.deals.map((d, i) => (
-          <Text key={i} fz="sm"><Text span c="dimmed" fz="xs">{d.date}</Text>{"  "}
-            {d.sides.map((s, j) => <span key={j}>{j > 0 && " · "}<b>{s.team}</b> gave {s.items.map((it, k) => (
-              <span key={k}>{k > 0 && ", "}{it.id ? <PlayerLink id={it.id} name={it.label} /> : it.label}</span>))}</span>)}
-            {d.sides.length === 1 && " · nothing listed in return"}
-          </Text>
-        ))}
-        {!q.data.deals.length && <Text c="dimmed">No similar trades in the last three seasons.</Text>}
-      </Stack>
+      <p className="mb-2 text-[13px] text-muted">{q.data.title}</p>
+      <DealList deals={q.data.deals} empty="No similar trades in the last three seasons." />
     </Section>
   );
 }
@@ -132,32 +142,30 @@ export function TradeLab() {
   const ready = { eval: urlGive.length > 0 && urlGet.length > 0, shop: urlGive.length > 0, offer: urlGet.length > 0, comps: urlGive.length > 0 }[mode];
 
   return (
-    <Stack gap="lg">
+    <div className="space-y-4">
       <PageTitle sub="Value to us comes from ratings; how other GMs see it blends ratings with this season's results, pays up for cheap control and for bats over gloves, and discounts prospects for risk. Type R3 for a draft pick.">
         Trade lab
       </PageTitle>
-      <Tabs value={mode} onChange={setMode}>
-        <Tabs.List>
-          <Tabs.Tab value="eval">Evaluate a deal</Tabs.Tab>
-          <Tabs.Tab value="shop">Shop a player</Tabs.Tab>
-          <Tabs.Tab value="offer">What would it take?</Tabs.Tab>
-          <Tabs.Tab value="comps">Comparable trades</Tabs.Tab>
-        </Tabs.List>
-      </Tabs>
+      <div className="overflow-x-auto">
+        <Segmented<Mode> value={mode} onChange={setMode} options={[
+          { value: "eval", label: "Evaluate a deal" }, { value: "shop", label: "Shop a player" },
+          { value: "offer", label: "What would it take?" }, { value: "comps", label: "Comparable trades" },
+        ]} />
+      </div>
       <Section title={{ eval: "Proposed deal", shop: "Players you're selling", offer: "Player you want", comps: "Player" }[mode]}>
-        <SimpleGrid cols={{ base: 1, md: mode === "eval" || mode === "offer" ? 2 : 1 }}>
+        <div className={cn("grid gap-3", (mode === "eval" || mode === "offer") && "md:grid-cols-2")}>
           {(mode === "eval" || mode === "shop") && <PlayerPicker label="You give" value={give} onChange={setGive} scope="mine" placeholder="Your player, or R3…" />}
           {mode === "comps" && <PlayerPicker label="Any player" value={give} onChange={setGive} single />}
           {(mode === "eval" || mode === "offer") && <PlayerPicker label={mode === "eval" ? "You get" : "Target"} value={get} onChange={setGet} scope="others" placeholder="Their player, or R3…" />}
           {mode === "offer" && <PlayerPicker label="Don't offer" value={protect} onChange={setProtect} scope="mine" placeholder="Protect a player…" />}
-        </SimpleGrid>
-        <Group mt="md"><Button onClick={run}>Run</Button></Group>
+        </div>
+        <div className="mt-4"><Button variant="primary" onClick={run}>Run</Button></div>
       </Section>
       {ready && mode === "eval" && <Eval give={urlGive} get={urlGet} />}
       {ready && mode === "shop" && <Shop give={urlGive} />}
       {ready && mode === "offer" && <Offer get={urlGet} protect={urlProtect} />}
       {ready && mode === "comps" && <Comps id={urlGive[0]} />}
-      {picks.data && <Section title="Draft pick values" right={<Text fz="xs" c="dimmed">average draftee of that round, $M</Text>}><DataTable table={picks.data} filter={false} /></Section>}
-    </Stack>
+      {picks.data && <Section title="Draft pick values" right="Average draftee of that round, $M"><DataTable table={picks.data} filter={false} /></Section>}
+    </div>
   );
 }

@@ -1,9 +1,8 @@
-import { Anchor, Badge, Group, SimpleGrid, Stack, Text } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { api, type Table } from "../api";
 import { DataTable } from "../components/DataTable";
-import { Failed, Loading, PageTitle, Section } from "../components/ui";
+import { Badge, Failed, Loading, PageTitle, Section, TextLink } from "../components/ui";
 
 interface Group_ { group: string; reports: { key: string; title: string; desc: string; rows: number }[] }
 
@@ -14,23 +13,26 @@ export function Reports() {
   if (q.isLoading) return <Loading />;
   if (q.error || !q.data) return <Failed error={q.error} />;
   return (
-    <Stack gap="lg">
+    <div className="space-y-4">
       <PageTitle sub="The offseason report, one sortable table per page. Rebuilt automatically after each refresh.">Reports</PageTitle>
-      <SimpleGrid cols={{ base: 1, md: 3 }}>
+      <div className="grid gap-4 md:grid-cols-3">
         {q.data.map((g) => (
           <Section key={g.group} title={g.group}>
-            <Stack gap="sm">
+            <div className="-mx-2 space-y-0.5">
               {g.reports.map((r) => (
-                <div key={r.key}>
-                  <Group gap={6}><Anchor component={Link} to={`/reports/${r.key}`} fw={600}>{pretty(r.title)}</Anchor><Badge size="xs" variant="light" color="gray">{r.rows}</Badge></Group>
-                  <Text fz="xs" c="dimmed" lineClamp={2}>{r.desc}</Text>
-                </div>
+                <Link key={r.key} to={`/reports/${r.key}`} className="group block rounded-lg px-2 py-2 transition-colors hover:bg-sunken">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[13px] font-medium group-hover:text-accent">{pretty(r.title)}</span>
+                    <Badge className="num">{r.rows}</Badge>
+                  </div>
+                  <p className="mt-0.5 line-clamp-2 text-xs leading-snug text-muted">{r.desc}</p>
+                </Link>
               ))}
-            </Stack>
+            </div>
           </Section>
         ))}
-      </SimpleGrid>
-    </Stack>
+      </div>
+    </div>
   );
 }
 
@@ -41,11 +43,11 @@ export function Report() {
   if (q.isLoading) return <Loading />;
   if (q.error || !q.data) return <Failed error={q.error} />;
   return (
-    <Stack gap="lg">
-      <Anchor component={Link} to="/reports" fz="sm">← Reports</Anchor>
+    <div className="space-y-4">
+      <TextLink to="/reports" className="text-[13px]">← Reports</TextLink>
       <PageTitle sub={q.data.desc}>{pretty(q.data.title)}</PageTitle>
-      {q.data.note && <Text fw={600}>{q.data.note}</Text>}
+      {q.data.note && <p className="text-[13px] font-medium">{q.data.note}</p>}
       <Section title={`${q.data.table.rows.length} rows`}><DataTable table={q.data.table} maxHeight={900} initialFilter={params.get("filter") ?? ""} /></Section>
-    </Stack>
+    </div>
   );
 }

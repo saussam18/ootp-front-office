@@ -1,9 +1,8 @@
 import { useMemo, useState } from "react";
-import { Anchor, Group, Table as MTable, Text, TextInput, Tooltip, UnstyledButton } from "@mantine/core";
 import { IconArrowDown, IconArrowUp, IconSearch } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
 import type { Row, Table } from "../api";
 import { cell } from "../format";
+import { Input, PlayerLink, Tip, cn } from "./ui";
 
 interface Props {
   table: Table;
@@ -39,53 +38,51 @@ export function DataTable({ table, filter = true, initialFilter = "", limit, max
 
   const toggle = (key: string) =>
     setSort((s) => (s?.key === key ? { key, desc: !s.desc } : { key, desc: true }));
+  const numeric = (fmt: string) => fmt !== "text" && fmt !== "bool";
 
   return (
     <div>
       {filter && (table.rows.length > 12 || q) && (
-        <TextInput size="xs" mb="xs" w={280} leftSection={<IconSearch size={14} />} placeholder={`Filter ${table.rows.length} rows…`}
+        <Input className="mb-3 w-72" icon={<IconSearch size={14} />} placeholder={`Filter ${table.rows.length} rows…`}
           value={q} onChange={(e) => setQ(e.currentTarget.value)} />
       )}
-      <MTable.ScrollContainer minWidth={300} mah={maxHeight}>
-        <MTable striped highlightOnHover stickyHeader verticalSpacing={6} fz="sm">
-          <MTable.Thead>
-            <MTable.Tr>
+      <div className="-mx-4 overflow-auto px-4" style={maxHeight ? { maxHeight } : undefined}>
+        <table className="w-full min-w-[300px] border-collapse text-[13px]">
+          <thead className="sticky top-0 z-10 bg-surface">
+            <tr>
               {table.columns.map((c) => (
-                <MTable.Th key={c.key} style={{ whiteSpace: "nowrap" }}>
-                  <UnstyledButton onClick={() => toggle(c.key)}>
-                    <Group gap={4} wrap="nowrap">
-                      {c.tip ? (
-                        <Tooltip label={c.tip} multiline w={260} withArrow>
-                          <Text fz="xs" fw={600} c="dimmed" td="underline dotted">{c.label}</Text>
-                        </Tooltip>
-                      ) : (
-                        <Text fz="xs" fw={600} c="dimmed">{c.label}</Text>
-                      )}
-                      {sort?.key === c.key && (sort.desc ? <IconArrowDown size={12} /> : <IconArrowUp size={12} />)}
-                    </Group>
-                  </UnstyledButton>
-                </MTable.Th>
+                <th key={c.key} className={cn("whitespace-nowrap border-b border-line px-2 py-2 text-[11px] font-medium uppercase tracking-wider text-faint first:pl-0 last:pr-0",
+                  numeric(c.fmt) ? "text-right" : "text-left")}>
+                  <button type="button" onClick={() => toggle(c.key)}
+                    className={cn("inline-flex items-center gap-1 uppercase hover:text-fg", sort?.key === c.key && "text-fg")}>
+                    {c.tip ? (
+                      <Tip label={c.tip}><span className="underline decoration-dotted underline-offset-2">{c.label}</span></Tip>
+                    ) : c.label}
+                    {sort?.key === c.key && (sort.desc ? <IconArrowDown size={11} /> : <IconArrowUp size={11} />)}
+                  </button>
+                </th>
               ))}
-            </MTable.Tr>
-          </MTable.Thead>
-          <MTable.Tbody>
+            </tr>
+          </thead>
+          <tbody>
             {rows.map((row, i) => (
-              <MTable.Tr key={i}>
+              <tr key={i} className="hover:bg-sunken/60">
                 {table.columns.map((c) => {
                   const text = cell(row[c.key], c.fmt);
                   const id = c.link ? row[c.link] : undefined;
-                  const numeric = c.fmt !== "text" && c.fmt !== "bool";
                   return (
-                    <MTable.Td key={c.key} style={{ whiteSpace: "nowrap", fontVariantNumeric: numeric ? "tabular-nums" : undefined }}>
-                      {typeof id === "number" && id > 0 ? <Anchor component={Link} to={`/player/${id}`} fz="sm">{text}</Anchor> : text}
-                    </MTable.Td>
+                    <td key={c.key} className={cn("whitespace-nowrap border-b border-line/70 px-2 py-1.5 first:pl-0 last:pr-0",
+                      numeric(c.fmt) && "num text-right")}>
+                      {typeof id === "number" && id > 0 ? <PlayerLink id={id} name={text} /> : text}
+                    </td>
                   );
                 })}
-              </MTable.Tr>
+              </tr>
             ))}
-          </MTable.Tbody>
-        </MTable>
-      </MTable.ScrollContainer>
+          </tbody>
+        </table>
+        {rows.length === 0 && <div className="py-6 text-center text-sm text-muted">No rows{q ? " match the filter" : ""}.</div>}
+      </div>
     </div>
   );
 }

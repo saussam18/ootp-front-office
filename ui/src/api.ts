@@ -5,7 +5,7 @@ export interface Column { key: string; label: string; tip: string; fmt: Fmt; lin
 export type Row = Record<string, unknown>;
 export interface Table { columns: Column[]; rows: Row[] }
 
-export interface Meta { team: string; season: number; next: number; core_year: number; snapshot: string }
+export interface Meta { team: string; season: number; next: number; core_year: number; snapshot: string; read_only: boolean }
 
 export interface PlayerBrief {
   id: number; name: string; pos: string; age: number; lev: string | null; org: string | null;

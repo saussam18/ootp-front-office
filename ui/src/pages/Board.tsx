@@ -1,87 +1,91 @@
-import { Alert, Anchor, Box, Group, SimpleGrid, Stack, Table, Text, Title, Tooltip } from "@mantine/core";
-import { IconAlertTriangle } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { api, type Board as BoardData, type Plan, type PlanRow } from "../api";
 import { FaTimeline } from "../components/FaTimeline";
-import { Failed, Loading, PlayerLink, Section } from "../components/ui";
-import { isNum, num } from "../format";
+import { Alert, Dot, Failed, Loading, Num, PageTitle, PlayerLink, Section, SectionLabel, Stat, TextLink, Tip, type Tone } from "../components/ui";
+import { num } from "../format";
 
 type Players = BoardData["players"];
 
-const DOT: Record<string, { color: string; tip: string }> = {
-  upgrade: { color: "var(--mantine-color-orange-6)", tip: "Upgrade target: 0.3+ season xWAR below the league median here" },
-  strong: { color: "var(--mantine-color-teal-6)", tip: "Strong: 0.5+ season xWAR above the league median here" },
-  leaving: { color: "var(--mantine-color-red-6)", tip: "Your pick isn't under control this season" },
-  empty: { color: "var(--mantine-color-red-6)", tip: "Open" },
+const FLAG: Record<string, { tone: Tone; tip: string }> = {
+  upgrade: { tone: "warn", tip: "Upgrade target: 0.3+ season xWAR below the league median here" },
+  strong: { tone: "good", tip: "Strong: 0.5+ season xWAR above the league median here" },
+  leaving: { tone: "bad", tip: "Your pick isn't under control this season" },
+  empty: { tone: "bad", tip: "Open" },
 };
 
 function Flag({ r }: { r: PlanRow }) {
-  const d = DOT[r.status];
-  if (!d || !r.counts) return null;
-  return (
-    <Tooltip label={r.status === "upgrade" ? `${d.tip} (${num(r.value)} vs ${num(r.median)})` : r.was ? `${r.was.name} leaving` : d.tip} withArrow>
-      <Box w={8} h={8} style={{ borderRadius: 8, background: d.color, flexShrink: 0 }} />
-    </Tooltip>
-  );
+  const f = FLAG[r.status];
+  if (!f || !r.counts) return null;
+  const tip = r.status === "upgrade" || r.status === "strong" ? `${f.tip} (${num(r.value)} vs ${num(r.median)})` : r.was ? `${r.was.name} leaving` : f.tip;
+  return <Tip label={tip}><span className="flex size-4 items-center justify-center"><Dot tone={f.tone} /></span></Tip>;
 }
 
-// A compact read-only plan block, like a section of the old notes sheet.
-function Block({ plan, players, hand, title }: { plan: Plan; players: Players; hand: "b" | "t"; title?: string }) {
+function Who({ r, players, hand }: { r: PlanRow; players: Players; hand: "b" | "t" }) {
+  if (r.player_id) {
+    const p = players[String(r.player_id)];
+    return (
+      <span className="flex min-w-0 items-center gap-1.5">
+        <PlayerLink id={r.player_id} name={p?.name ?? String(r.player_id)} className="truncate" />
+        <span className="text-xs text-faint">{p?.[hand]?.[0]}</span>
+        {p?.lev && p.lev !== "RLB" && <span className="rounded bg-sunken px-1 text-[10px] font-medium text-muted">{p.lev}</span>}
+      </span>
+    );
+  }
+  if (r.was || (r.counts && !r.label)) {
+    return (
+      <span className="flex min-w-0 items-center gap-1.5">
+        <span className="text-bad">{r.was ? `was ${r.was.name}` : "open"}</span>
+        {r.suggest && (
+          <Tip label="Best player under control who isn't already in this lineup">
+            <span className="flex min-w-0 items-center gap-1 text-muted">
+              → <PlayerLink id={r.suggest.id} name={r.suggest.name} className="truncate" />
+            </span>
+          </Tip>
+        )}
+      </span>
+    );
+  }
+  return <span className="text-muted">{r.label ? `${r.label}?` : "—"}</span>;
+}
+
+// A compact read-only plan: slot, player, season value, flag; the bench as one line.
+function Block({ plan, players, hand, title, sub }: { plan: Plan; players: Players; hand: "b" | "t"; title?: string; sub?: string }) {
   const starters = plan.rows.filter((r) => r.counts);
-  const bench = plan.rows.filter((r) => !r.counts && (r.player_id || r.label));
-  const name = (r: PlanRow) => {
-    if (r.player_id) {
-      const p = players[String(r.player_id)];
-      return (
-        <Group gap={6} wrap="nowrap">
-          <PlayerLink id={r.player_id} name={p?.name ?? String(r.player_id)} />
-          <Text fz="xs" c="dimmed">{p?.[hand]?.[0]}</Text>
-          {p?.lev && p.lev !== "RLB" && <Text fz="xs" c="dimmed">{p.lev}</Text>}
-        </Group>
-      );
-    }
-    const next = r.suggest && (
-      <Tooltip label="Best player under control who isn't already in this lineup" withArrow>
-        <Group gap={4} wrap="nowrap">
-          <Text fz="sm" c="dimmed">→</Text>
-          <PlayerLink id={r.suggest.id} name={r.suggest.name} />
-          <Text fz="xs" c="dimmed">{players[String(r.suggest.id)]?.[hand]?.[0]} {num(r.suggest.value)}</Text>
-        </Group>
-      </Tooltip>
-    );
-    if (r.was || (r.counts && !r.label)) return (
-      <Group gap={8} wrap="nowrap">
-        <Text fz="sm" c="red">{r.was ? `was ${r.was.name}` : "open"}</Text>
-        {next}
-      </Group>
-    );
-    if (r.label) return <Text fz="sm" c="dimmed">{r.label}?</Text>;
-    return <Text fz="sm" c="red">—</Text>;
-  };
+  const bench = plan.rows.filter((r) => !r.counts && r.player_id);
   return (
-    <Section title={<>{title ?? plan.title}</>} right={<Anchor component={Link} to={`/plans#${plan.key}`} fz="xs">edit</Anchor>}>
-      <Table verticalSpacing={2} fz="sm" withRowBorders={false}>
-        <Table.Tbody>
+    <Section title={<>{title ?? plan.title}{sub && <span className="ml-1.5 font-normal text-faint">{sub}</span>}</>}
+      right={<TextLink to={`/plans#${plan.key}`}>Edit</TextLink>}>
+      {starters.length > 0 && (
+        <div className="divide-y divide-line/60">
           {starters.map((r) => (
-            <Table.Tr key={r.slot}>
-              <Table.Td w={44} fw={700} c="dimmed" fz="xs">{r.slot}</Table.Td>
-              <Table.Td>{name(r)}</Table.Td>
-              <Table.Td w={40} ta="right" fz="xs" c="dimmed" style={{ fontVariantNumeric: "tabular-nums" }}>
-                {isNum(r.rate) ? <Tooltip label={`${num(r.rate)} full-season rate × ${Math.round(plan.share * 100)}% of PAs`} withArrow><span>{num(r.value)}</span></Tooltip> : num(r.value)}
-              </Table.Td>
-              <Table.Td w={16}><Flag r={r} /></Table.Td>
-            </Table.Tr>
+            <div key={r.slot} className="flex h-8 items-center gap-3">
+              <span className="w-9 shrink-0 text-[11px] font-semibold text-faint">{r.slot}</span>
+              <span className="min-w-0 flex-1 text-[13px]"><Who r={r} players={players} hand={hand} /></span>
+              <Tip label={r.rate !== null && r.rate !== undefined ? `${num(r.rate)} full-season rate × ${Math.round(plan.share * 100)}% of PAs` : null}>
+                <span className="w-9 text-right text-xs text-muted"><Num v={r.value} /></span>
+              </Tip>
+              <span className="w-4"><Flag r={r} /></span>
+            </div>
           ))}
-        </Table.Tbody>
-      </Table>
+        </div>
+      )}
       {bench.length > 0 && (
-        <>
-          <Text fz="xs" fw={700} c="dimmed" tt="uppercase" mt="xs" mb={2}>{plan.group === "minors" ? "" : "Bench"}</Text>
-          <Stack gap={2}>
-            {bench.map((r) => <div key={r.slot}>{name(r)}</div>)}
-          </Stack>
-        </>
+        <div className={starters.length ? "mt-3" : ""}>
+          {starters.length > 0 && <SectionLabel className="mb-1">Bench</SectionLabel>}
+          <div className="flex flex-wrap gap-x-3 gap-y-1 text-[13px]">
+            {bench.map((r) => {
+              const p = players[String(r.player_id)];
+              return (
+                <span key={r.slot} className="flex items-center gap-1">
+                  <PlayerLink id={r.player_id} name={p?.name ?? ""} />
+                  <span className="text-xs text-faint">{p?.[hand]?.[0]}</span>
+                  {p?.lev && p.lev !== "RLB" && <span className="text-[10px] text-faint">{p.lev}</span>}
+                </span>
+              );
+            })}
+          </div>
+        </div>
       )}
     </Section>
   );
@@ -94,63 +98,78 @@ export function Board() {
   const d = q.data;
   const p = d.plans;
   const f = d.forty;
+  const lineup = p.lineup_vr.total + p.lineup_vl.total;
+  const pct = (s: number) => `${Math.round(s * 100)}% of PAs`;
 
   return (
-    <Stack gap="md">
-      <Group justify="space-between" align="flex-end">
-        <div>
-          <Title order={2}>Halifax team plan</Title>
-          <Text c="dimmed" fz="sm">Next season ({d.next}) from your lineups & staff plans, free agency by year, and the {d.core_year} core.
-            Dots: <Text span c="orange">upgrade</Text> · <Text span c="teal">strong</Text> · <Text span c="red">leaving / open</Text>.</Text>
-        </div>
-      </Group>
+    <div className="space-y-6">
+      <PageTitle sub={<>Next season ({d.next}) from your lineup and staff plans, free agency by year, and the {d.core_year} core.
+        Values are season xWAR. <span className="inline-flex items-center gap-1"><Dot tone="warn" /> upgrade</span>{" "}
+        <span className="ml-1 inline-flex items-center gap-1"><Dot tone="good" /> strong</span>{" "}
+        <span className="ml-1 inline-flex items-center gap-1"><Dot tone="bad" /> leaving or open</span></>}>
+        Team plan
+      </PageTitle>
 
       {d.must_protect.length > 0 && (
-        <Alert color="orange" icon={<IconAlertTriangle size={18} />} title={`Rule 5: protect before the December ${d.season} draft`}>
-          {d.must_protect.map((m, i) => <span key={m.id}>{i > 0 && ", "}<PlayerLink id={m.id} name={m.name} /> ({m.pos}, {m.lev}, worth {num(m.surplus)}M)</span>)}
-          {" "}is eligible and not on the 40-man. <Anchor component={Link} to="/forty" fz="sm">40-man roster →</Anchor>
+        <Alert tone="warn" title={`Rule 5: protect before the December ${d.season} draft`}>
+          {d.must_protect.map((m, i) => <span key={m.id}>{i > 0 && ", "}<PlayerLink id={m.id} name={m.name} className="font-medium" /> ({m.pos}, {m.lev}, worth ${num(m.surplus)}M)</span>)}
+          {d.must_protect.length === 1 ? " is" : " are"} eligible and not on the 40-man. <Link to="/forty" className="font-medium underline">40-man roster →</Link>
         </Alert>
       )}
 
-      <SimpleGrid cols={{ base: 1, md: 2 }}>
-        <Section title="40-man" right={<Anchor component={Link} to="/forty" fz="xs">manage</Anchor>}>
-          <Text fz={28} fw={700} lh={1.2}>{f.count}<Text span c="dimmed" fz="md">/40</Text></Text>
-          <Text fz="xs" c="dimmed">{f.leaving} leaving · {f.planned_drops} planned drops · {f.planned_adds} planned adds → <b>{f.projected}</b> after the offseason</Text>
-        </Section>
-        <Section title={`Leaving after ${d.season}`} right={<Anchor component={Link} to="/fa" fz="xs">contract end dates</Anchor>}>
-          <Text fz="sm">{d.losing.map((l, i) => <span key={l.id}>{i > 0 && ", "}<PlayerLink id={l.id} name={l.name} /></span>)}</Text>
-          <Text fz="xs" c="dimmed" mt={4}>Team options aren't in the export: set declined or exercised options on the Free agency page.</Text>
-        </Section>
-      </SimpleGrid>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Stat label="Lineup" value={num(lineup)} sub={`vs RHP ${num(p.lineup_vr.total)} + vs LHP ${num(p.lineup_vl.total)}`} />
+        <Stat label="Rotation + bullpen" value={num(p.rotation.total + p.bullpen.total)} sub={`${num(p.rotation.total)} + ${num(p.bullpen.total)} (leverage-weighted)`} />
+        <Stat label="40-man" value={<>{f.count}<span className="text-base font-normal text-faint">/40</span></>}
+          sub={<>{f.leaving} leaving · {f.planned_drops} drops · {f.planned_adds} adds → <b className="text-fg">{f.projected}</b></>} />
+        <div className="rounded-xl border border-line bg-surface px-4 py-3">
+          <div className="flex items-center justify-between">
+            <div className="text-[11px] font-medium uppercase tracking-wider text-muted">Leaving after {d.season}</div>
+            <TextLink to="/fa" className="text-xs">Dates</TextLink>
+          </div>
+          <div className="mt-1.5 text-[13px] leading-relaxed">
+            {d.losing.length ? d.losing.map((l, i) => <span key={l.id}>{i > 0 && <span className="text-faint">, </span>}<PlayerLink id={l.id} name={l.name} /></span>)
+              : <span className="text-muted">Nobody</span>}
+          </div>
+        </div>
+      </div>
 
-      <Title order={4} mt="xs">{d.next} lineups</Title>
-      <SimpleGrid cols={{ base: 1, md: 2 }}>
-        <Block plan={p.lineup_vr} players={d.players} hand="b" title={`vs RHP · ${Math.round(p.lineup_vr.share * 100)}% of PAs`} />
-        <Block plan={p.lineup_vl} players={d.players} hand="b" title={`vs LHP · ${Math.round(p.lineup_vl.share * 100)}% of PAs`} />
-      </SimpleGrid>
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">{d.next} lineups</h2>
+        <div className="grid gap-3 lg:grid-cols-2">
+          <Block plan={p.lineup_vr} players={d.players} hand="b" title="vs RHP" sub={pct(p.lineup_vr.share)} />
+          <Block plan={p.lineup_vl} players={d.players} hand="b" title="vs LHP" sub={pct(p.lineup_vl.share)} />
+        </div>
+      </div>
 
-      <Title order={4} mt="xs">{d.next} pitching staff</Title>
-      <SimpleGrid cols={{ base: 1, md: 2 }}>
-        <Block plan={p.rotation} players={d.players} hand="t" />
-        <Block plan={p.bullpen} players={d.players} hand="t" />
-      </SimpleGrid>
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">{d.next} pitching staff</h2>
+        <div className="grid gap-3 lg:grid-cols-2">
+          <Block plan={p.rotation} players={d.players} hand="t" />
+          <Block plan={p.bullpen} players={d.players} hand="t" />
+        </div>
+      </div>
 
-      <SimpleGrid cols={{ base: 1, md: 2 }}>
-        <Block plan={p.minors_hit} players={d.players} hand="b" title="Minors: hitters" />
-        <Block plan={p.minors_pit} players={d.players} hand="t" title="Minors: pitchers" />
-      </SimpleGrid>
+      <div className="grid gap-3 lg:grid-cols-2">
+        <Block plan={p.minors_hit} players={d.players} hand="b" title="Minors: hitters to watch" />
+        <Block plan={p.minors_pit} players={d.players} hand="t" title="Minors: pitchers to watch" />
+      </div>
 
-      <Group justify="space-between" mt="xs">
-        <Title order={4}>Free agency by year</Title>
-        <Anchor component={Link} to="/fa" fz="sm">plan replacements →</Anchor>
-      </Group>
-      <FaTimeline years={d.fa} />
+      <div className="space-y-3">
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-sm font-semibold">Free agency by year</h2>
+          <TextLink to="/fa" className="text-[13px]">Plan replacements →</TextLink>
+        </div>
+        <FaTimeline years={d.fa} />
+      </div>
 
-      <Title order={4} mt="xs">{d.core_year} core</Title>
-      <SimpleGrid cols={{ base: 1, md: 2 }}>
-        <Block plan={p.core_lineup} players={d.players} hand="b" title="Lineup" />
-        <Block plan={p.core_rotation} players={d.players} hand="t" title="Rotation" />
-      </SimpleGrid>
-    </Stack>
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold">{d.core_year} core</h2>
+        <div className="grid gap-3 lg:grid-cols-2">
+          <Block plan={p.core_lineup} players={d.players} hand="b" title="Lineup" />
+          <Block plan={p.core_rotation} players={d.players} hand="t" title="Rotation" />
+        </div>
+      </div>
+    </div>
   );
 }

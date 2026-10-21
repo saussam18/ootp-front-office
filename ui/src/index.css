@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Neutrals carry the page; the accent marks what's interactive or selected;
+   good / warn / bad are reserved for "act on this" (strong slot, upgrade target, leaving or open). */
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --sunken: #f1f1ee;
+  --line: #e6e5e1;
+  --line-strong: #d4d3ce;
+  --fg: #1c1c1a;
+  --muted: #6d6c67;
+  --faint: #a19f98;
+  --accent: #2f5fd0;
+  --accent-soft: #e8eefb;
+  --good: #13855b;
+  --good-soft: #e3f4ec;
+  --warn: #b25e09;
+  --warn-soft: #fbf0e1;
+  --bad: #c33a3a;
+  --bad-soft: #fbe9e8;
+}
+
+.dark {
+  --bg: #0e0f11;
+  --surface: #16171a;
+  --sunken: #1c1d21;
+  --line: #26282d;
+  --line-strong: #34363c;
+  --fg: #e9e9ec;
+  --muted: #9a9ba3;
+  --faint: #65676f;
+  --accent: #7ea2ff;
+  --accent-soft: #1b2440;
+  --good: #4cc995;
+  --good-soft: #10291f;
+  --warn: #f0a24a;
+  --warn-soft: #2d2010;
+  --bad: #f07a7a;
+  --bad-soft: #321718;
+}
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-sunken: var(--sunken);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection {
+    background: var(--accent-soft);
+  }
+}
+
+/* Numbers line up in columns everywhere. */
+.num {
+  font-variant-numeric: tabular-nums;
+}

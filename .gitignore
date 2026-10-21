@@ -9,3 +9,4 @@ ui/tsconfig.tsbuildinfo
 .vercel/
 .env*
 *.duckdb.wal
+.vercel
